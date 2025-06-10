@@ -80,8 +80,8 @@ module mmul_control_logic#(
     assign addr_Bx_o = addr_Bx ;
     assign addr_By_o = addr_By ;
     
-    assign addr_Cx_o = addr_C%8;
-    assign addr_Cy_o = addr_C/8        ;
+    assign addr_Cx_o = addr_C%OP_NEUR_WIDTH ;
+    assign addr_Cy_o = addr_C/OP_NEUR_WIDTH ;
     
     
     assign accel_rst_o      = accel_rst     ;
@@ -181,8 +181,8 @@ always_comb begin
                     en_AB       =  1'b1     ;         
                     we_AB       =  1'b0     ;
                     addr_Ax      = k        ;
-                    addr_Ay      = (addr_C/8);
-                    addr_Bx      = (addr_C%8);
+                    addr_Ay      = (addr_C/OP_NEUR_WIDTH);
+                    addr_Bx      = (addr_C%OP_NEUR_WIDTH);
                     addr_By      =  k        ;
                     case (accum_state)
                         ACCUMULATE : begin

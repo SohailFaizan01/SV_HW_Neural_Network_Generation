@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../BNN_accel.srcs/sources_1/new/accel.sv" \
+"../../../../BNN_accel.srcs/sources_1/new/accel_wrapper.sv" \
+"../../../../BNN_accel.srcs/sources_1/new/control_logic.sv" \
+"../../../../BNN_accel.srcs/sources_1/new/ip_reg.sv" \
+"../../../../BNN_accel.srcs/sources_1/new/op_reg.sv" \
+"../../../../BNN_accel.srcs/sim_1/new/accel_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
