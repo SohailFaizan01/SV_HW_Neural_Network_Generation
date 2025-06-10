@@ -114,7 +114,7 @@ reg clk, rst_n;
 		 // '{20'd081951,20'd107527,20'd095720,20'd127228,20'd131392,20'd115236,20'd135198}
     };
 
-reg [19:0] mult_out[0:2][0:6] = '{default:'h0};
+reg [19:0] mult_out[0:1][0:6] = '{default:'h0};
 
 
     reg             data_ready, write_done, read_done  ;
@@ -131,7 +131,7 @@ reg [19:0] mult_out[0:2][0:6] = '{default:'h0};
     reg     [7:0]   wd_A, wd_B              ;
     wire    [19:0]  rd_C                    ;
     
-    int k,errors;
+    int k,errors,correct;
     
     parameter IDLE = 3'h0;
     parameter WRITE = 3'h1;
@@ -183,12 +183,12 @@ reg [19:0] mult_out[0:2][0:6] = '{default:'h0};
                     data_ready  <= 1'b1         ;
                     addr_Ax      <= (i[3:0]%8)  ;
                     addr_Ay      <= (i[3:0]/8)  ;
-                    addr_Bx      <= (i[5:0]%8)  ;
-                    addr_By      <= (i[5:0]/8)  ;
+                    addr_Bx      <= (i[5:0]%7)  ;
+                    addr_By      <= (i[5:0]/7)  ;
                     wd_A        <= in1[i[3:0]/8][i[3:0]%8]    ;
                     wd_B        <= in2[i/7][i%7]    ;
-                    addr_Cx      <= i%8                ;
-                    addr_Cy      <= i/8                ;
+                    addr_Cx      <= i%7                ;
+                    addr_Cy      <= i/7                ;
                     // write_done  <= 1'b0 ;
                     if (i == 'd56)
                         state <= WAIT_CALC;
@@ -212,7 +212,7 @@ reg [19:0] mult_out[0:2][0:6] = '{default:'h0};
                     addr_Cx <= i%8;
                     addr_Cy <= i/8;
                     // mult_out[i/8][i%8]<= rd_C;
-                    if (i == 'd15) //63 adresses + 1 for clk + 1 because 1 cycle read delay
+                    if (i == 'd16) //63 adresses + 1 for clk + 1 because 1 cycle read delay
                         state   <= VERIFY   ;
                 end
                 VERIFY: begin
@@ -245,26 +245,27 @@ reg [19:0] mult_out[0:2][0:6] = '{default:'h0};
         else begin
             case (state)
                 IDLE: begin
-                i   <= 'h0;
-                mult_out <= '{default:'h0};
+                    i   <= 'h0;
+                    mult_out <= '{default:'h0};
                 end
                 WRITE: begin
-                i   <= i+1;
-                mult_out <= '{default:'h0};
+                    i   <= i+1;
+                    mult_out <= '{default:'h0};
                 end
                 WAIT_CALC: begin
-                i   <= 'h0;
-                mult_out <= '{default:'h0};
+                    i   <= 'h0;
+                    mult_out <= '{default:'h0};
                 end
                 READ: begin
-                i   <= i+1;
-                mult_out[(i-1'b1)/8][(i-1'b1)%8]<= rd_C;
+                    i   <= i+1;
+                    mult_out[(i-1'b1)/8][(i-1'b1)%8]<= rd_C;
                 end
                 VERIFY: begin
-                i   <= i-1;
-                mult_out <= mult_out;
-                if (mult_out[(i-1)/7][(i-1)%7] != mult_out_reference[((i-1)/7)][((i-1)%7)])
-                        errors = errors + 1;
+                    i   <= i-1;
+                    mult_out <= mult_out;
+                    if (mult_out[(i-2)/7][(i-2)%7] != mult_out_reference[((i-2)/7)][((i-2)%7)])
+                            errors = errors + 1;
+                    else correct = correct+1;
                 end
             endcase         
         end

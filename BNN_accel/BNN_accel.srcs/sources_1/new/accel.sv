@@ -28,7 +28,6 @@ module mmul#(
     output [(OP_DATA_WIDTH-1):0] wd_C_o
     );
     reg  [(OP_DATA_WIDTH-1):0] accum_q;
-    // logic [(OP_DATA_WIDTH-1):0] accum_d;
 
 
     assign wd_C_o = accum_q;
