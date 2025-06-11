@@ -39,8 +39,6 @@ module mmul_control_logic#(
     output accel_rst_o, accel_done_o, accel_ready_o
     );
     
-    reg [2:0] state;
-    reg [2:0] accum_state;
     
     logic                     en_AB, we_AB, en_C, we_C;
     logic                     accel_rst, accel_done, accel_ready;
@@ -62,13 +60,8 @@ module mmul_control_logic#(
     reg [$clog2(IP_NEUR_WIDTH):0] k;
     reg  write_clk_sync;
 
-    localparam IDLE         = 2'h0;
-    localparam LOAD         = 2'h1;
-    localparam CALC         = 2'h2;
-    localparam MATRIX_DONE  = 2'h3;
-    
-    localparam ACCUMULATE   = 1'h0;
-    localparam STORE        = 1'h1;
+    enum {IDLE, LOAD, CALC, MATRIX_DONE} state, nxt_state;
+    enum {ACCUMULATE, STORE} accum_state,nxt_accum_state;
 
     assign en_AB_o  =   en_AB   ;
     assign we_AB_o  =   we_AB   ;
@@ -108,21 +101,17 @@ always_latch begin
                 CALC : begin
                     case (accum_state)
                         ACCUMULATE : begin
-                        if (!write_clk_sync) begin
                             if ((k==(IP_NEUR_WIDTH+1'b1))) 
                                 accum_state <= STORE    ;
-                        end
                         end 
                         STORE : begin
-                                if (write_clk_sync) begin
                                     if ((addr_C == (OP_NEUR_WIDTH*IP_NEUR_HIGHT)) ) 
                                         state <= MATRIX_DONE;
                                     else 
                                         accum_state <= ACCUMULATE;
-                                end
                         end
                         default: accum_state <= accum_state;
-                    endcase  
+                     endcase
                 end
                 MATRIX_DONE : begin
                     if(read_done_i)
@@ -256,8 +245,10 @@ always_comb begin
         if (!rst_n_i) begin
             k       <=  'h0 ;
             addr_C  <=  'h0 ;
+            // accum_state <= ACCUMULATE ;
         end
         else begin 
+            // accum_state <= nxt_accum_state;
             case(state)
                 IDLE : begin
                     k       <=  'h0 ;
