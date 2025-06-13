@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="4,259.583 ns"></ZoomStartTime>
-      <ZoomEndTime time="4,656.084 ns"></ZoomEndTime>
+      <ZoomStartTime time="4,332.083 ns"></ZoomStartTime>
+      <ZoomEndTime time="4,641.584 ns"></ZoomEndTime>
       <Cursor1Time time="4,590.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="287"></NameColumnWidth>
+      <NameColumnWidth column_width="282"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="31" />
+   <WVObjectSize size="32" />
    <wvobject fp_name="/accel_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -37,49 +37,19 @@
       <obj_property name="ObjectShortName">in2[0:7][0:6][7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/accel_tb/mult_out_reference" type="array">
-      <obj_property name="ElementShortName">mult_out_reference[0:1][0:6][19:0]</obj_property>
-      <obj_property name="ObjectShortName">mult_out_reference[0:1][0:6][19:0]</obj_property>
+      <obj_property name="ElementShortName">mult_out_reference[0:1][0:6]</obj_property>
+      <obj_property name="ObjectShortName">mult_out_reference[0:1][0:6]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/accel_tb/mult_out_reference[0]" type="array">
-         <obj_property name="ElementShortName">[0][0:6][19:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][0:6][19:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mult_out_reference[1]" type="array">
-         <obj_property name="ElementShortName">[1][0:6][19:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][0:6][19:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="/accel_tb/mult_out" type="array">
-      <obj_property name="ElementShortName">mult_out[0:1][0:6][19:0]</obj_property>
-      <obj_property name="ObjectShortName">mult_out[0:1][0:6][19:0]</obj_property>
+      <obj_property name="ElementShortName">mult_out[0:1][0:6]</obj_property>
+      <obj_property name="ObjectShortName">mult_out[0:1][0:6]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/accel_tb/mult_out[0]" type="array">
-         <obj_property name="ElementShortName">[0][0:6][19:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][0:6][19:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mult_out[1]" type="array">
-         <obj_property name="ElementShortName">[1][0:6][19:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][0:6][19:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram" type="array">
-      <obj_property name="ElementShortName">ram[1:0][6:0][19:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[1:0][6:0][19:0]</obj_property>
+      <obj_property name="ElementShortName">ram[1:0][6:0]</obj_property>
+      <obj_property name="ObjectShortName">ram[1:0][6:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram[1]" type="array">
-         <obj_property name="ElementShortName">[1][6:0][19:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][6:0][19:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram[0]" type="array">
-         <obj_property name="ElementShortName">[0][6:0][19:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][6:0][19:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="/accel_tb/data_ready" type="logic">
       <obj_property name="ElementShortName">data_ready</obj_property>
@@ -142,10 +112,9 @@
       <obj_property name="ElementShortName">wd_B[7:0]</obj_property>
       <obj_property name="ObjectShortName">wd_B[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/accel_tb/rd_C" type="array">
-      <obj_property name="ElementShortName">rd_C[19:0]</obj_property>
-      <obj_property name="ObjectShortName">rd_C[19:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/accel_tb/rd_C" type="logic">
+      <obj_property name="ElementShortName">rd_C</obj_property>
+      <obj_property name="ObjectShortName">rd_C</obj_property>
    </wvobject>
    <wvobject fp_name="/accel_tb/k" type="array">
       <obj_property name="ElementShortName">k[31:0]</obj_property>
@@ -178,5 +147,19 @@
    <wvobject fp_name="/accel_tb/VERIFY" type="array">
       <obj_property name="ElementShortName">VERIFY[2:0]</obj_property>
       <obj_property name="ObjectShortName">VERIFY[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram" type="array">
+      <obj_property name="ElementShortName">ram[1:0][6:0]</obj_property>
+      <obj_property name="ObjectShortName">ram[1:0][6:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram[1]" type="array">
+         <obj_property name="ElementShortName">[1][6:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram[0]" type="array">
+         <obj_property name="ElementShortName">[0][6:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][6:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

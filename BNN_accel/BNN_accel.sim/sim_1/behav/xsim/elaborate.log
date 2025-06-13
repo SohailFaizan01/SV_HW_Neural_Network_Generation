@@ -5,16 +5,7 @@ Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.dualport_matrix_mem(MATRIX_HIGHT...
-Compiling module xil_defaultlib.dualport_matrix_mem(MATRIX_WIDTH...
-Compiling module xil_defaultlib.dualport_matrix_mem(DATA_WIDTH=1...
-Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
-Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
-Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
-Compiling module xil_defaultlib.accel_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot accel_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

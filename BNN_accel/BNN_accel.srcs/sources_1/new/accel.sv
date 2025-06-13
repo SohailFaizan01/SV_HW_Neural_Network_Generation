@@ -55,9 +55,9 @@ module mmul#(
             accum_q <= 'h0;
         else
             if      (rd_B_i == 'h1)
-                accum_q <= accum_q + rd_A_i ;
+                accum_q <= accum_q + rd_A   ;
             else if (rd_B_i == 'h0)
-                accum_q <= accum_q - rd_A_i ;
+                accum_q <= accum_q - rd_A   ;
             else
                 accum_q <= accum_q          ;
     end

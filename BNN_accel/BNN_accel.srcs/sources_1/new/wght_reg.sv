@@ -1,0 +1,73 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/12/2025 09:18:10 PM
+// Design Name: 
+// Module Name: ip_reg
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module wght_matrix_mem#(
+    parameter string WGHT_FILE,
+    parameter DATA_WIDTH = 8,
+    parameter MATRIX_WIDTH = 8,
+    parameter MATRIX_HIGHT = 8
+    )(
+    input  clk_i, rst_n_i, we_i, re_i,
+    input  [$clog2(MATRIX_WIDTH)-1:0] addrx_i ,
+    input  [$clog2(MATRIX_HIGHT)-1:0] addry_i ,    
+
+    input  [(DATA_WIDTH-1):0]  wd_i,
+    output [(DATA_WIDTH-1):0]  rd_o
+    );
+    
+
+
+
+logic   [(DATA_WIDTH-1):0] rd_q;
+
+// logic   [(DATA_WIDTH-1):0] ram [(MATRIX_HIGHT-1):0]  [(MATRIX_WIDTH-1):0] = '{default:'h0};
+logic   [(DATA_WIDTH-1):0] ram [0:(MATRIX_HIGHT-1)]  [0:(MATRIX_WIDTH-1)] ;
+logic [(DATA_WIDTH-1):0] init_array [0:((MATRIX_HIGHT*MATRIX_WIDTH)-1)]   ;
+
+initial begin
+    $readmemh(WGHT_FILE, init_array);
+    for (int x = 0; x<MATRIX_WIDTH; x++) begin
+        for (int y = 0; y<MATRIX_HIGHT; y++)
+            ram[y][x] = init_array[y+MATRIX_HIGHT*x];
+    end
+end
+
+
+
+
+
+
+assign rd_o       = rd_q ;
+
+always_ff @ (posedge clk_i, negedge rst_n_i) begin
+    if (!rst_n_i) begin
+        rd_q <= 'h0;
+    end 
+    else begin
+        if (we_i)
+            ram[addry_i][addrx_i] <= wd_i;  
+        if (re_i)
+            rd_q <= ram[addry_i][addrx_i];
+    end
+end
+
+endmodule

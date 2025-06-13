@@ -26,7 +26,8 @@ module mmul_control_logic#(
     parameter IP_NEUR_HIGHT = 8
     )(
     input clk_i, rst_n_i, data_ready_i, write_done_i, read_done_i,
-    output en_AB_o, we_AB_o, en_C_o, we_C_o,
+    input wght_mod_i,
+    output en_A_o, we_A_o, en_B_o, we_B_o, en_C_o, we_C_o,
     
     // output [($clog2(MATRIX_WIDTH)-1):0] addr_A_o [1:0], addr_B_o [1:0],
     output  [$clog2(IP_NEUR_WIDTH)-1:0] addr_Ax_o ,
@@ -36,13 +37,13 @@ module mmul_control_logic#(
     
     output [$clog2(OP_NEUR_WIDTH)-1:0] addr_Cx_o ,
     output [$clog2(IP_NEUR_HIGHT)-1:0] addr_Cy_o ,
+    output [1:0] state_o,
     output accel_rst_o, accel_done_o, accel_ready_o
     );
     
     
-    logic                     en_AB, we_AB, en_C, we_C;
+    logic                     en_A, we_A, en_B, we_B, en_C, we_C;
     logic                     accel_rst, accel_done, accel_ready;
-    // logic [($clog2(MATRIX_WIDTH)-1):0] addr_A [1:0], addr_B [1:0];
     
     logic  [$clog2(IP_NEUR_WIDTH)-1:0] addr_Ax ;
     logic  [$clog2(IP_NEUR_HIGHT)-1:0] addr_Ay ;
@@ -60,11 +61,21 @@ module mmul_control_logic#(
     reg [$clog2(IP_NEUR_WIDTH):0] k;
     reg  write_clk_sync;
 
-    enum {IDLE, LOAD, CALC, MATRIX_DONE} state, nxt_state;
-    enum {ACCUMULATE, STORE} accum_state,nxt_accum_state;
+    parameter IDLE        = 2'h0    ;
+    parameter LOAD        = 2'h1    ;
+    parameter CALC        = 2'h2    ;
+    parameter MATRIX_DONE = 2'h3    ;
+    
+    reg [1:0] state ;
+    
+    assign state_o = state;
+    
+    enum {ACCUMULATE, STORE} accum_state;
 
-    assign en_AB_o  =   en_AB   ;
-    assign we_AB_o  =   we_AB   ;
+    assign en_A_o  =   en_A   ;
+    assign we_A_o  =   we_A   ;
+    assign en_B_o  =   en_B   ;
+    assign we_B_o  =   we_B   ;
     assign en_C_o   =   en_C    ;
     assign we_C_o   =   we_C    ;
     
@@ -128,8 +139,10 @@ always_comb begin
             accel_ready =  1'b0    ;
             accel_done  =  1'b0    ;
             accel_rst   =  1'b1    ;
-            en_AB       =  1'b0    ;
-            we_AB       =  1'b0    ;
+            en_A       =  1'b0    ;
+            we_A       =  1'b0    ;            
+            en_B       =  1'b0    ;
+            we_B       =  1'b0    ;
             en_C        =  1'b0    ;
             we_C        =  1'b0    ;
             addr_Ax      =  'h0     ;
@@ -142,33 +155,49 @@ always_comb begin
                     accel_ready =  1'b1    ;
                     accel_done  =  1'b0    ;
                     accel_rst   =  1'b1    ;
-                    en_AB       =  1'b0    ;
-                    we_AB       =  1'b0    ;
+                    en_A        =  1'b0    ;
+                    we_A        =  1'b0    ;
                     en_C        =  1'b0    ;
                     we_C        =  1'b0    ;
-                    addr_Ax      =  'h0     ;
-                    addr_Bx      =  'h0     ;
-                    addr_Ay      =  'h0     ;
-                    addr_By      =  'h0     ;
+                    addr_Ax     =  'h0     ;
+                    addr_Bx     =  'h0     ;
+                    addr_Ay     =  'h0     ;
+                    addr_By     =  'h0     ;
+                    if (wght_mod_i) begin
+                        en_B        =  1'b1    ;
+                        we_B        =  1'b1    ;
+                    end else begin
+                        en_B        =  1'b0    ;
+                        we_B        =  1'b0    ;
+                    end
                 end
                 LOAD : begin
                     accel_ready =  1'b1    ;
                     accel_done  =  1'b0    ;
                     accel_rst   =  1'b1    ;
-                    en_AB       =  1'b1    ;
-                    we_AB       =  1'b1    ;                
+                    en_A       =  1'b1    ;
+                    we_A       =  1'b1    ;                             
                     en_C        =  1'b1    ;
                     we_C        =  1'b1    ;
                     addr_Ax      =  'h0     ;
                     addr_Bx      =  'h0     ;
                     addr_Ay      =  'h0     ;
                     addr_By      =  'h0     ;
+                    if (wght_mod_i) begin
+                        en_B        =  1'b1    ;
+                        we_B        =  1'b1    ;
+                    end else begin
+                        en_B        =  1'b0    ;
+                        we_B        =  1'b0    ;
+                    end
                 end
                 CALC : begin
                     accel_ready =  1'b0     ;
                     accel_done  =  1'b0     ;
-                    en_AB       =  1'b1     ;         
-                    we_AB       =  1'b0     ;
+                    en_A       =  1'b1     ;         
+                    we_A       =  1'b0     ;
+                    en_B       =  1'b1     ;         
+                    we_B       =  1'b0     ;
                     addr_Ax      = k        ;
                     addr_Ay      = (addr_C/OP_NEUR_WIDTH);
                     addr_Bx      = (addr_C%OP_NEUR_WIDTH);
@@ -206,8 +235,10 @@ always_comb begin
                     accel_ready =   1'b0    ;
                     accel_done  =   1'b0    ;
                     accel_rst   =   1'b1    ;
-                    en_AB       =   1'b0    ;         
-                    we_AB       =   1'b0    ; 
+                    en_A       =   1'b0    ;         
+                    we_A       =   1'b0    ; 
+                    en_B       =   1'b0    ;         
+                    we_B       =   1'b0    ; 
                     en_C        =   1'b1    ;
                     we_C        =   1'b0    ;
                     addr_Ax      =  'h0     ;
@@ -223,8 +254,10 @@ always_comb begin
                     accel_ready =   'h0;
                     accel_done  =   'h0;
                     accel_rst   =   'h0;
-                    en_AB       =   'h0;         
-                    we_AB       =   'h0; 
+                    en_A       =   'h0;         
+                    we_A       =   'h0; 
+                    en_B       =   'h0;         
+                    we_B       =   'h0; 
                     en_C        =   'h0;
                     we_C        =   'h0;
                     addr_Ax      =  'h0     ;
@@ -272,7 +305,6 @@ always_comb begin
                         STORE : begin
                             k       <= 'h0          ;
                             write_clk_sync <= write_clk_sync+ 1'b1;
-                             // if (write_clk_sync)
                                 addr_C  <= addr_C + 1'b1   ;
                                 
                         end

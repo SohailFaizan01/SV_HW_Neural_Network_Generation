@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+WARNING: Too many words specified in data file wght.txt
+                   0 << Starting the Simulation >>
+                7130 << Simulation Failed >>          6
+$stop called at time : 7130 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 229

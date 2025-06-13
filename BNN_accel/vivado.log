@@ -1,0 +1,1084 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Jun 13 03:05:25 2025
+# Process ID         : 17180
+# Current directory  : C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent21996 C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.xpr
+# Log file           : C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/vivado.log
+# Journal file       : C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel\vivado.jou
+# Running On         : Sohail_PC
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : AMD Ryzen 5 3600 6-Core Processor              
+# CPU Frequency      : 3600 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 34282 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 39382 MB
+# Available Virtual  : 7282 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel'
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 1557.238 ; gain = 322.316
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'accel_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/wght.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'we_A_ext_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:51]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "accel_tb_behav -key {Behavioral:sim_1:Functional:accel_tb} -tclbatch {accel_tb.tcl} -view {C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/accel_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/accel_tb_behav.wcfg
+WARNING: Simulation object /accel_tb/mmul_accel/op_mem/ram was not found in the design.
+WARNING: Simulation object /accel_tb/mmul_accel/op_mem/ram was not found in the design.
+WARNING: Simulation object /accel_tb/mmul_accel/op_mem/ram[1] was not found in the design.
+WARNING: Simulation object /accel_tb/mmul_accel/op_mem/ram[0] was not found in the design.
+source accel_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+                   0 << Starting the Simulation >>
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'accel_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1603.137 ; gain = 25.477
+run all
+                4590 << Simulation Complete - Successful >>
+$stop called at time : 4590 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 221
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'accel_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/wght.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'we_A_ext_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:51]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1603.250 ; gain = 0.000
+run all
+                4590 << Simulation Failed >>          7
+$stop called at time : 4590 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 224
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'we_A_ext_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:51]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1603.250 ; gain = 0.000
+run all
+                4590 << Simulation Failed >>          6
+$stop called at time : 4590 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 224
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'we_A_ext_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:51]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1612.898 ; gain = 0.379
+run all
+                4590 << Simulation Complete - Successful >>
+$stop called at time : 4590 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 221
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+ERROR: [VRFC 10-4982] syntax error near '.' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv:160]
+ERROR: [VRFC 10-2989] 'wght_mod_i' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv:186]
+ERROR: [VRFC 10-8530] module 'accel_wrapper' is ignored due to previous errors [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv:23]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+ERROR: [VRFC 10-2989] 'wght_mod_i' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv:186]
+ERROR: [VRFC 10-8530] module 'accel_wrapper' is ignored due to previous errors [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv:23]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+update_compile_order -fileset sources_1
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+ERROR: [VRFC 10-4982] syntax error near 'input' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv:35]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'input' used in incorrect context [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv:35]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+update_compile_order -fileset sources_1
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'we_A_ext_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:51]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1622.723 ; gain = 0.000
+run all
+                4590 << Simulation Complete - Successful >>
+$stop called at time : 4590 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 221
+update_compile_order -fileset sources_1
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+ERROR: [VRFC 10-4982] syntax error near ';' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv:49]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+update_compile_order -fileset sources_1
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:268]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1622.723 ; gain = 0.000
+run all
+                4590 << Simulation Complete - Successful >>
+$stop called at time : 4590 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 221
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+ERROR: [VRFC 10-2934] 'layer1' is already declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:99]
+ERROR: [VRFC 10-2989] 'wd_C' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:83]
+ERROR: [VRFC 10-2989] 'wd_C' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:113]
+ERROR: [VRFC 10-2989] 'wd_C' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+ERROR: [VRFC 10-2989] 'wd_C' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:139]
+ERROR: [VRFC 10-8530] module 'BNN_wrapper' is ignored due to previous errors [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:22]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+ERROR: [VRFC 10-2989] 'wd_C' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:83]
+ERROR: [VRFC 10-2989] 'wd_C' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:113]
+ERROR: [VRFC 10-2989] 'wd_C' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+ERROR: [VRFC 10-2989] 'wd_C' is not declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:139]
+ERROR: [VRFC 10-8530] module 'BNN_wrapper' is ignored due to previous errors [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:22]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sim_1\new\accel_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:115]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul(IP_DATA_WIDTH=1,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(IP_DATA_WIDTH=1,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1622.816 ; gain = 0.000
+run all
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sim_1\new\accel_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sim_1\new\accel_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sim_1\new\accel_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sim_1\new\accel_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul(IP_DATA_WIDTH=1,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(IP_DATA_WIDTH=1,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1627.707 ; gain = 0.000
+run all
+                7410 << Simulation Failed >>          8
+$stop called at time : 7410 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 229
+current_wave_config {accel_tb_behav.wcfg}
+accel_tb_behav.wcfg
+add_wave {{/accel_tb/mmul_accel/layer2/data}} 
+current_wave_config {accel_tb_behav.wcfg}
+accel_tb_behav.wcfg
+add_wave {{/accel_tb/mmul_accel/layer2/data/ram}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul(IP_DATA_WIDTH=1,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(IP_DATA_WIDTH=1,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Time resolution is 1 ps
+INFO: [Common 17-344] 'relaunch_xsim_kernel' was cancelled
+INFO: [Common 17-344] 'relaunch_sim' was cancelled
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul(IP_DATA_WIDTH=1,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(IP_DATA_WIDTH=1,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2150.805 ; gain = 0.000
+run all
+                7410 << Simulation Failed >>          8
+$stop called at time : 7410 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 229
+current_wave_config {accel_tb_behav.wcfg}
+accel_tb_behav.wcfg
+add_wave {{/accel_tb/mult_out_reference_1}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 2300.586 ; gain = 1.008
+run all
+                7410 << Simulation Failed >>          8
+$stop called at time : 7410 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 229
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sim_1\new\accel_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+relaunch_sim
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-39] 'suspend_sim' failed due to earlier errors.
+INFO: [Common 17-17] undo 'relaunch_sim'
+INFO: [Common 17-17] undo 'relaunch_sim'
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'suspend_sim' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BNN_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/accel_wrapper.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_wrapper
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/control_logic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmul_control_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/data_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/wght_reg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wght_matrix_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module accel_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_matrix_mem(MATRIX_HIGHT=2)
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul_control_logic(OP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_WGHT_WIDTH=8,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(OP_NEUR_WIDTH=7,IP...
+Compiling module xil_defaultlib.data_matrix_mem(DATA_WIDTH=1,MAT...
+Compiling module xil_defaultlib.wght_matrix_mem(WGHT_FILE="wght....
+Compiling module xil_defaultlib.mmul_control_logic(IP_NEUR_WIDTH...
+Compiling module xil_defaultlib.mmul(IP_DATA_WIDTH=1,IP_NEUR_WID...
+Compiling module xil_defaultlib.accel_wrapper(IP_DATA_WIDTH=1,IP...
+Compiling module xil_defaultlib.BNN_wrapper(OP_NEUR_WIDTH=7,IP_N...
+Compiling module xil_defaultlib.accel_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accel_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+WARNING: Too many words specified in data file wght.txt
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2687.828 ; gain = 0.000
+run all
+                7130 << Simulation Failed >>          6
+$stop called at time : 7130 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 229
+current_wave_config {accel_tb_behav.wcfg}
+accel_tb_behav.wcfg
+add_wave {{/accel_tb/mmul_accel/op_mem/ram}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+WARNING: Too many words specified in data file wght.txt
+                   0 << Starting the Simulation >>
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 2692.078 ; gain = 0.000
+run all
+                7130 << Simulation Failed >>          6
+$stop called at time : 7130 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 229
+relaunch_sim
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sim_1\new\accel_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\Sohai\Desktop\Academics\TU_Delft\Q4\EE4690_Hardware_Architecture_for_AI\EE4690_Hardware_Architecture_for_AI\BNN_accel\BNN_accel.srcs\sources_1\new\BNN_wrapper.sv:]
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+ERROR: [Common 17-180] Spawn failed: No error
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+ERROR: [USF-XSim-62] 'compile' step failed with error(s) while executing 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/compile.bat' script. Please check that the file has the correct 'read/write/execute' permissions and the Tcl console output for any other possible errors or warnings.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj accel_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'accel_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot accel_tb_behav xil_defaultlib.accel_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 2 for port 'wd_B_i' [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sources_1/new/BNN_wrapper.sv:116]
+WARNING: [VRFC 10-5021] port 'wght_mod_i' is not connected on this instance [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:273]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+WARNING: Too many words specified in data file wght.txt
+                   0 << Starting the Simulation >>
+run all
+                7130 << Simulation Failed >>          6
+$stop called at time : 7130 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" Line 229
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 13 04:23:14 2025...

@@ -102,10 +102,15 @@ reg clk, rst_n;
 		 // '{20'd081951,20'd107527,20'd095720,20'd127228,20'd131392,20'd115236,20'd135198,20'd074334}
     // };    
     
-    reg mult_out_reference[0:1][0:6] =
+    reg mult_out_reference_1[0:1][0:6] =
 	'{
         '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1},
         '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0}
+    };
+    reg mult_out_reference[0:1][0:6] =
+	'{
+        '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1},
+        '{1'b1, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1}
     };
 
 reg mult_out[0:1][0:6] = '{default:'h0};
@@ -265,7 +270,7 @@ reg mult_out[0:1][0:6] = '{default:'h0};
         end
     end
     
-accel_wrapper
+BNN_wrapper
 #(
     .IP_DATA_WIDTH (8 ),
     .IP_WGHT_WIDTH (8 ),
