@@ -42,24 +42,11 @@ reg clk, rst_n;
     
  
     
-    // reg [7:0] in1[0:7][0:7] =
-    // '{
-        // '{8'd244,8'd079,8'd122,8'd027,8'd165,8'd011,8'd146,8'd060},
-		// '{8'd219,8'd114,8'd095,8'd245,8'd049,8'd056,8'd155,8'd124},
-		// '{8'd142,8'd192,8'd187,8'd060,8'd125,8'd082,8'd079,8'd244},
-		// '{8'd233,8'd074,8'd101,8'd019,8'd163,8'd091,8'd183,8'd212},
-		// '{8'd127,8'd094,8'd034,8'd060,8'd002,8'd029,8'd148,8'd246},
-		// '{8'd164,8'd244,8'd207,8'd066,8'd062,8'd009,8'd162,8'd169},
-		// '{8'd025,8'd187,8'd025,8'd096,8'd043,8'd126,8'd065,8'd051},
-		// '{8'd007,8'd101,8'd208,8'd116,8'd196,8'd156,8'd037,8'd006}
-    // };
- 
-    
-    reg [7:0] in1[0:1][0:7] =
+    reg [7:0] in1[0:2][0:7] =
     '{
         '{8'd244,8'd079,8'd122,8'd027,8'd165,8'd011,8'd146,8'd060},
-		'{8'd219,8'd114,8'd095,8'd245,8'd049,8'd056,8'd155,8'd124}
-		// '{8'd142,8'd192,8'd187,8'd060,8'd125,8'd082,8'd079,8'd244},
+		'{8'd219,8'd114,8'd095,8'd245,8'd049,8'd056,8'd155,8'd124},
+		'{8'd142,8'd192,8'd187,8'd060,8'd125,8'd082,8'd079,8'd244}
 		// '{8'd233,8'd074,8'd101,8'd019,8'd163,8'd091,8'd183,8'd212},
 		// '{8'd127,8'd094,8'd034,8'd060,8'd002,8'd029,8'd148,8'd246},
 		// '{8'd164,8'd244,8'd207,8'd066,8'd062,8'd009,8'd162,8'd169},
@@ -78,7 +65,18 @@ reg clk, rst_n;
 		// '{8'd070,8'd053,8'd108,8'd210,8'd044,8'd084,8'd083,8'd171},
 		// '{8'd254,8'd159,8'd237,8'd221,8'd100,8'd253,8'd095,8'd075}
     // };
-    reg [7:0] in2[0:7][0:6] =
+    reg [0:0] in2[0:7][0:6] =
+    '{
+		'{1'b1,1'b0,1'b1,1'b0,1'b1,1'b1,1'b1},
+		'{1'b0,1'b1,1'b1,1'b0,1'b1,1'b1,1'b0},
+		'{1'b1,1'b0,1'b1,1'b0,1'b0,1'b1,1'b0},
+		'{1'b0,1'b1,1'b1,1'b0,1'b0,1'b0,1'b0},
+		'{1'b1,1'b0,1'b0,1'b1,1'b1,1'b0,1'b1},
+		'{1'b0,1'b1,1'b0,1'b1,1'b1,1'b0,1'b1},
+		'{1'b1,1'b0,1'b0,1'b1,1'b0,1'b1,1'b1},
+		'{1'b0,1'b1,1'b0,1'b1,1'b0,1'b1,1'b0}
+    };         
+    reg [0:0] in3[0:7][0:6] =
     '{
 		'{1'b1,1'b0,1'b1,1'b0,1'b1,1'b1,1'b1},
 		'{1'b0,1'b1,1'b1,1'b0,1'b1,1'b1,1'b0},
@@ -102,56 +100,118 @@ reg clk, rst_n;
 		 // '{20'd081951,20'd107527,20'd095720,20'd127228,20'd131392,20'd115236,20'd135198,20'd074334}
     // };    
     
+    reg mult_out_reference[0:2][0:6] =
+	'{ 
+  '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1},
+  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0},
+  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0}
+};
+
     reg mult_out_reference_1[0:1][0:6] =
-	'{
-        '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1},
-        '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0}
-    };
-    reg mult_out_reference[0:1][0:6] =
 	'{
         '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1},
         '{1'b1, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1}
     };
+    
+// reg mult_out_reference[0:1][0:6] =
+	// '{
+        // '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1},  // Row 0
+        // '{1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1}   // Row 1
+    // };
 
-reg mult_out[0:1][0:6] = '{default:'h0};
+reg mult_out[0:2][0:6] = '{default:'h0};
 
 
     reg             data_ready, write_done, read_done  ;
-    reg     [2:0]   state                   ;
-    reg     [6:0]   i                       ;
+    reg     [6:0]   i,j                       ;
     // reg             clk_sync                       ;
     wire            accel_ready, accel_done ;
-    reg     [2:0]   addr_Ax ;
-    reg     [0:0]   addr_Ay           ;
-    reg     [2:0]   addr_Bx           ;
-    reg     [2:0]   addr_By           ;
-    reg     [2:0]   addr_Cx             ; 
-    reg     [0:0]   addr_Cy             ; 
-    reg     [7:0]   wd_A, wd_B              ;
+    // reg     [2:0]   addr_Ax ;
+    // reg     [0:0]   addr_Ay           ;
+    // reg     [2:0]   addr_Bx           ;
+    // reg     [2:0]   addr_By           ;
+    // reg     [2:0]   addr_Cx             ; 
+    // reg     [0:0]   addr_Cy             ; 
+    
+    ram_addr_port #(.RAM_WIDTH (8), .RAM_HIGHT (3)) addr_A();
+    ram_addr_port #(.RAM_WIDTH (7), .RAM_HIGHT (8)) addr_B();
+    ram_addr_port #(.RAM_WIDTH (7), .RAM_HIGHT (3)) addr_C();
+    
+    reg     [7:0]   wd_A              ;
+    reg     [1:0]   wd_B              ;
     wire      rd_C                    ;
     
     int k,errors,correct;
     
-    parameter IDLE = 3'h0;
-    parameter WRITE = 3'h1;
-    parameter WAIT_CALC = 3'h2;
-    parameter READ = 3'h3;
-    parameter VERIFY = 3'h4;
+    enum logic [2:0] {IDLE, WRITE, WAIT_CALC, READ, VERIFY} state, nxt_state;
     
     
     // always_ff @(posedge clk, negedge rst_n) begin
+    
+    
+    
+    
+    
     always @(*) begin
+        if (!rst_n) 
+            nxt_state <= IDLE;
+        else begin
+            case (state)
+                IDLE: begin       
+                    #10
+                    if (accel_ready)
+                    nxt_state <= WRITE;  
+                end
+                WRITE: begin
+                    if (i == 'd23)
+                        nxt_state <= WAIT_CALC;
+                end
+                WAIT_CALC: begin
+
+                    if (accel_done) 
+                        nxt_state <= READ;
+                end
+                READ: begin
+
+                    if (i == 'd21) //63 adresses + 1 for clk 
+                        nxt_state   <= VERIFY   ;
+                end
+                VERIFY: begin
+
+                    if (i == 'h1) begin
+                        if (errors == 'h0) begin
+                            $display($time, " << Simulation Complete - Successful >>");
+                            $stop;
+                        end else begin
+                            $display($time, " << Simulation Failed >>", errors);
+                            $stop;
+                        end  
+                    end
+                end
+                default : nxt_state <= nxt_state;
+                
+            endcase
+        end
+    end
+    
+    always_ff @(posedge clk, negedge rst_n) begin
+        if(!rst_n) 
+            state <= IDLE;
+        else
+            state <= nxt_state;
+    end
+        
+    always_comb begin
         if (!rst_n) begin
-            state       <= IDLE   ;
             data_ready  <= 1'b0 ;
             write_done  <= 1'b0 ; 
             read_done   <= 1'b0 ;
-            addr_Ax      <= 'h0 ;
-            addr_Ay      <= 'h0 ;
-            addr_Bx      <= 'h0 ;
-            addr_By      <= 'h0 ;
-            addr_Cx      <= 'h0 ;
-            addr_Cy      <= 'h0 ;
+            addr_A.x    <= 'h0 ;
+            addr_A.y    <= 'h0 ;
+            addr_B.x    <= 'h0 ;
+            addr_B.y    <= 'h0 ;
+            addr_C.x    <= 'h0 ;
+            addr_C.y    <= 'h0 ;
             wd_A        <=  'h0 ;
             wd_B        <=  'h0 ;
             // errors      <=  'h0 ;
@@ -164,77 +224,43 @@ reg mult_out[0:1][0:6] = '{default:'h0};
                     data_ready  <= 1'b0 ;
                     write_done  <= 1'b0 ; 
                     read_done   <= 1'b0 ;
-                    addr_Ax      <= 'h0 ;
-                    addr_Ay      <= 'h0 ;
-                    addr_Bx      <= 'h0 ;
-                    addr_By      <= 'h0 ;
-                    addr_Cx      <= 'h0 ;
-                    addr_Cy      <= 'h0 ;
-                    wd_A        <=  'h0 ;
-                    wd_B        <=  'h0 ;
+
                     // errors      <=  'h0 ;
                     
-                    #10
-                    if (accel_ready)
-                    state <= WRITE;  
+
                 end
                 WRITE: begin
                     data_ready  <= 1'b1         ;
-                    addr_Ax      <= (i[3:0]%8)  ;
-                    addr_Ay      <= (i[3:0]/8)  ;
-                    addr_Bx      <= (i[5:0]%7)  ;
-                    addr_By      <= (i[5:0]/7)  ;
-                    wd_A        <= in1[i[3:0]/8][i[3:0]%8]    ;
-                    wd_B        <= in2[i/7][i%7]    ;
-                    addr_Cx      <= i%7                ;
-                    addr_Cy      <= i/7                ;
-                    // write_done  <= 1'b0 ;
-                    if (i == 'd56)
-                        state <= WAIT_CALC;
+                    
+
                 end
                 WAIT_CALC: begin
                     data_ready  <=  'h0 ;
-                    addr_Ax      <= 'h0 ;
-                    addr_Ay      <= 'h0 ;
-                    addr_Bx      <= 'h0 ;
-                    addr_By      <= 'h0 ;
-                    addr_Cx      <= 'h0 ;
-                    addr_Cy      <= 'h0 ;
-                    wd_A        <=  'h0 ;
-                    wd_B        <=  'h0 ;
                     write_done  <= 1'b1 ;
-                    if (accel_done) 
-                        state <= READ;
                 end
                 READ: begin
                     write_done <= 1'b0;
-                    addr_Cx <= i%7;
-                    addr_Cy <= i/7;
-                    // mult_out[i/8][i%8]<= rd_C;
-                    if (i == 'd16) //63 adresses + 1 for clk + 1 because 1 cycle read delay
-                        state   <= VERIFY   ;
+                    addr_C.x <= i%7;
+                    addr_C.y <= i/7;
+                    
                 end
                 VERIFY: begin
                     read_done   <= 1'b1;
-                    addr_Cx      <= 'h0 ;
-                    addr_Cy      <= 'h0 ;
                     
-                        
-                    if (i == 'h1) begin
-                        if (errors == 'h0) begin
-                            $display($time, " << Simulation Complete - Successful >>");
-                            $stop;
-                        end else begin
-                            $display($time, " << Simulation Failed >>", errors);
-                            $stop;
-                        end  
-                    end
                 end
-                default : state <= state;
                 
             endcase
         end
     end
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     always_ff @(posedge clk, negedge rst_n) begin
         if(!rst_n) begin
@@ -246,22 +272,57 @@ reg mult_out[0:1][0:6] = '{default:'h0};
                 IDLE: begin
                     i   <= 'h0;
                     mult_out <= '{default:'h0};
+                    
+                    addr_A.x     <= 'h0 ;
+                    addr_A.y     <= 'h0 ;
+                    addr_B.x     <= 'h0 ;
+                    addr_B.y     <= 'h0 ;
+                    addr_C.x     <= 'h0 ;
+                    addr_C.y     <= 'h0 ;
+                    wd_A        <=  'h0 ;
+                    wd_B        <=  'h0 ;
                 end
                 WRITE: begin
                     i   <= i+1;
                     mult_out <= '{default:'h0};
+                    
+                    addr_A.x    <= (i[3:0]%8)  ;
+                    addr_A.y    <= (i[4:0]/8)  ;
+                    addr_B.x    <= (i[5:0]%7)  ;
+                    addr_B.y    <= (i[5:0]/7)  ;
+                    wd_A        <= in1[i[4:0]/8][i[3:0]%8]    ;
+                    wd_B        <= in2[i/7][i%7]    ;
+                    addr_C.x    <= i%7                ;
+                    addr_C.y    <= i/7                ;
+
                 end
                 WAIT_CALC: begin
                     i   <= 'h0;
                     mult_out <= '{default:'h0};
+                    
+                    addr_A.x     <= 'h0 ;
+                    addr_A.y     <= 'h0 ;
+                    addr_B.x     <= 'h0 ;
+                    addr_B.y     <= 'h0 ;
+                    addr_C.x     <= 'h0 ;
+                    addr_C.y     <= 'h0 ;
+                    wd_A         <=  'h0 ;
+                    wd_B         <=  'h0 ;
                 end
                 READ: begin
                     i   <= i+1;
-                    mult_out[(i-1'b1)/7][(i-1'b1)%7]<= rd_C;
+                    j<= i; // 1 cycle delay of data from address
+                    mult_out[(j)/7][(j)%7]<= rd_C;
+                    
                 end
                 VERIFY: begin
                     i   <= i-1;
                     mult_out <= mult_out;
+                    
+                    addr_C.x     <= 'h0 ;
+                    addr_C.y     <= 'h0 ;
+                    
+                    
                     if (mult_out[(i-2)/7][(i-2)%7] != mult_out_reference[((i-2)/7)][((i-2)%7)])
                             errors = errors + 1;
                     else correct = correct+1;
@@ -273,29 +334,29 @@ reg mult_out[0:1][0:6] = '{default:'h0};
 BNN_wrapper
 #(
     .IP_DATA_WIDTH (8 ),
-    .IP_WGHT_WIDTH (8 ),
-    .IP_NEUR_HIGHT (2 ),
+    .IP_WGHT_WIDTH (2 ),
+    .IP_NEUR_HIGHT (3 ),
     .IP_NEUR_WIDTH (8 ),
     .OP_NEUR_WIDTH (7 )
     )
     mmul_accel(
-    .clk_i          (clk    ), 
-    .rst_n_i        (rst_n  ),
-    .data_ready_i   (data_ready), 
-    .write_done_i   (write_done), 
-    .read_done_i    (read_done),
-    .addr_Ax_i   (addr_Ax     ), 
-    .addr_Ay_i   (addr_Ay     ),
-    .addr_Bx_i   (addr_Bx     ),
-    .addr_By_i   (addr_By     ),
-    .addr_Cx_i   (addr_Cx     ),
-    .addr_Cy_i   (addr_Cy     ),
-    .wd_A_i         (wd_A), 
-    .wd_B_i         (wd_B),
-    .wd_C_i         ('h0),
-    .rd_C_o         (rd_C),
-    .accel_done_o   (accel_done), 
-    .accel_ready_o  (accel_ready)
+    .clk_i          ( clk           ), 
+    .rst_n_i        ( rst_n         ),
+    .data_ready_i   ( data_ready    ), 
+    .write_done_i   ( write_done    ), 
+    .read_done_i    ( read_done     ),
+    .wght_mod_i     ( 1'b0          ),
+    
+    .addr_A_i       ( addr_A        ), 
+    .addr_B_i       ( addr_B        ),
+    .addr_C_i       ( addr_C        ),
+    
+    .wd_A_i         ( wd_A          ), 
+    .wd_B_i         ( wd_B          ),
+    .wd_C_i         ( 'h0           ),
+    .rd_C_o         ( rd_C          ),
+    .accel_done_o   ( accel_done    ), 
+    .accel_ready_o  ( accel_ready   )
     );   
     
 endmodule

@@ -18,19 +18,18 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+import type_pkg::*;
 
 module data_matrix_mem#(
     parameter DATA_WIDTH = 8,
     parameter MATRIX_WIDTH = 8,
     parameter MATRIX_HIGHT = 8
     )(
-    input  clk_i, rst_n_i, we_A_i, re_B_i,
-    input  [$clog2(MATRIX_WIDTH)-1:0] addr_Ax_i ,
-    input  [$clog2(MATRIX_HIGHT)-1:0] addr_Ay_i ,    
-    
-    input  [$clog2(MATRIX_WIDTH)-1:0] addr_Bx_i ,
-    input  [$clog2(MATRIX_HIGHT)-1:0] addr_By_i ,
+    input  clk_i, rst_n_i, 
+    input  rw_en  en_i,
+
+    ram_addr_port addr_A_i ,
+    ram_addr_port addr_B_i ,
 
     input  [(DATA_WIDTH-1):0]  wd_A_i,
     output [(DATA_WIDTH-1):0]  rd_B_o,
@@ -44,7 +43,7 @@ typedef struct {
     logic                       valid   ;               
 } valid_data;
 
-valid_data ram [(MATRIX_HIGHT-1):0]  [(MATRIX_WIDTH-1):0] = '{default:'h0};
+valid_data ram [MATRIX_HIGHT]  [MATRIX_WIDTH] = '{default:'h0};
 valid_data rd_q;
 
 
@@ -57,10 +56,15 @@ always_ff @ (posedge clk_i, negedge rst_n_i) begin
         rd_q.valid  <= 'h0;
     end 
     else begin
-        if (we_A_i)
-            ram[addr_Ay_i][addr_Ax_i].data <= wd_A_i;  
-        if (re_B_i)
-            rd_q <= ram[addr_By_i][addr_Bx_i];
+        if (en_i.we)
+            ram[addr_A_i.y][addr_A_i.x].data <= wd_A_i;  
+        if (en_i.re)
+            rd_q <= ram[addr_B_i.y][addr_B_i.x];
+        else begin
+            rd_q.data   <= 'h0;
+            rd_q.valid  <= 'h0;
+            // rd_q <= '{data:'h0,valid:'h0};
+        end
     end
 end
 

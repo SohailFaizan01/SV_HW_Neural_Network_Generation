@@ -18,7 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+    import type_pkg::*;
 
 module mmul_control_logic#(
     parameter IP_NEUR_WIDTH = 8,
@@ -27,65 +27,59 @@ module mmul_control_logic#(
     )(
     input clk_i, rst_n_i, data_ready_i, write_done_i, read_done_i,
     input wght_mod_i,
-    output en_A_o, we_A_o, en_B_o, we_B_o, en_C_o, we_C_o,
+    output rw_en en_A_o, en_B_o, en_C_o,
+
+    ram_addr_port addr_A_o,
+    ram_addr_port addr_B_o,
+    ram_addr_port addr_C_o,
     
-    // output [($clog2(MATRIX_WIDTH)-1):0] addr_A_o [1:0], addr_B_o [1:0],
-    output  [$clog2(IP_NEUR_WIDTH)-1:0] addr_Ax_o ,
-    output  [$clog2(IP_NEUR_HIGHT)-1:0] addr_Ay_o ,
-    output  [$clog2(OP_NEUR_WIDTH)-1:0] addr_Bx_o ,
-    output  [$clog2(IP_NEUR_WIDTH)-1:0] addr_By_o ,
-    
-    output [$clog2(OP_NEUR_WIDTH)-1:0] addr_Cx_o ,
-    output [$clog2(IP_NEUR_HIGHT)-1:0] addr_Cy_o ,
     output [1:0] state_o,
     output accel_rst_o, accel_done_o, accel_ready_o
     );
     
     
-    logic                     en_A, we_A, en_B, we_B, en_C, we_C;
+    rw_en                     en_A, en_B, en_C;
+    
     logic                     accel_rst, accel_done, accel_ready;
-    
-    logic  [$clog2(IP_NEUR_WIDTH)-1:0] addr_Ax ;
-    logic  [$clog2(IP_NEUR_HIGHT)-1:0] addr_Ay ;
-    logic  [$clog2(OP_NEUR_WIDTH)-1:0] addr_Bx ;
-    logic  [$clog2(IP_NEUR_WIDTH)-1:0] addr_By ;
-    
-    
-    
-    
-    
-    
-    
-    
-    reg [$clog2(OP_NEUR_WIDTH*IP_NEUR_HIGHT):0] addr_C;
-    reg [$clog2(IP_NEUR_WIDTH):0] k;
-    reg  write_clk_sync;
 
-    parameter IDLE        = 2'h0    ;
-    parameter LOAD        = 2'h1    ;
-    parameter CALC        = 2'h2    ;
-    parameter MATRIX_DONE = 2'h3    ;
     
-    reg [1:0] state ;
+    struct {
+        logic [($clog2(IP_NEUR_WIDTH)):0] x;
+        logic [($clog2(IP_NEUR_HIGHT))-1:0] y;
+    } addr_A;
+    
+    struct {
+        logic [($clog2(OP_NEUR_WIDTH))-1:0] x;
+        logic [($clog2(IP_NEUR_WIDTH)):0] y;
+    } addr_B;
+    
+    struct {
+        logic [($clog2(OP_NEUR_WIDTH))-1:0] x;
+        logic [($clog2(IP_NEUR_HIGHT))-1:0] y;
+    } addr_C;
+
+    
+    
+    reg [$clog2(IP_NEUR_WIDTH):0] accum_counter;
+
+    enum [1:0] {IDLE, LOAD, CALC, MATRIX_DONE} state, nxt_state ;
     
     assign state_o = state;
     
-    enum {ACCUMULATE, STORE} accum_state;
+    enum {ACCUMULATE, WAIT, STORE} accum_state, accum_nxt_state;
 
     assign en_A_o  =   en_A   ;
-    assign we_A_o  =   we_A   ;
     assign en_B_o  =   en_B   ;
-    assign we_B_o  =   we_B   ;
-    assign en_C_o   =   en_C    ;
-    assign we_C_o   =   we_C    ;
+    assign en_C_o  =   en_C    ;
+
     
-    assign addr_Ax_o = addr_Ax ;
-    assign addr_Ay_o = addr_Ay ;
-    assign addr_Bx_o = addr_Bx ;
-    assign addr_By_o = addr_By ;
+    assign addr_A_o.x   =   addr_A.x[$clog2(IP_NEUR_WIDTH)-1:0] ;
+    assign addr_A_o.y   =   addr_A.y                            ;
+    assign addr_B_o.x   =   addr_B.x                            ;
+    assign addr_B_o.y   =   addr_B.y[$clog2(IP_NEUR_WIDTH)-1:0] ;
     
-    assign addr_Cx_o = addr_C%OP_NEUR_WIDTH ;
-    assign addr_Cy_o = addr_C/OP_NEUR_WIDTH ;
+    assign addr_C_o.x   =   addr_C.x    ;
+    assign addr_C_o.y   =   addr_C.y    ;
     
     
     assign accel_rst_o      = accel_rst     ;
@@ -96,28 +90,33 @@ module mmul_control_logic#(
 // always @(*) begin
 always_latch begin
         if (!rst_n_i) begin
-            state       <=  IDLE    ;
+            nxt_state       <=  IDLE    ;
             accum_state <=  ACCUMULATE  ;
         end else begin
-            case(state)
+            case(nxt_state)
                 IDLE : begin
                     accum_state <=  ACCUMULATE  ;
                     if (data_ready_i) 
-                        state   <=  LOAD    ;
+                        nxt_state   <=  LOAD    ;
                 end
                 LOAD : begin
                     if (write_done_i)
-                        state <= CALC;
+                        nxt_state <= CALC;
                 end
                 CALC : begin
                     case (accum_state)
                         ACCUMULATE : begin
-                            if ((k==(IP_NEUR_WIDTH+1'b1))) 
-                                accum_state <= STORE    ;
+                            if ((accum_counter==(IP_NEUR_WIDTH))) 
+                                accum_state <= WAIT    ;
                         end 
+                        WAIT : begin
+                            if ((accum_counter==(IP_NEUR_WIDTH+1))) 
+                                accum_state <= STORE    ;
+                        end
                         STORE : begin
-                                    if ((addr_C == (OP_NEUR_WIDTH*IP_NEUR_HIGHT)) ) 
-                                        state <= MATRIX_DONE;
+                                    // if ((addr_C_cell == (OP_NEUR_WIDTH*IP_NEUR_HIGHT)) ) 
+                                    if ( (addr_C.x == 'h0) && (addr_C.y ==(IP_NEUR_HIGHT)) ) 
+                                        nxt_state <= MATRIX_DONE;
                                     else 
                                         accum_state <= ACCUMULATE;
                         end
@@ -125,11 +124,26 @@ always_latch begin
                      endcase
                 end
                 MATRIX_DONE : begin
+                    accum_state <=  ACCUMULATE  ;
                     if(read_done_i)
-                        state <= IDLE;
+                        nxt_state <= IDLE;
                 end
-                default : state <= state;
+                default : begin
+                    nxt_state <= IDLE;
+                    accum_state <=  ACCUMULATE  ;
+                end
             endcase    
+        end
+    end
+    
+            
+    always_ff @(posedge clk_i, negedge rst_n_i) begin
+        if (!rst_n_i) begin
+            state       <=  IDLE        ;
+            // accum_state <=  ACCUMULATE  ;
+        end else begin
+            state       <=  nxt_state       ;
+            // accum_state <=  accum_nxt_state ;
         end
     end
     
@@ -139,95 +153,77 @@ always_comb begin
             accel_ready =  1'b0    ;
             accel_done  =  1'b0    ;
             accel_rst   =  1'b1    ;
-            en_A       =  1'b0    ;
-            we_A       =  1'b0    ;            
-            en_B       =  1'b0    ;
-            we_B       =  1'b0    ;
-            en_C        =  1'b0    ;
-            we_C        =  1'b0    ;
-            addr_Ax      =  'h0     ;
-            addr_Bx      =  'h0     ;
-            addr_Ay      =  'h0     ;
-            addr_By      =  'h0     ;
+            en_A        =  '{re: 1'b0, we: 1'b0};            
+            en_B        =  '{re: 1'b0, we: 1'b0};
+            en_C        =  '{re: 1'b0, we: 1'b0};
+            
+            addr_A      = '{x: 1'b0, y: 1'b0}   ;
+            addr_B      = '{x: 1'b0, y: 1'b0}   ;
+            
         end else begin
             case(state)
                 IDLE : begin
                     accel_ready =  1'b1    ;
                     accel_done  =  1'b0    ;
                     accel_rst   =  1'b1    ;
-                    en_A        =  1'b0    ;
-                    we_A        =  1'b0    ;
-                    en_C        =  1'b0    ;
-                    we_C        =  1'b0    ;
-                    addr_Ax     =  'h0     ;
-                    addr_Bx     =  'h0     ;
-                    addr_Ay     =  'h0     ;
-                    addr_By     =  'h0     ;
-                    if (wght_mod_i) begin
-                        en_B        =  1'b1    ;
-                        we_B        =  1'b1    ;
-                    end else begin
-                        en_B        =  1'b0    ;
-                        we_B        =  1'b0    ;
-                    end
+                    en_A        =  '{re: 1'b0, we: 1'b0};
+                    en_C        =  '{re: 1'b0, we: 1'b0};
+                    addr_A      = '{x: 1'b0, y: 1'b0}   ;
+                    addr_B      = '{x: 1'b0, y: 1'b0}   ;
+                    
+                    if (wght_mod_i) 
+                        en_B    =  '{re: 1'b0, we: 1'b1};
+                    else 
+                        en_B    =  '{re: 1'b0, we: 1'b0};
                 end
                 LOAD : begin
                     accel_ready =  1'b1    ;
                     accel_done  =  1'b0    ;
                     accel_rst   =  1'b1    ;
-                    en_A       =  1'b1    ;
-                    we_A       =  1'b1    ;                             
-                    en_C        =  1'b1    ;
-                    we_C        =  1'b1    ;
-                    addr_Ax      =  'h0     ;
-                    addr_Bx      =  'h0     ;
-                    addr_Ay      =  'h0     ;
-                    addr_By      =  'h0     ;
-                    if (wght_mod_i) begin
-                        en_B        =  1'b1    ;
-                        we_B        =  1'b1    ;
-                    end else begin
-                        en_B        =  1'b0    ;
-                        we_B        =  1'b0    ;
-                    end
+                    en_A        =  '{re: 1'b0, we: 1'b1};
+                    en_C        =  '{re: 1'b0, we: 1'b0};
+                    addr_A      = '{x: 1'b0, y: 1'b0}   ;
+                    addr_B      = '{x: 1'b0, y: 1'b0}   ;
+                    if (wght_mod_i) 
+                        en_B    =  '{re: 1'b0, we: 1'b1};
+                    else 
+                        en_B    =  '{re: 1'b0, we: 1'b0};
                 end
                 CALC : begin
                     accel_ready =  1'b0     ;
                     accel_done  =  1'b0     ;
-                    en_A       =  1'b1     ;         
-                    we_A       =  1'b0     ;
-                    en_B       =  1'b1     ;         
-                    we_B       =  1'b0     ;
-                    addr_Ax      = k        ;
-                    addr_Ay      = (addr_C/OP_NEUR_WIDTH);
-                    addr_Bx      = (addr_C%OP_NEUR_WIDTH);
-                    addr_By      =  k        ;
+                    
+
                     case (accum_state)
                         ACCUMULATE : begin
-                            if (!write_clk_sync) begin
-                                accel_rst   =  1'b0            ;
-                                en_C        =  1'b0            ;
-                                we_C        =  1'b0            ;
-                            end
-                            else begin
-                            accel_rst   =  1'b1            ;
-                            en_C        =  1'b1            ;
-                            we_C        =  1'b1            ;
-                            end
-                        end 
-                        STORE : begin
-                            accel_rst   = 1'b0;
-                            en_C        = 1'b1;
-                            we_C        = 1'b1;
-                            if (write_clk_sync)
-                                accel_rst   =   1'b1    ;
+                            en_A        =  '{re: 1'b1, we: 1'b0};
+                            en_B        =  '{re: 1'b1, we: 1'b0};
+                            
+                            addr_A      = '{   x: accum_counter,    y: addr_C.y                }   ;
+                            addr_B      = '{   x: addr_C.x               ,    y: accum_counter }   ;
+                            if ((accum_counter==0)) 
+                                accel_rst   =  1'b1;
                             else
-                                accel_rst   =   1'b0    ;
+                                accel_rst   =  1'b0;
+                            en_C        =  '{re: 1'b0, we: 1'b0};
+                        end 
+                        WAIT : begin
+                            en_A        =  '{re: 1'b0, we: 1'b0};
+                            en_B        =  '{re: 1'b0, we: 1'b0};
+                            
+                            addr_A      = '{   x: 'h0, y: 'h0}   ;
+                            addr_B      = '{   x: 'h0, y: 'h0}   ;
+                        
+                        end
+                        
+                        
+                        STORE : begin
+                            en_C        =  '{re: 1'b0, we: 1'b1};
+                            accel_rst   = 1'b1    ;
                         end
                         default : begin
                             accel_rst   =  1'b0            ;
-                            en_C        =  1'b0            ;
-                            we_C        =  1'b0            ;
+                            en_C        =  '{re: 1'b0, we: 1'b0};
                         end
                     endcase  
                 end
@@ -235,35 +231,22 @@ always_comb begin
                     accel_ready =   1'b0    ;
                     accel_done  =   1'b0    ;
                     accel_rst   =   1'b1    ;
-                    en_A       =   1'b0    ;         
-                    we_A       =   1'b0    ; 
-                    en_B       =   1'b0    ;         
-                    we_B       =   1'b0    ; 
-                    en_C        =   1'b1    ;
-                    we_C        =   1'b0    ;
-                    addr_Ax      =  'h0     ;
-                    addr_Bx      =  'h0     ;
-                    addr_Ay      =  'h0     ;
-                    addr_By      =  'h0     ;
-                    if (!write_clk_sync)
-                        accel_done  = 1'b1;
-                    else 
-                        accel_done  = 1'b0;
+                    en_A        =  '{re: 1'b0, we: 1'b0};            
+                    en_B        =  '{re: 1'b0, we: 1'b0};
+                    en_C        =  '{re: 1'b1, we: 1'b0};
+                    addr_A      = '{x: 1'b0, y: 1'b0}   ;
+                    addr_B      = '{x: 1'b0, y: 1'b0}   ;
+                    accel_done  = 1'b1;
                 end
                 default : begin
                     accel_ready =   'h0;
                     accel_done  =   'h0;
                     accel_rst   =   'h0;
-                    en_A       =   'h0;         
-                    we_A       =   'h0; 
-                    en_B       =   'h0;         
-                    we_B       =   'h0; 
-                    en_C        =   'h0;
-                    we_C        =   'h0;
-                    addr_Ax      =  'h0     ;
-                    addr_Bx      =  'h0     ;
-                    addr_Ay      =  'h0     ;
-                    addr_By      =  'h0     ;
+                    en_A        =  '{re: 1'b0, we: 1'b0 }   ;            
+                    en_B        =  '{re: 1'b0, we: 1'b0 }   ;
+                    en_C        =  '{re: 1'b0, we: 1'b0 }   ;
+                    addr_A      =  '{x: 1'b0, y: 1'b0   }   ;
+                    addr_B      =  '{x: 1'b0, y: 1'b0   }   ;
                 end
             endcase    
         end
@@ -276,49 +259,42 @@ always_comb begin
         
     always_ff @(posedge clk_i, negedge rst_n_i) begin
         if (!rst_n_i) begin
-            k       <=  'h0 ;
-            addr_C  <=  'h0 ;
-            // accum_state <= ACCUMULATE ;
+            accum_counter   <=  'h0 ;
+            addr_C          <=  '{x:'h0,y:'h0} ;
         end
         else begin 
-            // accum_state <= nxt_accum_state;
             case(state)
                 IDLE : begin
-                    k       <=  'h0 ;
-                    addr_C  <=  'h0 ;
-                    write_clk_sync <= 'b0;
+                    accum_counter   <=  'h0 ;
+                    addr_C          <=  '{x:'h0,y:'h0} ;
                 end
                 LOAD : begin
-                    k       <=  'h0 ;
-                    addr_C  <=  'h0 ;
-                    write_clk_sync <= 'b0;
+                    accum_counter   <=  'h0 ;
+                    addr_C          <=  '{x:'h0,y:'h0} ;
                 end
                 CALC : begin
-                    
-
                     case (accum_state)
-                        ACCUMULATE : begin
-                            k <= k+1    ;
-                            addr_C <= addr_C;
-                            write_clk_sync <= 1'b0;
+                        ACCUMULATE, WAIT : begin
+                            accum_counter   <= accum_counter+1    ;
+                            addr_C          <= addr_C;
                         end
                         STORE : begin
-                            k       <= 'h0          ;
-                            write_clk_sync <= write_clk_sync+ 1'b1;
-                                addr_C  <= addr_C + 1'b1   ;
+                            accum_counter   <= 'h0          ;
+                            if (addr_C.x == OP_NEUR_WIDTH-1)
+                                addr_C      <=  '{x:'h0,y: (addr_C.y + 1'b1)} ;
+                            else
+                                addr_C.x    <= addr_C.x + 1'b1;
                                 
                         end
                     endcase  
                 end
                 MATRIX_DONE : begin
-                    k       <=  'h0 ;
-                    addr_C  <=  'h0 ;
-                    write_clk_sync <= 'b0;
+                    accum_counter   <=  'h0 ;
+                    addr_C          <=  '{x:'h0,y:'h0} ;
                 end
                 default : begin
-                    k       <=  k      ;
-                    addr_C  <=  addr_C ;
-                    write_clk_sync <= 'b0;
+                    accum_counter   <=  'h0      ;
+                    addr_C          <=  '{x:'h0,y:'h0} ;
                 end
             endcase
         end
