@@ -62,7 +62,12 @@ module mmul_control_logic#(
     
     reg [$clog2(IP_NEUR_WIDTH):0] accum_counter;
 
-    enum [1:0] {IDLE, LOAD, CALC, MATRIX_DONE} state, nxt_state ;
+    parameter IDLE        = 2'h0    ;
+    parameter LOAD        = 2'h1    ;
+    parameter CALC        = 2'h2    ;
+    parameter MATRIX_DONE = 2'h3    ;
+    
+    reg [1:0] state, nxt_state ;
     
     assign state_o = state;
     
