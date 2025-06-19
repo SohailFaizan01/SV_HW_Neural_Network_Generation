@@ -29,9 +29,10 @@ module mmul#(
     parameter           OP_DATA_WIDTH = 1
     )(
     input  clk_i, rst_n_i, sm_rst_i,
+    input  clc_done_i,
     input  [(IP_DATA_WIDTH-1):0] rd_A_i,
     input  [(IP_WGHT_WIDTH-1):0] rd_B_i,
-    output [(OP_DATA_WIDTH-1):0] wd_C_o
+    output logic [(OP_DATA_WIDTH-1):0] wd_C_o
     );
     
     // accumulator width $clog2(IP_NEUR_WIDTH) + IP_DATA_WIDTH + 2
@@ -117,11 +118,65 @@ if (OP_ACTV_LAYER == "BNN") begin  : activation_gen
             actv = 1'b1 ;
     end
     
-    assign wd_C_o = actv;
+    always_comb begin
+        if (clc_done_i)
+            wd_C_o  =   actv ;
+        else 
+            wd_C_o  =   'h0;
+    end
+            
+end
+else if (OP_ACTV_LAYER == "ARGMAX") begin
+
+    reg signed [ACCUM_WIDTH-1:0] maxval, maxval_nxt;
+    
+    always_latch begin
+        if (!rst_n_i)
+            maxval_nxt <= 'h0;
+        else begin
+            if (clc_done_i) begin
+                if (maxval <= accum_q) 
+                    maxval_nxt = accum_q;
+                else 
+                    maxval_nxt = maxval_nxt;
+            end else
+                maxval_nxt = maxval_nxt;
+        end
+    end
+                
+    always_comb begin
+        if (clc_done_i) begin
+                if (maxval <= accum_q)
+                    wd_C_o = 1'b1;
+                else
+                    wd_C_o = 1'b0;
+        end else
+                    wd_C_o = 1'b0;
+    
+    end
+    
+    
+    always_ff @(posedge clk_i, negedge rst_n_i) begin
+        if (!rst_n_i)
+            maxval  <=   'h0;
+        else
+            maxval <= maxval_nxt;
+    end
+        
+        
+        
+
+
+
 end
 else if (OP_ACTV_LAYER == "NONE") begin
-    assign  wd_C_o  =   accum_q ;
-    
+
+    always_comb begin
+        if (clc_done_i)
+            wd_C_o  =   accum_q ;
+        else 
+            wd_C_o  =   'h0;
+    end
     
 end
 endgenerate

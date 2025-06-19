@@ -30,8 +30,8 @@ module accel_wrapper#(
     parameter           IP_NEUR_WIDTH = 8,
     parameter           OP_NEUR_WIDTH = 8,
     parameter           IP_NEUR_HIGHT = 8,
-    parameter           OP_DATA_WIDTH = ( OP_ACTV_LAYER == "BNN"                             ? 1: 
-                                        ( ((IPDATA_BNNENC == 0) && (IPWGHT_BNNENC == 0))     ? ($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH)) : ($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH+1))  )
+    parameter           OP_DATA_WIDTH = ( ((OP_ACTV_LAYER == "BNN") || OP_ACTV_LAYER == "ARGMAX")   ? 1: 
+                                        ( ((IPDATA_BNNENC == 0) && (IPWGHT_BNNENC == 0))            ? ($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH)) : ($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH+1))  )
     
     )(
     input   clk_i, rst_n_i,
@@ -146,12 +146,13 @@ wght_matrix_mem#(
     
     
     ) accel (
-    .clk_i          ( clk_i          ), 
-    .rst_n_i        ( rst_n_i        ),
-    .sm_rst_i       ( accel_rst_fsm  ),
-    .rd_A_i         ( rd_A.data      ), 
-    .rd_B_i         ( rd_B           ),
-    .wd_C_o         ( wd_C_accel     )
+    .clk_i          ( clk_i         ), 
+    .rst_n_i        ( rst_n_i       ),
+    .sm_rst_i       ( accel_rst_fsm ),
+    .clc_done_i     ( en_C_o.we     ),
+    .rd_A_i         ( rd_A.data     ), 
+    .rd_B_i         ( rd_B          ),
+    .wd_C_o         ( wd_C_accel    )
     );
     
 always_comb begin

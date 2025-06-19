@@ -55,7 +55,7 @@ module mmul_control_logic#(
     
     struct {
         logic [($clog2(OP_NEUR_WIDTH))-1:0] x;
-        logic [($clog2(IP_NEUR_HIGHT))-1:0] y;
+        logic [($clog2(IP_NEUR_HIGHT)):0] y;
     } addr_C;
 
     
@@ -84,7 +84,7 @@ module mmul_control_logic#(
     assign addr_B_o.y   =   addr_B.y[$clog2(IP_NEUR_WIDTH)-1:0] ;
     
     assign addr_C_o.x   =   addr_C.x    ;
-    assign addr_C_o.y   =   addr_C.y    ;
+    assign addr_C_o.y   =   addr_C.y[($clog2(IP_NEUR_HIGHT))-1:0]    ;
     
     
     assign accel_rst_o      = accel_rst     ;

@@ -38,7 +38,6 @@ reg clk, rst_n;
     always # 10 clk = ~clk;
 
 
-
     
  
     
@@ -84,13 +83,31 @@ reg clk, rst_n;
   '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0},
   '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0}
 };
+//______________________________________________________________________
+  // BNN test - pass, wght_2 file data
+//______________________________________________________________________
+    // reg mult_out_reference[0:2][0:6] =
+	// '{ 
+  // '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1},
+  // '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0},
+  // '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0}
+// }; 
+
+// 1 0 1 0 1 0 1 
+// 0 1 0 1 0 1 0 
+// 1 1 1 1 0 0 0 
+// 0 0 0 0 1 1 1 
+// 1 1 0 0 1 1 0 
+// 1 1 1 0 0 0 1 
+// 1 0 0 0 1 1 1
+//______________________________________________________________________
 
     reg mult_out_reference[0:2][0:6] =
-	'{ 
-  '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1},
-  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0},
-  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0}
-};
+    '{ 
+  '{1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1},
+  '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0},
+  '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0}
+}; // Custom ARGMAX test
      
 
      
@@ -104,6 +121,11 @@ reg clk, rst_n;
 
 reg mult_out[0:2][0:6] = '{default:'h0};
 
+parameter IP_DATA_WIDTH = 8;
+parameter IP_WGHT_WIDTH = 2;
+parameter IP_NEUR_HIGHT = 3;
+parameter IP_NEUR_WIDTH = 8;
+parameter OP_NEUR_WIDTH = 7;
 
     reg             data_ready, write_done, read_done  ;
     reg     [6:0]   i,j                       ;
@@ -116,13 +138,13 @@ reg mult_out[0:2][0:6] = '{default:'h0};
     // reg     [2:0]   addr_Cx             ; 
     // reg     [0:0]   addr_Cy             ; 
     
-    ram_addr_port #(.RAM_WIDTH (8), .RAM_HIGHT (3)) addr_A();
-    ram_addr_port #(.RAM_WIDTH (7), .RAM_HIGHT (8)) addr_B();
-    ram_addr_port #(.RAM_WIDTH (7), .RAM_HIGHT (3)) addr_C();
+    ram_addr_port #(.RAM_WIDTH (IP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_A();
+    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_WIDTH)) addr_B();
+    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_C();
     
-    reg     [7:0]   wd_A              ;
-    reg     [1:0]   wd_B              ;
-    wire      rd_C                    ;
+    reg     [IP_DATA_WIDTH-1:0]   wd_A              ;
+    reg     [IP_WGHT_WIDTH-1:0]   wd_B              ;
+    wire    rd_C                    ;
     
     int k,errors,correct;
     

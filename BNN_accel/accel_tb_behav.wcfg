@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="246.001 ns"></ZoomStartTime>
-      <ZoomEndTime time="10,666.002 ns"></ZoomEndTime>
-      <Cursor1Time time="1,982.667 ns"></Cursor1Time>
+      <ZoomStartTime time="8,373.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="9,398.001 ns"></ZoomEndTime>
+      <Cursor1Time time="9,200.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="192"></NameColumnWidth>
+      <NameColumnWidth column_width="177"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="31" />
    <wvobject fp_name="/accel_tb/mmul_accel/addr_A_i/x" type="array">
       <obj_property name="ElementShortName">x[2:0]</obj_property>
       <obj_property name="ObjectShortName">x[2:0]</obj_property>
@@ -33,33 +33,6 @@
       <obj_property name="ElementShortName">ram[0:2][0:7]</obj_property>
       <obj_property name="ObjectShortName">ram[0:2][0:7]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer1/data/ram[0]" type="array">
-         <obj_property name="ElementShortName">[0][0:7]</obj_property>
-         <obj_property name="ObjectShortName">[0][0:7]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer1/data/ram[1]" type="array">
-         <obj_property name="ElementShortName">[1][0:7]</obj_property>
-         <obj_property name="ObjectShortName">[1][0:7]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer1/data/ram[2]" type="array">
-         <obj_property name="ElementShortName">[2][0:7]</obj_property>
-         <obj_property name="ObjectShortName">[2][0:7]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer1/data/ram[0]" type="array">
-         <obj_property name="ElementShortName">[0][0:7]</obj_property>
-         <obj_property name="ObjectShortName">[0][0:7]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer1/data/ram[1]" type="array">
-         <obj_property name="ElementShortName">[1][0:7]</obj_property>
-         <obj_property name="ObjectShortName">[1][0:7]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer1/data/ram[2]" type="array">
-         <obj_property name="ElementShortName">[2][0:7]</obj_property>
-         <obj_property name="ObjectShortName">[2][0:7]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="/accel_tb/mmul_accel/layer1/accel/accum_q" type="array">
       <obj_property name="ElementShortName">accum_q[11:0]</obj_property>
@@ -67,12 +40,12 @@
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/accel_tb/mmul_accel/layer1/control_fsm/addr_C_o/x" type="array">
-      <obj_property name="ElementShortName">x[1:0]</obj_property>
-      <obj_property name="ObjectShortName">x[1:0]</obj_property>
+      <obj_property name="ElementShortName">x[2:0]</obj_property>
+      <obj_property name="ObjectShortName">x[2:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/accel_tb/mmul_accel/layer1/control_fsm/addr_C_o/y" type="array">
-      <obj_property name="ElementShortName">y[0:0]</obj_property>
-      <obj_property name="ObjectShortName">y[0:0]</obj_property>
+      <obj_property name="ElementShortName">y[1:0]</obj_property>
+      <obj_property name="ObjectShortName">y[1:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/accel_tb/mmul_accel/layer1/control_fsm/nxt_state" type="array">
       <obj_property name="ElementShortName">nxt_state[1:0]</obj_property>
@@ -113,18 +86,75 @@
       <obj_property name="ElementShortName">ram[0:2][0:6]</obj_property>
       <obj_property name="ObjectShortName">ram[0:2][0:6]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer2/data/ram[0]" type="array">
-         <obj_property name="ElementShortName">[0][0:6]</obj_property>
-         <obj_property name="ObjectShortName">[0][0:6]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer2/data/ram[1]" type="array">
-         <obj_property name="ElementShortName">[1][0:6]</obj_property>
-         <obj_property name="ObjectShortName">[1][0:6]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/accel_tb/mmul_accel/layer2/data/ram[2]" type="array">
-         <obj_property name="ElementShortName">[2][0:6]</obj_property>
-         <obj_property name="ObjectShortName">[2][0:6]</obj_property>
-      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/control_fsm/addr_C" type="array">
+      <obj_property name="ElementShortName">addr_C</obj_property>
+      <obj_property name="ObjectShortName">addr_C</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/accel/rd_A_i" type="array">
+      <obj_property name="ElementShortName">rd_A_i[0:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_A_i[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/accel/rd_B_i" type="array">
+      <obj_property name="ElementShortName">rd_B_i[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_B_i[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/accel/accum_q" type="array">
+      <obj_property name="ElementShortName">accum_q[4:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_q[4:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/data/ram" type="array">
+      <obj_property name="ElementShortName">ram[0:2][0:6]</obj_property>
+      <obj_property name="ObjectShortName">ram[0:2][0:6]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/weights/ram" type="array">
+      <obj_property name="ElementShortName">ram[0:6][0:6][1:0]</obj_property>
+      <obj_property name="ObjectShortName">ram[0:6][0:6][1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/control_fsm/addr_A" type="array">
+      <obj_property name="ElementShortName">addr_A</obj_property>
+      <obj_property name="ObjectShortName">addr_A</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/control_fsm/addr_B" type="array">
+      <obj_property name="ElementShortName">addr_B</obj_property>
+      <obj_property name="ObjectShortName">addr_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/control_fsm/addr_C" type="array">
+      <obj_property name="ElementShortName">addr_C</obj_property>
+      <obj_property name="ObjectShortName">addr_C</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mult_out" type="array">
+      <obj_property name="ElementShortName">mult_out[0:2][0:6]</obj_property>
+      <obj_property name="ObjectShortName">mult_out[0:2][0:6]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/accel/\genblk2.maxval " type="array">
+      <obj_property name="ElementShortName">\genblk2.maxval [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\genblk2.maxval [4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/accel/\genblk2.maxval_nxt " type="array">
+      <obj_property name="ElementShortName">\genblk2.maxval_nxt [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\genblk2.maxval_nxt [4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/accel/accum_q" type="array">
+      <obj_property name="ElementShortName">accum_q[4:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_q[4:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/accel/clc_done_i" type="logic">
+      <obj_property name="ElementShortName">clc_done_i</obj_property>
+      <obj_property name="ObjectShortName">clc_done_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer2/accel/wd_C_o" type="array">
+      <obj_property name="ElementShortName">wd_C_o[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wd_C_o[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/accel_tb/mult_out" type="array">
+      <obj_property name="ElementShortName">mult_out[0:2][0:6]</obj_property>
+      <obj_property name="ObjectShortName">mult_out[0:2][0:6]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

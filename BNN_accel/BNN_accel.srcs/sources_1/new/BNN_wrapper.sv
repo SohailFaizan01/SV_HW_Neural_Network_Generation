@@ -101,7 +101,7 @@ module BNN_wrapper#(
     .WEIGHTS_FILE   ( "wght2.txt"   ),
     .IPDATA_BNNENC  ( 1             ),
     .IPWGHT_BNNENC  ( 1             ),
-    .OP_ACTV_LAYER  ( "BNN"         ),
+    .OP_ACTV_LAYER  ( "ARGMAX"         ),
     .IP_DATA_WIDTH  ( 1 ),
     .IP_WGHT_WIDTH  ( IP_WGHT_WIDTH ),
     .IP_NEUR_WIDTH  ( 7 ),
