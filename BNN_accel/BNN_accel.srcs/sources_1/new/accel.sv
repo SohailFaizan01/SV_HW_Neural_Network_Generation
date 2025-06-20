@@ -25,24 +25,30 @@ module mmul#(
     parameter  string   OP_ACTV_LAYER = "NONE",
     parameter           IP_DATA_WIDTH = 8,
     parameter           IP_WGHT_WIDTH = 2,
+    parameter           IP_BIAS_WIDTH = 32,
     parameter           IP_NEUR_WIDTH = 784,
-    parameter           OP_DATA_WIDTH = 1
+    parameter           OP_DATA_WIDTH = 1,
+    parameter           IP_DECBIAS_EN = 1
     )(
     input  clk_i, rst_n_i, sm_rst_i,
     input  clc_done_i,
-    input  [(IP_DATA_WIDTH-1):0] rd_A_i,
-    input  [(IP_WGHT_WIDTH-1):0] rd_B_i,
-    output logic [(OP_DATA_WIDTH-1):0] wd_C_o
+    input           [(IP_DATA_WIDTH-1):0] rd_A_i,
+    input           [(IP_WGHT_WIDTH-1):0] rd_B_i,
+    input signed    [(IP_BIAS_WIDTH-1):0] rd_K_i,
+    output logic    [(OP_DATA_WIDTH-1):0] wd_C_o
     );
     
     // accumulator width $clog2(IP_NEUR_WIDTH) + IP_DATA_WIDTH + 2
     
-    localparam ACCUM_WIDTH =     (IPWGHT_BNNENC == 1) ? ($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH+1) : ($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH));
-                                
-    reg signed  [ACCUM_WIDTH-1:0]       accum_q ;
+    localparam ACCUM_NO_BIAS    =   (IPWGHT_BNNENC == 1) ? ($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH+1) : ($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH));
+    localparam ACCUM_RS_WIDTH   =   (IP_DECBIAS_EN == 0 )       ? ACCUM_NO_BIAS         :
+                                    (ACCUM_NO_BIAS + 1 > 32)    ? (ACCUM_NO_BIAS + 1)   : 33;
+    
+    reg signed  [ACCUM_NO_BIAS-1:0]       accum_q ;
+    logic signed [ACCUM_RS_WIDTH-1:0]     accum_biased;
     
 generate
-if ((IPDATA_BNNENC == 1) && (IPWGHT_BNNENC == 1))  begin : accum_gen
+if ((IPDATA_BNNENC == 1) && (IPWGHT_BNNENC == 1))  begin 
     // reg signed  [($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH):0]       accum_q ;
 
 
@@ -108,11 +114,15 @@ else begin
 end
 endgenerate
     
+always_comb
+        accum_biased = accum_q + rd_K_i;
+    
+    
 generate
 if (OP_ACTV_LAYER == "BNN") begin  : activation_gen   
     logic actv    ; 
     always_comb begin
-        if (accum_q[$left(accum_q)])
+        if (accum_biased[$left(accum_biased)])
             actv = 1'b0 ;
         else 
             actv = 1'b1 ;
@@ -128,15 +138,15 @@ if (OP_ACTV_LAYER == "BNN") begin  : activation_gen
 end
 else if (OP_ACTV_LAYER == "ARGMAX") begin
 
-    reg signed [ACCUM_WIDTH-1:0] maxval, maxval_nxt;
+    reg signed [ACCUM_RS_WIDTH-1:0] maxval, maxval_nxt;
     
     always_latch begin
         if (!rst_n_i)
             maxval_nxt <= 'h0;
         else begin
             if (clc_done_i) begin
-                if (maxval <= accum_q) 
-                    maxval_nxt = accum_q;
+                if (maxval <= accum_biased) 
+                    maxval_nxt = accum_biased;
                 else 
                     maxval_nxt = maxval_nxt;
             end else
@@ -146,7 +156,7 @@ else if (OP_ACTV_LAYER == "ARGMAX") begin
                 
     always_comb begin
         if (clc_done_i) begin
-                if (maxval <= accum_q)
+                if (maxval <= accum_biased)
                     wd_C_o = 1'b1;
                 else
                     wd_C_o = 1'b0;
@@ -173,7 +183,7 @@ else if (OP_ACTV_LAYER == "NONE") begin
 
     always_comb begin
         if (clc_done_i)
-            wd_C_o  =   accum_q ;
+            wd_C_o  =   accum_biased ;
         else 
             wd_C_o  =   'h0;
     end

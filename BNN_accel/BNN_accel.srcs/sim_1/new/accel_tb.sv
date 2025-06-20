@@ -86,12 +86,12 @@ reg clk, rst_n;
 //______________________________________________________________________
   // BNN test - pass, wght_2 file data
 //______________________________________________________________________
-    // reg mult_out_reference[0:2][0:6] =
-	// '{ 
-  // '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1},
-  // '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0},
-  // '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0}
-// }; 
+    reg mult_out_reference_l2[0:2][0:6] =
+	'{ 
+  '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1},
+  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0},
+  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0}
+}; 
 
 // 1 0 1 0 1 0 1 
 // 0 1 0 1 0 1 0 
@@ -104,7 +104,7 @@ reg clk, rst_n;
 
     reg mult_out_reference[0:2][0:6] =
     '{ 
-  '{1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1},
+  '{1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1},
   '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0},
   '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0}
 }; // Custom ARGMAX test
@@ -127,7 +127,7 @@ parameter IP_NEUR_HIGHT = 3;
 parameter IP_NEUR_WIDTH = 8;
 parameter OP_NEUR_WIDTH = 7;
 
-    reg             data_ready, write_done, read_done  ;
+    reg             data_ready, write_done, read_done, we_A_ext  ;
     reg     [6:0]   i,j                       ;
     // reg             clk_sync                       ;
     wire            accel_ready, accel_done ;
@@ -168,7 +168,7 @@ parameter OP_NEUR_WIDTH = 7;
                     nxt_state <= WRITE;  
                 end
                 WRITE: begin
-                    if (i == 'd23)
+                    if (i == 'd24)
                         nxt_state <= WAIT_CALC;
                 end
                 WAIT_CALC: begin
@@ -219,6 +219,7 @@ parameter OP_NEUR_WIDTH = 7;
             addr_C.y    <= 'h0 ;
             wd_A        <=  'h0 ;
             wd_B        <=  'h0 ;
+            we_A_ext    <= 1'b0 ;
             // errors      <=  'h0 ;
             // i           <=  'h0 ;
         // mult_out <= '{default:'h0};
@@ -229,6 +230,7 @@ parameter OP_NEUR_WIDTH = 7;
                     data_ready  <= 1'b0 ;
                     write_done  <= 1'b0 ; 
                     read_done   <= 1'b0 ;
+                    we_A_ext    <= 1'b0 ;
 
                     // errors      <=  'h0 ;
                     
@@ -236,21 +238,24 @@ parameter OP_NEUR_WIDTH = 7;
                 end
                 WRITE: begin
                     data_ready  <= 1'b1         ;
-                    
+                    we_A_ext    <= 1'b1 ;
 
                 end
                 WAIT_CALC: begin
                     data_ready  <=  'h0 ;
                     write_done  <= 1'b1 ;
+                    we_A_ext    <= 1'b0 ;
                 end
                 READ: begin
                     write_done <= 1'b0;
                     addr_C.x <= i%7;
                     addr_C.y <= i/7;
+                    we_A_ext    <= 1'b0 ;
                     
                 end
                 VERIFY: begin
                     read_done   <= 1'b1;
+                    we_A_ext    <= 1'b0 ;
                     
                 end
                 
@@ -337,13 +342,13 @@ parameter OP_NEUR_WIDTH = 7;
     end
     
 BNN_wrapper
-#(
-    .IP_DATA_WIDTH (8 ),
-    .IP_WGHT_WIDTH (2 ),
-    .IP_NEUR_HIGHT (3 ),
-    .IP_NEUR_WIDTH (8 ),
-    .OP_NEUR_WIDTH (7 )
-    )
+// #(
+    // .IP_DATA_WIDTH (8 ),
+    // .IP_WGHT_WIDTH (2 ),
+    // .IP_NEUR_HIGHT (3 ),
+    // .IP_NEUR_WIDTH (8 ),
+    // .OP_NEUR_WIDTH (7 )
+    // )
     mmul_accel(
     .clk_i          ( clk           ), 
     .rst_n_i        ( rst_n         ),
@@ -351,6 +356,7 @@ BNN_wrapper
     .write_done_i   ( write_done    ), 
     .read_done_i    ( read_done     ),
     .wght_mod_i     ( 1'b0          ),
+    .we_A_ext_i     ( we_A_ext      ),
     
     .addr_A_i       ( addr_A        ), 
     .addr_B_i       ( addr_B        ),

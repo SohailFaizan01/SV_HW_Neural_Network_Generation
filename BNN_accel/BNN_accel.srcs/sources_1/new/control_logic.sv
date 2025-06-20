@@ -27,18 +27,19 @@ module mmul_control_logic#(
     )(
     input clk_i, rst_n_i, data_ready_i, write_done_i, read_done_i,
     input wght_mod_i,
-    output rw_en en_A_o, en_B_o, en_C_o,
+    output rw_en en_A_o, en_B_o, en_C_o, en_K_o,
 
     ram_addr_port addr_A_o,
     ram_addr_port addr_B_o,
     ram_addr_port addr_C_o,
+    ram_addr_port addr_K_o,
     
     output [1:0] state_o,
     output accel_rst_o, accel_done_o, accel_ready_o
     );
     
     
-    rw_en                     en_A, en_B, en_C;
+    rw_en                     en_A, en_B, en_C, en_K;
     
     logic                     accel_rst, accel_done, accel_ready;
 
@@ -62,10 +63,10 @@ module mmul_control_logic#(
     
     reg [$clog2(IP_NEUR_WIDTH):0] accum_counter;
 
-    parameter IDLE        = 2'h0    ;
-    parameter LOAD        = 2'h1    ;
-    parameter CALC        = 2'h2    ;
-    parameter MATRIX_DONE = 2'h3    ;
+    localparam IDLE        = 2'h0    ;
+    localparam LOAD        = 2'h1    ;
+    localparam CALC        = 2'h2    ;
+    localparam MATRIX_DONE = 2'h3    ;
     
     reg [1:0] state, nxt_state ;
     
@@ -76,6 +77,7 @@ module mmul_control_logic#(
     assign en_A_o  =   en_A   ;
     assign en_B_o  =   en_B   ;
     assign en_C_o  =   en_C    ;
+    assign en_K_o  =   en_K    ;
 
     
     assign addr_A_o.x   =   addr_A.x[$clog2(IP_NEUR_WIDTH)-1:0] ;
@@ -84,8 +86,10 @@ module mmul_control_logic#(
     assign addr_B_o.y   =   addr_B.y[$clog2(IP_NEUR_WIDTH)-1:0] ;
     
     assign addr_C_o.x   =   addr_C.x    ;
-    assign addr_C_o.y   =   addr_C.y[($clog2(IP_NEUR_HIGHT))-1:0]    ;
+    assign addr_C_o.y   =   addr_C.y[($clog2(IP_NEUR_HIGHT))-1:0]    ;    
     
+    assign addr_K_o.x   =   addr_C.x    ;
+    assign addr_K_o.y   =   addr_C.y[($clog2(IP_NEUR_HIGHT))-1:0]    ;
     
     assign accel_rst_o      = accel_rst     ;
     assign accel_done_o     = accel_done    ;
@@ -161,6 +165,7 @@ always_comb begin
             en_A        =  '{re: 1'b0, we: 1'b0};            
             en_B        =  '{re: 1'b0, we: 1'b0};
             en_C        =  '{re: 1'b0, we: 1'b0};
+            en_K        =  '{re: 1'b0, we: 1'b0};
             
             addr_A      = '{x: 1'b0, y: 1'b0}   ;
             addr_B      = '{x: 1'b0, y: 1'b0}   ;
@@ -176,10 +181,13 @@ always_comb begin
                     addr_A      = '{x: 1'b0, y: 1'b0}   ;
                     addr_B      = '{x: 1'b0, y: 1'b0}   ;
                     
-                    if (wght_mod_i) 
+                    if (wght_mod_i) begin
                         en_B    =  '{re: 1'b0, we: 1'b1};
-                    else 
+                        en_K    =  '{re: 1'b0, we: 1'b1};
+                    end else begin
                         en_B    =  '{re: 1'b0, we: 1'b0};
+                        en_K    =  '{re: 1'b0, we: 1'b0};
+                    end
                 end
                 LOAD : begin
                     accel_ready =  1'b1    ;
@@ -187,6 +195,7 @@ always_comb begin
                     accel_rst   =  1'b1    ;
                     en_A        =  '{re: 1'b0, we: 1'b1};
                     en_C        =  '{re: 1'b0, we: 1'b0};
+                    en_K        =  '{re: 1'b0, we: 1'b0};
                     addr_A      = '{x: 1'b0, y: 1'b0}   ;
                     addr_B      = '{x: 1'b0, y: 1'b0}   ;
                     if (wght_mod_i) 
@@ -203,6 +212,8 @@ always_comb begin
                         ACCUMULATE : begin
                             en_A        =  '{re: 1'b1, we: 1'b0};
                             en_B        =  '{re: 1'b1, we: 1'b0};
+                            en_C        =  '{re: 1'b0, we: 1'b0};
+                            en_K        =  '{re: 1'b0, we: 1'b0};
                             
                             addr_A      = '{   x: accum_counter,    y: addr_C.y                }   ;
                             addr_B      = '{   x: addr_C.x               ,    y: accum_counter }   ;
@@ -210,11 +221,12 @@ always_comb begin
                                 accel_rst   =  1'b1;
                             else
                                 accel_rst   =  1'b0;
-                            en_C        =  '{re: 1'b0, we: 1'b0};
                         end 
                         WAIT : begin
                             en_A        =  '{re: 1'b0, we: 1'b0};
                             en_B        =  '{re: 1'b0, we: 1'b0};
+                            en_C        =  '{re: 1'b0, we: 1'b0};
+                            en_K        =  '{re: 1'b1, we: 1'b0};
                             
                             addr_A      = '{   x: 'h0, y: 'h0}   ;
                             addr_B      = '{   x: 'h0, y: 'h0}   ;
@@ -224,11 +236,17 @@ always_comb begin
                         
                         STORE : begin
                             en_C        =  '{re: 1'b0, we: 1'b1};
+                            en_K        =  '{re: 1'b0, we: 1'b0};
                             accel_rst   = 1'b1    ;
                         end
                         default : begin
                             accel_rst   =  1'b0            ;
+                            en_A        =  '{re: 1'b0, we: 1'b0};
+                            en_B        =  '{re: 1'b0, we: 1'b0};
                             en_C        =  '{re: 1'b0, we: 1'b0};
+                            en_K        =  '{re: 1'b0, we: 1'b0};
+                            addr_A      =  '{x: 'h0, y: 'h0}   ;
+                            addr_B      =  '{x: 'h0, y: 'h0}   ;
                         end
                     endcase  
                 end
@@ -238,6 +256,7 @@ always_comb begin
                     accel_rst   =   1'b1    ;
                     en_A        =  '{re: 1'b0, we: 1'b0};            
                     en_B        =  '{re: 1'b0, we: 1'b0};
+                    en_K        =  '{re: 1'b0, we: 1'b0};
                     en_C        =  '{re: 1'b1, we: 1'b0};
                     addr_A      = '{x: 1'b0, y: 1'b0}   ;
                     addr_B      = '{x: 1'b0, y: 1'b0}   ;
@@ -249,6 +268,7 @@ always_comb begin
                     accel_rst   =   'h0;
                     en_A        =  '{re: 1'b0, we: 1'b0 }   ;            
                     en_B        =  '{re: 1'b0, we: 1'b0 }   ;
+                    en_K        =  '{re: 1'b0, we: 1'b0 }   ;
                     en_C        =  '{re: 1'b0, we: 1'b0 }   ;
                     addr_A      =  '{x: 1'b0, y: 1'b0   }   ;
                     addr_B      =  '{x: 1'b0, y: 1'b0   }   ;
