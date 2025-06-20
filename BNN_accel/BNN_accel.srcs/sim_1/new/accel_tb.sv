@@ -168,7 +168,7 @@ parameter OP_NEUR_WIDTH = 7;
                     nxt_state <= WRITE;  
                 end
                 WRITE: begin
-                    if (i == 'd24)
+                    if (i == 'd24) // 20 + 4 for 21 elements - needs 4 extra cycles. Check data reg if issues
                         nxt_state <= WAIT_CALC;
                 end
                 WAIT_CALC: begin
@@ -178,7 +178,7 @@ parameter OP_NEUR_WIDTH = 7;
                 end
                 READ: begin
 
-                    if (i == 'd21) //63 adresses + 1 for clk 
+                    if (i == 'd21) //21 for 21 elements
                         nxt_state   <= VERIFY   ;
                 end
                 VERIFY: begin
