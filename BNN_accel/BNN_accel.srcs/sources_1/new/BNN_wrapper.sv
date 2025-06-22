@@ -21,45 +21,20 @@
 import type_pkg::*;
 import cfg_param::*;
 module BNN_wrapper
-// #(
-    // parameter IP_DATA_WIDTH = 8,
-    // parameter IP_WGHT_WIDTH = 8,
-    // parameter IP_NEUR_WIDTH = 8,
-    // parameter OP_NEUR_WIDTH = 8,
-    // parameter IP_NEUR_HIGHT = 8
-    
-    
-    // )
     (
     input   clk_i, rst_n_i,
-    input   data_ready_i, write_done_i, read_done_i, we_A_ext_i,
-    input   wght_mod_i,
-   
-    ram_addr_port addr_A_i,
-    ram_addr_port addr_B_i,
-    ram_addr_port addr_C_i,
+    input   data_ready_i, write_done_i, read_done_i, //we_A_ext_i,
+
+    input ip_data_port  module_data_port_i  ,
+    input ip_bswt_port  module_bswt_port_i  ,
     
-    input   [(IP_DATA_WIDTH[0]-1):0] wd_A_i,
-    input   [(IP_WGHT_WIDTH[0]-1):0] wd_B_i,    
-    // input   [(IP_DATA_WIDTH-1):0] wd_A_i,
-    // input   [(IP_WGHT_WIDTH-1):0] wd_B_i,
+    input op_addr_port  addr_C_i  ,
+
     input   wd_C_i,
     output  rd_C_o,
     output  accel_done_o, accel_ready_o
     );
 
-    // struct {
-    // parameter NUMBER_OF_LAYERS = 3 ;
-    // parameter WEIGHTS_FILE  [0:NUMBER_OF_LAYERS-1] = '{"fc1_folded_weight_2bit.txt", "fc2_folded_weight_2bit.txt", "fc3_weight_2bit.txt"}   ;
-    // parameter IPDATA_BNNENC [0:NUMBER_OF_LAYERS-1] = '{1, 1, 1}   ;
-    // parameter IPWGHT_BNNENC [0:NUMBER_OF_LAYERS-1] = '{1, 1, 1}   ;
-    // parameter OP_ACTV_LAYER [0:NUMBER_OF_LAYERS-1] = '{"BNN", "BNN", "ARGMAX"}   ;
-    // parameter IP_DATA_WIDTH [0:NUMBER_OF_LAYERS-1] = '{1, 1, 1}   ;
-    // parameter IP_WGHT_WIDTH [0:NUMBER_OF_LAYERS-1] = '{2, 2, 2}   ;
-    // parameter IP_NEUR_WIDTH [0:NUMBER_OF_LAYERS-1] = '{784, 512, 256}   ;
-    // parameter OP_NEUR_WIDTH [0:NUMBER_OF_LAYERS-1] = '{512, 256, 10}   ;
-    // parameter IP_NEUR_HIGHT [0:NUMBER_OF_LAYERS-1] = '{1, 1, 1}   ;
-    // } cfg_prm;
     
         
 //____________________________________________________________________________________________________________________________
@@ -196,16 +171,9 @@ module BNN_wrapper
     
 generate
 for (neur = 0; neur < NUMBER_OF_LAYERS; neur++) begin : neuron_signals
-    
-    
 
-
-    
-
+    rw_en en_BK ;
     logic wd_A;
-    logic wd_B;
-    logic wd_C;
-    
     logic wd_C_out;
     rw_en en_C ;
     logic [1:0] state ;
@@ -214,23 +182,34 @@ for (neur = 0; neur < NUMBER_OF_LAYERS; neur++) begin : neuron_signals
 end    
 endgenerate
 
-    // ram_addr_port #(.RAM_WIDTH (IP_NEUR_WIDTH[neur]), .RAM_HIGHT (IP_NEUR_HIGHT[neur])) addr_A();
-    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[0]), .RAM_HIGHT (IP_NEUR_WIDTH[0])) addr_B_1();
-    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[1]), .RAM_HIGHT (IP_NEUR_WIDTH[1])) addr_B_2();
+    ram_addr_port #(.RAM_WIDTH (IP_NEUR_WIDTH[0]), .RAM_HIGHT (IP_NEUR_HIGHT[0])) addr_A();
+    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[2]), .RAM_HIGHT (IP_NEUR_HIGHT[2])) addr_C();
+    
+    
+    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[0]), .RAM_HIGHT (IP_NEUR_WIDTH[0])) addr_BK_0();
+    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[1]), .RAM_HIGHT (IP_NEUR_WIDTH[1])) addr_BK_1();
+    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[2]), .RAM_HIGHT (IP_NEUR_WIDTH[2])) addr_BK_2();
+    
     ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[0]), .RAM_HIGHT (IP_NEUR_HIGHT[0])) addr_C_fsm_0();
     ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[1]), .RAM_HIGHT (IP_NEUR_HIGHT[1])) addr_C_fsm_1();
     ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[2]), .RAM_HIGHT (IP_NEUR_HIGHT[2])) addr_C_fsm_2();
 
-    assign addr_B_1.x = 'h0;
-    assign addr_B_1.y = 'h0;
-    assign addr_B_2.x = 'h0;
-    assign addr_B_2.y = 'h0;
+    assign  addr_A.x    = module_data_port_i.x;
+    assign  addr_A.y    = module_data_port_i.y;
+    
+    
+    // assign addr_B_1.x = 'h0;
+    // assign addr_B_1.y = 'h0;
+    // assign addr_B_2.x = 'h0;
+    // assign addr_B_2.y = 'h0;
+    
+    assign addr_C.x = addr_C_i.x;
+    assign addr_C.y = addr_C_i.y;
 
+    logic wght_mod_i = 1'b0;
 
         accel_wrapper
         #(
-            .WEIGHTS_FILE   ( WEIGHTS_FILE [0]),
-            .BIASES_FILE    ( BIASES_FILE [0]),
             .IPDATA_BNNENC  ( IPDATA_BNNENC[0] ),
             .IPWGHT_BNNENC  ( IPWGHT_BNNENC[0] ),
             .OP_ACTV_LAYER  ( OP_ACTV_LAYER[0] ),
@@ -247,20 +226,21 @@ endgenerate
             .data_ready_i   ( data_ready_i   ), 
             .write_done_i   ( write_done_i   ), 
             .read_done_i    ( read_done_i    ),
-            .we_A_ext_i     ( we_A_ext_i     ),
-            .wght_mod_i     ( wght_mod_i     ),
+            
+            .en_A_i         ( module_data_port_i.en ), 
+            .addr_A_i       ( addr_A         ), 
+            .wd_A_i         ( module_data_port_i.data         ), 
+            
+            .en_BK_i        ( neuron_signals[0].en_BK  ),
+            .BK_sel_i       ( module_bswt_port_i.BK_sel),  
+            .addr_BK_i      ( addr_BK_0       ),
+            .wd_BK_i        ( module_bswt_port_i.data          ),
                             
-            .addr_A_i       ( addr_A_i       ), 
-            .addr_B_i       ( addr_B_i       ),
                             
-                            
-            .addr_C_fsm_o   ( addr_C_fsm_0   ),
-                            
-            .wd_A_i         ( wd_A_i         ), 
-            .wd_B_i         ( wd_B_i         ),
-            .wd_C_i         ( wd_C_i         ),
-            .wd_C_o         ( neuron_signals[0].wd_C_out       ),
             .en_C_o         ( neuron_signals[0].en_C           ), 
+            .addr_C_fsm_o   ( addr_C_fsm_0   ),
+            .wd_C_o         ( neuron_signals[0].wd_C_out       ),
+            
             .state_o        ( neuron_signals[0].state          ),
             .accel_done_o   ( neuron_signals[0].accel_done     ), 
             .accel_ready_o  ( neuron_signals[0].accel_ready    )
@@ -269,8 +249,6 @@ endgenerate
 
         accel_wrapper
         #(
-            .WEIGHTS_FILE   ( WEIGHTS_FILE [1]),
-            .BIASES_FILE    ( BIASES_FILE  [1]),
             .IPDATA_BNNENC  ( IPDATA_BNNENC[1] ),
             .IPWGHT_BNNENC  ( IPWGHT_BNNENC[1] ),
             .OP_ACTV_LAYER  ( OP_ACTV_LAYER[1] ),
@@ -287,20 +265,20 @@ endgenerate
             .data_ready_i   ( neuron_signals[0].state[1:0] == 2  ), 
             .write_done_i   ( neuron_signals[0].accel_done   ), 
             .read_done_i    ( read_done_i    ),
-            .we_A_ext_i     ( neuron_signals[0].en_C.we     ),
-            .wght_mod_i     ( wght_mod_i     ),
                             
+            .en_A_i         ( neuron_signals[0].en_C ), 
             .addr_A_i       ( addr_C_fsm_0   ), 
-            .addr_B_i       ( addr_B_1 ),
-                            
-                            
-            .addr_C_fsm_o   ( addr_C_fsm_1   ),
-                            
             .wd_A_i         ( neuron_signals[0].wd_C_out ), 
-            .wd_B_i         ( neuron_signals[1].wd_B         ),
-            .wd_C_i         ( neuron_signals[1].wd_C         ),
-            .wd_C_o         ( neuron_signals[1].wd_C_out       ),
+            
+            .en_BK_i        ( neuron_signals[1].en_BK  ),
+            .BK_sel_i       ( module_bswt_port_i.BK_sel), 
+            .addr_BK_i      ( addr_BK_1 ),
+            .wd_BK_i        ( module_bswt_port_i.data          ),
+                                  
             .en_C_o         ( neuron_signals[1].en_C           ), 
+            .addr_C_fsm_o   ( addr_C_fsm_1   ),
+            .wd_C_o         ( neuron_signals[1].wd_C_out       ),
+                            
             .state_o        ( neuron_signals[1].state          ),
             .accel_done_o   ( neuron_signals[1].accel_done     ), 
             .accel_ready_o  ( neuron_signals[1].accel_ready    )
@@ -309,8 +287,6 @@ endgenerate
     
         accel_wrapper
         #(
-            .WEIGHTS_FILE   ( WEIGHTS_FILE [2] ),
-            .BIASES_FILE    ( BIASES_FILE  [2] ),
             .IPDATA_BNNENC  ( IPDATA_BNNENC[2] ),
             .IPWGHT_BNNENC  ( IPWGHT_BNNENC[2] ),
             .OP_ACTV_LAYER  ( OP_ACTV_LAYER[2] ),
@@ -327,20 +303,20 @@ endgenerate
             .data_ready_i   ( neuron_signals[1].state[1:0] == 2  ), 
             .write_done_i   ( neuron_signals[1].accel_done   ), 
             .read_done_i    ( read_done_i    ),
-            .we_A_ext_i     ( neuron_signals[1].en_C.we     ),
-            .wght_mod_i     ( wght_mod_i     ),
-                            
+            
+            .en_A_i         ( neuron_signals[1].en_C ), 
             .addr_A_i       ( addr_C_fsm_1   ), 
-            .addr_B_i       ( addr_B_2 ),
-                            
-                            
+            .wd_A_i         ( neuron_signals[1].wd_C_out ), 
+            
+            .en_BK_i        ( neuron_signals[2].en_BK  ),
+            .BK_sel_i       ( module_bswt_port_i.BK_sel), 
+            .addr_BK_i      ( addr_BK_2 ),
+            .wd_BK_i        ( module_bswt_port_i.data ),
+            
+            .en_C_o         ( neuron_signals[2].en_C           ), 
+            .wd_C_o         ( neuron_signals[2].wd_C_out       ),
             .addr_C_fsm_o   ( addr_C_fsm_2   ),
                             
-            .wd_A_i         ( neuron_signals[1].wd_C_out ), 
-            .wd_B_i         ( neuron_signals[2].wd_B         ),
-            .wd_C_i         ( neuron_signals[2].wd_C         ),
-            .wd_C_o         ( neuron_signals[2].wd_C_out       ),
-            .en_C_o         ( neuron_signals[2].en_C           ), 
             .state_o        ( neuron_signals[2].state          ),
             .accel_done_o   ( neuron_signals[2].accel_done     ), 
             .accel_ready_o  ( neuron_signals[2].accel_ready    )
@@ -361,7 +337,7 @@ data_matrix_mem #(
     .rst_n_i        ( rst_n_i   ),
     .en_i           ( neuron_signals[NUMBER_OF_LAYERS-1].en_C         ),
     .addr_A_i       ( addr_C_fsm_2   ),   
-    .addr_B_i       ( addr_C_i   ),
+    .addr_B_i       ( addr_C   ),
     .wd_A_i         ( neuron_signals[NUMBER_OF_LAYERS-1].wd_C_out     ), 
     .rd_B_o         ( rd_C_o                                        ),
     .rd_B_valid_o   ()
@@ -370,209 +346,29 @@ data_matrix_mem #(
     assign accel_done_o  = neuron_signals[NUMBER_OF_LAYERS-1].accel_done;
     assign accel_ready_o = neuron_signals[NUMBER_OF_LAYERS-1].accel_ready;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//____________________________________________________________________________________________________________________________
-//############################################ 2 Neuron Layer Test ###########################################################
-//____________________________________________________________________________________________________________________________
-// genvar neur   ;
-   // generate
-// for (neur = 0; neur < 3; neur++) begin : neuron_layer
-        // logic a, b, c;
-        // ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_C_fsm_out();
-// end
-// endgenerate
-    
-    // assign neuron_layer[1].c = 1'b0;
-    // assign neuron_layer[2].a = neuron_layer[1].c;
-    
-    
-    // logic wd_C [2];
-    
-    // logic accel_done [2], accel_ready [2];
-
-    
-    // rw_en en_C [2];
-    // logic [1:0] state [2];
-    
-    // assign accel_done_o = accel_done[1];
-    // assign accel_ready_o = accel_ready[0] && accel_ready[1];
-
-    // ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_C_fsm_0();
-    // ram_addr_port #(.RAM_WIDTH (7), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_C_fsm_1();
-    
-        // accel_wrapper
-// #(
-    // .WEIGHTS_FILE   ( "wght.txt"    ),
-    // .IPDATA_BNNENC  ( 0             ),
-    // .IPWGHT_BNNENC  ( 1             ),
-    // .OP_ACTV_LAYER  ( "BNN"         ),
-    // .IP_DATA_WIDTH  ( IP_DATA_WIDTH ),
-    // .IP_WGHT_WIDTH  ( IP_WGHT_WIDTH ),
-    // .IP_NEUR_WIDTH  ( IP_NEUR_WIDTH ),
-    // .OP_NEUR_WIDTH  ( OP_NEUR_WIDTH ),
-    // .IP_NEUR_HIGHT  ( IP_NEUR_HIGHT )
-    // )layer1(
-    // .clk_i          ( clk_i         ), 
-    // .rst_n_i        ( rst_n_i       ),
-    // .data_ready_i   ( data_ready_i  ), 
-    // .write_done_i   ( write_done_i  ), 
-    // .read_done_i    ( read_done_i   ),
-    // .we_A_ext_i     ( 1'b1          ),
-    // .wght_mod_i     ( neuron_layer[2].a    ),
-    
-    // .addr_A_i       ( addr_A_i      ), 
-    // .addr_B_i       ( addr_B_i      ),
-    
-    
-    // .addr_C_fsm_o   ( addr_C_fsm_0  ),
-    
-    // .wd_A_i         ( wd_A_i        ), 
-    // .wd_B_i         ( wd_B_i        ),
-    // .wd_C_i         ( wd_C_i        ),
-    // .wd_C_o         ( wd_C[0]       ),
-    // .en_C_o         ( en_C[0]       ), 
-    // .state_o        ( state[0][1:0] ),
-    // .accel_done_o   ( accel_done[0] ), 
-    // .accel_ready_o  ( accel_ready[0])
-    // );     
+   
+    always_comb begin
         
-        // accel_wrapper
-// #(
-    // .WEIGHTS_FILE   ( "wght2.txt"   ),
-    // .IPDATA_BNNENC  ( 1             ),
-    // .IPWGHT_BNNENC  ( 1             ),
-    // .OP_ACTV_LAYER  ( "ARGMAX"         ),
-    // .IP_DATA_WIDTH  ( 1 ),
-    // .IP_WGHT_WIDTH  ( IP_WGHT_WIDTH ),
-    // .IP_NEUR_WIDTH  ( 7 ),
-    // .OP_NEUR_WIDTH  ( OP_NEUR_WIDTH ),
-    // .IP_NEUR_HIGHT  ( IP_NEUR_HIGHT )
-
-    
-    // )layer2(
-    // .clk_i          ( clk_i         ), 
-    // .rst_n_i        ( rst_n_i       ),
-    // .data_ready_i   ( state[0][1:0] == 2  ), 
-    // .write_done_i   ( accel_done[0]  ), 
-    // .read_done_i    ( read_done_i   ),
-    // .we_A_ext_i     ( en_C[0].we    ),
-    // .wght_mod_i     ( wght_mod_i    ),
-    
-    // .addr_A_i       ( addr_C_fsm_0  ), 
-    // .addr_B_i       ( addr_B_i      ),
-    
-    
-    // .addr_C_fsm_o   ( addr_C_fsm_1  ),
-    
-    // .wd_A_i         ( wd_C[0]       ), 
-    // .wd_B_i         ( wd_B_i        ),
-    // .wd_C_i         ( wd_C_i        ),
-    // .wd_C_o         ( wd_C[1]       ),
-    // .en_C_o         ( en_C[1]       ), 
-    // .state_o        ( state[1]      ),
-    // .accel_done_o   ( accel_done[1] ), 
-    // .accel_ready_o  ( accel_ready[1])
-    // );     
-    
-    // data_matrix_mem #(
-    // .DATA_WIDTH     (1) ,
-
-    // .MATRIX_WIDTH   ( OP_NEUR_WIDTH ),
-    // .MATRIX_HIGHT   ( IP_NEUR_HIGHT )
-    
-    // ) op_mem (
-    // .clk_i          ( clk_i         ), 
-    // .rst_n_i        ( rst_n_i       ),
-    // .en_i           ( en_C[1]       ),
-    // .addr_A_i       ( addr_C_fsm_1  ),   
-    // .addr_B_i       ( addr_C_i      ),
-    // .wd_A_i         ( wd_C[1]       ), 
-    // .rd_B_o         ( rd_C_o        ),
-    // .rd_B_valid_o   ()
-    // );
-    
-    
-//____________________________________________________________________________________________________________________________
-//############################################ 1 Neuron Layer Test ###########################################################
-//____________________________________________________________________________________________________________________________
-
+        addr_BK_0.x = module_bswt_port_i.x [$clog2(OP_NEUR_WIDTH[0])-1:0];
+        addr_BK_1.x = module_bswt_port_i.x [$clog2(OP_NEUR_WIDTH[1])-1:0];
+        addr_BK_2.x = module_bswt_port_i.x [$clog2(OP_NEUR_WIDTH[2])-1:0];
         
-    // ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_C_fsm();
-    // logic wd_C;
-    // rw_en en_C;
+        addr_BK_0.y = module_bswt_port_i.y [$clog2(IP_NEUR_WIDTH[0])-1:0];
+        addr_BK_1.y = module_bswt_port_i.y [$clog2(IP_NEUR_WIDTH[1])-1:0];
+        addr_BK_2.y = module_bswt_port_i.y [$clog2(IP_NEUR_WIDTH[2])-1:0];
+    end
     
-    // accel_wrapper
-// #(
-    // .WEIGHTS_FILE   ( "wght.txt"    ),
-    // .IPDATA_BNNENC  ( 0             ),
-    // .IPWGHT_BNNENC  ( 1             ),
-    // .OP_ACTV_LAYER  ( "BNN"         ),
-    // .IP_DATA_WIDTH  ( IP_DATA_WIDTH ),
-    // .IP_WGHT_WIDTH  ( IP_WGHT_WIDTH ),
-    // .IP_NEUR_WIDTH  ( IP_NEUR_WIDTH ),
-    // .OP_NEUR_WIDTH  ( OP_NEUR_WIDTH ),
-    // .IP_NEUR_HIGHT  ( IP_NEUR_HIGHT )
-    
-    // )layer1(
-    // .clk_i          ( clk_i         ), 
-    // .rst_n_i        ( rst_n_i       ),
-    // .data_ready_i   ( data_ready_i  ), 
-    // .write_done_i   ( write_done_i  ), 
-    // .read_done_i    ( read_done_i   ),
-    // .we_A_ext_i     ( 1'b1          ),
-    // .wght_mod_i     ( wght_mod_i    ),
-    
-    // .addr_A_i       ( addr_A_i      ), 
-    // .addr_B_i       ( addr_B_i      ),
-    
-    
-    // .addr_C_fsm_o   ( addr_C_fsm  ),
-    
-    // .wd_A_i         ( wd_A_i        ), 
-    // .wd_B_i         ( wd_B_i        ),
-    // .wd_C_i         ( 'h0        ),
-    // .wd_C_o         ( wd_C          ),
-    // .en_C_o         ( en_C          ), 
-    // .state_o        (               ),
-    // .accel_done_o   ( accel_done_o  ), 
-    // .accel_ready_o  ( accel_ready_o )
-    // );     
-    
-
-    
-        
-    // data_matrix_mem #(
-    // .DATA_WIDTH     (1) ,
-
-    // .MATRIX_WIDTH (OP_NEUR_WIDTH),
-    // .MATRIX_HIGHT (IP_NEUR_HIGHT)
-    
-    // ) op_mem (
-    // .clk_i          ( clk_i         ), 
-    // .rst_n_i        ( rst_n_i       ),
-    // .en_i           ( en_C          ),
-    // .addr_A_i       ( addr_C_fsm    ),   
-    // .addr_B_i       ( addr_C_i      ),
-    // .wd_A_i         ( wd_C          ), 
-    // .rd_B_o         ( rd_C_o        ),
-    // .rd_B_valid_o   ()
-    // );
-    
-    
-    
-
-    
-    
+    genvar i;
+generate 
+for (i = 0; i< NUMBER_OF_LAYERS; i++) begin
+    always_comb begin
+        if ( module_bswt_port_i.lyr_sel == i )
+            neuron_signals[i].en_BK = module_bswt_port_i.en;
+        else 
+            neuron_signals[i].en_BK = '{re: 1'b0, we: 1'b0};
+    end
+end   
+endgenerate        
  endmodule   
+    
+    

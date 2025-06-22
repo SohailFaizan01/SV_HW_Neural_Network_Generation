@@ -21,18 +21,18 @@
 import type_pkg::*;
 
 module wght_matrix_mem#(
-    parameter string    WEIGHTS_FILE       ,
     parameter           DATA_WIDTH      = 8 ,
     parameter           MATRIX_WIDTH    = 8 ,
     parameter           MATRIX_HIGHT    = 8
     )(
     input  clk_i, rst_n_i, 
     input  rw_en  en_i,
-    ram_addr_port addr_i ,
+    ram_addr_port addr_A_i ,
+    ram_addr_port addr_B_i ,
 
 
-    input  [(DATA_WIDTH-1):0]  wd_i,
-    output [(DATA_WIDTH-1):0]  rd_o
+    input  [(DATA_WIDTH-1):0]  wd_A_i,
+    output [(DATA_WIDTH-1):0]  rd_B_o
     );
     
 
@@ -40,24 +40,16 @@ module wght_matrix_mem#(
 
 logic   [(DATA_WIDTH-1):0] rd_q;
 
-// logic   [(DATA_WIDTH-1):0] ram [(MATRIX_HIGHT-1):0]  [(MATRIX_WIDTH-1):0] = '{default:'h0};
+
 logic   [(DATA_WIDTH-1):0] ram [MATRIX_HIGHT]  [MATRIX_WIDTH] ;
-logic [(DATA_WIDTH-1):0] init_array [(MATRIX_HIGHT*MATRIX_WIDTH)]   ;
-
-initial begin
-    $readmemh(WEIGHTS_FILE, init_array);
-    for (int x = 0; x<MATRIX_WIDTH; x++) begin
-        for (int y = 0; y<MATRIX_HIGHT; y++)
-            ram[y][x] = init_array[y+MATRIX_HIGHT*x];
-    end
-end
 
 
 
 
 
 
-assign rd_o       = rd_q ;
+
+assign rd_B_o       = rd_q ;
 
 always_ff @ (posedge clk_i, negedge rst_n_i) begin
     if (!rst_n_i) begin
@@ -65,9 +57,10 @@ always_ff @ (posedge clk_i, negedge rst_n_i) begin
     end 
     else begin
         if (en_i.we)
-            ram[addr_i.y][addr_i.x] <= wd_i;  
+            ram[addr_A_i.y][addr_A_i.x] <= wd_A_i;  
+        
         if (en_i.re)
-            rd_q <= ram[addr_i.y][addr_i.x];
+            rd_q <= ram[addr_B_i.y][addr_B_i.x];
         else            
             rd_q <= 'h2;
             

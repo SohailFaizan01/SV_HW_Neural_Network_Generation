@@ -43,7 +43,7 @@ typedef struct {
     logic                       valid   ;               
 } valid_data;
 
-valid_data ram [MATRIX_HIGHT]  [MATRIX_WIDTH] = '{default:'h0};
+valid_data ram [MATRIX_HIGHT]  [MATRIX_WIDTH] ;
 valid_data rd_q;
 
 

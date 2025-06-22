@@ -26,13 +26,15 @@ module mmul_control_logic#(
     parameter IP_NEUR_HIGHT = 8
     )(
     input clk_i, rst_n_i, data_ready_i, write_done_i, read_done_i,
-    input wght_mod_i,
     output rw_en en_A_o, en_B_o, en_C_o, en_K_o,
 
     ram_addr_port addr_A_o,
     ram_addr_port addr_B_o,
     ram_addr_port addr_C_o,
     ram_addr_port addr_K_o,
+    
+    input   rw_en       en_A_i,  en_BK_i,
+    input               BK_sel_i [2],
     
     output [1:0] state_o,
     output accel_rst_o, accel_done_o, accel_ready_o
@@ -57,7 +59,13 @@ module mmul_control_logic#(
     struct {
         logic [($clog2(OP_NEUR_WIDTH))-1:0] x;
         logic [($clog2(IP_NEUR_HIGHT)):0] y;
+    } addr_K;
+    
+    struct {
+        logic [($clog2(OP_NEUR_WIDTH))-1:0] x;
+        logic [($clog2(IP_NEUR_HIGHT)):0] y;
     } addr_C;
+    
 
     
     
@@ -178,30 +186,30 @@ always_comb begin
                     accel_rst   =  1'b1    ;
                     en_A        =  '{re: 1'b0, we: 1'b0};
                     en_C        =  '{re: 1'b0, we: 1'b0};
-                    addr_A      = '{x: 1'b0, y: 1'b0}   ;
-                    addr_B      = '{x: 1'b0, y: 1'b0}   ;
+                    addr_A      =   '{x: 1'b0, y: 1'b0}   ;
+                    addr_B      =   '{x: 1'b0, y: 1'b0}   ;
                     
-                    if (wght_mod_i) begin
-                        en_B    =  '{re: 1'b0, we: 1'b1};
-                        en_K    =  '{re: 1'b0, we: 1'b1};
+                    if      ( BK_sel_i[0] ) begin
+                        en_B    =   en_BK_i ;
+                        en_K    =   '{re: 1'b0, we: 1'b0};
+                    end else if ( BK_sel_i[1] ) begin
+                        en_B    =   '{re: 1'b0, we: 1'b0};
+                        en_K    =   en_BK_i;
                     end else begin
                         en_B    =  '{re: 1'b0, we: 1'b0};
                         en_K    =  '{re: 1'b0, we: 1'b0};
                     end
                 end
                 LOAD : begin
-                    accel_ready =  1'b1    ;
-                    accel_done  =  1'b0    ;
-                    accel_rst   =  1'b1    ;
-                    en_A        =  '{re: 1'b0, we: 1'b1};
-                    en_C        =  '{re: 1'b0, we: 1'b0};
-                    en_K        =  '{re: 1'b0, we: 1'b0};
-                    addr_A      = '{x: 1'b0, y: 1'b0}   ;
-                    addr_B      = '{x: 1'b0, y: 1'b0}   ;
-                    if (wght_mod_i) 
-                        en_B    =  '{re: 1'b0, we: 1'b1};
-                    else 
-                        en_B    =  '{re: 1'b0, we: 1'b0};
+                    accel_ready =   1'b0    ;
+                    accel_done  =   1'b0    ;
+                    accel_rst   =   1'b1    ;
+                    en_A        =   en_A_i  ;
+                    en_C        =   '{re: 1'b0, we: 1'b0};
+                    en_B        =   '{re: 1'b0, we: 1'b0};
+                    en_K        =   '{re: 1'b0, we: 1'b0};
+                    addr_A      =   '{x: 1'b0, y: 1'b0}   ;
+                    addr_B      =   '{x: 1'b0, y: 1'b0}   ;
                 end
                 CALC : begin
                     accel_ready =  1'b0     ;

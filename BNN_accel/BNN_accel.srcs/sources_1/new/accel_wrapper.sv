@@ -19,13 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 import type_pkg::*;
+import cfg_param::*;
 
 module accel_wrapper#(
-    parameter string    WEIGHTS_FILE    ,
-    parameter string    BIASES_FILE     ,
     parameter           IPDATA_BNNENC = 0,
     parameter           IPWGHT_BNNENC = 0,
-    parameter string    OP_ACTV_LAYER = "NONE",
+    parameter           OP_ACTV_LAYER = 0,
     parameter           IP_DATA_WIDTH = 8,
     parameter           IP_WGHT_WIDTH = 8,
     parameter           IP_BIAS_WIDTH = 32,
@@ -39,24 +38,24 @@ module accel_wrapper#(
     )(
     input   clk_i, rst_n_i,
     input   data_ready_i, write_done_i, read_done_i,
-    input   we_A_ext_i,
-    input   wght_mod_i,
     
-    ram_addr_port addr_A_i ,
-    ram_addr_port addr_B_i ,
-    ram_addr_port addr_C_fsm_o,
+    input   rw_en                   en_A_i          ,
+            ram_addr_port           addr_A_i        ,
+    input   [(IP_DATA_WIDTH-1):0]   wd_A_i          ,
     
     
-    input   [(IP_DATA_WIDTH-1):0] wd_A_i,
-    input   [(IP_WGHT_WIDTH-1):0] wd_B_i,
-    input   [(OP_DATA_WIDTH-1):0] wd_C_i,
-    input   [(IP_BIAS_WIDTH-1):0] wd_K_i,
-    // output  rd_C_o,
+    input   rw_en                   en_BK_i         ,
+    input                           BK_sel_i [2]    ,
+            ram_addr_port           addr_BK_i       ,
+    input   [(MAX_BSWT_WIDTH-1):0]  wd_BK_i         ,
+    
+    output  rw_en                   en_C_o          ,
+            ram_addr_port           addr_C_fsm_o    ,
+    output  [OP_DATA_WIDTH-1:0]     wd_C_o          ,
+    
+    
     output  [1:0]   state_o,
-    
-    output  rw_en                       en_C_o,
-    output  logic  [OP_DATA_WIDTH-1:0]  wd_C_o,
-    output                              accel_done_o, accel_ready_o
+    output                          accel_done_o, accel_ready_o
     );
     
     
@@ -66,6 +65,20 @@ module accel_wrapper#(
     ram_addr_port #(.RAM_WIDTH (IP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_A_fsm();
     ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_WIDTH)) addr_B_fsm();
     ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_K_fsm();
+    
+    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_WIDTH)) addr_B_mod();
+    ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_K_mod();
+    
+    
+    always_comb begin
+        addr_B_mod.x = addr_BK_i.x[$clog2(OP_NEUR_WIDTH)-1:0];
+        addr_K_mod.x = addr_BK_i.x[$clog2(OP_NEUR_WIDTH)-1:0];
+        addr_B_mod.y = addr_BK_i.y[$clog2(IP_NEUR_WIDTH)-1:0];
+        addr_K_mod.y = addr_BK_i.y[$clog2(IP_NEUR_HIGHT)-1:0];
+    end
+    
+    
+    
     
     
     typedef struct {
@@ -90,7 +103,7 @@ module accel_wrapper#(
         ) data (
         .clk_i          (clk_i          ), 
         .rst_n_i        ( rst_n_i       ),
-        .en_i           ( en_A          ), 
+        .en_i           ( en_A_fsm      ), 
         .addr_A_i       ( addr_A_i      ),
         .addr_B_i       ( addr_A_fsm    ),
         .wd_A_i         ( wd_A.data     ), 
@@ -101,7 +114,6 @@ module accel_wrapper#(
         
         
     wght_matrix_mem#(
-        .WEIGHTS_FILE   ( WEIGHTS_FILE  ),
         .DATA_WIDTH     ( IP_WGHT_WIDTH ),
         .MATRIX_WIDTH   ( OP_NEUR_WIDTH ),
         .MATRIX_HIGHT   ( IP_NEUR_WIDTH )
@@ -109,14 +121,14 @@ module accel_wrapper#(
         .clk_i          ( clk_i         ), 
         .rst_n_i        ( rst_n_i       ), 
         .en_i           ( en_B          ), 
-        .addr_i         ( addr_B_fsm    ),
-        .wd_i           ( wd_B_i        ),
-        .rd_o           ( rd_B          )
+        .addr_A_i       ( addr_B_mod    ),
+        .addr_B_i       ( addr_B_fsm    ),
+        .wd_A_i         ( wd_BK_i[IP_WGHT_WIDTH-1:0]),
+        .rd_B_o         ( rd_B          )
         );
     
         
     bias_matrix_mem#(
-        .BIASES_FILE    ( BIASES_FILE   ),
         .DATA_WIDTH     ( IP_BIAS_WIDTH ),
         .MATRIX_WIDTH   ( OP_NEUR_WIDTH ),
         .MATRIX_HIGHT   ( IP_NEUR_HIGHT )
@@ -124,9 +136,10 @@ module accel_wrapper#(
         .clk_i          ( clk_i         ), 
         .rst_n_i        ( rst_n_i       ), 
         .en_i           ( en_K          ), 
-        .addr_i         ( addr_K_fsm    ),
-        .wd_i           ( wd_K_i        ),
-        .rd_o           ( rd_K          )
+        .addr_A_i       ( addr_K_mod    ),
+        .addr_B_i       ( addr_K_fsm    ),
+        .wd_A_i         ( wd_BK_i[IP_BIAS_WIDTH-1:0]),
+        .rd_B_o         ( rd_K          )
         );
     
     
@@ -145,7 +158,9 @@ module accel_wrapper#(
     .en_B_o         ( en_B          ),  
     .en_C_o         ( en_C_o        ), 
     .en_K_o         ( en_K          ), 
-    .wght_mod_i     ( wght_mod_i    ),
+    .en_A_i         ( en_A_i        ),  
+    .en_BK_i        ( en_BK_i       ),
+    .BK_sel_i       ( BK_sel_i      ),
     .state_o        ( state_o       ),
     .addr_A_o       ( addr_A_fsm    ),
     .addr_B_o       ( addr_B_fsm    ),
@@ -176,16 +191,7 @@ module accel_wrapper#(
     .rd_A_i         ( rd_A.data     ), 
     .rd_B_i         ( rd_B          ),
     .rd_K_i         ( rd_K          ),
-    .wd_C_o         ( wd_C_accel    )
+    .wd_C_o         ( wd_C_o    )
     );
     
-always_comb begin
-    en_A = '{re: en_A_fsm.re, we: (en_A_fsm.we && we_A_ext_i)};
-    if ((state_o == 2'h0)||(state_o == 2'h1)) begin
-        if (wght_mod_i) 
-            wd_C_o    = wd_C_i;
-        end else begin
-            wd_C_o    = wd_C_accel    ;
-        end
-    end
 endmodule

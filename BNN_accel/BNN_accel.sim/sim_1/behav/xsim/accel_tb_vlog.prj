@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  \
-"../../../../BNN_accel.srcs/sources_1/new/type_package.sv" \
 "../../../../BNN_accel.srcs/sources_1/new/cfg_param.sv" \
+"../../../../BNN_accel.srcs/sources_1/new/type_package.sv" \
 "../../../../BNN_accel.srcs/sources_1/new/BNN_wrapper.sv" \
 "../../../../BNN_accel.srcs/sources_1/new/accel.sv" \
 "../../../../BNN_accel.srcs/sources_1/new/accel_wrapper.sv" \

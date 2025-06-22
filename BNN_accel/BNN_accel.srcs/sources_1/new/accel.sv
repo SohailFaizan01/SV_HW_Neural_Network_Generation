@@ -22,7 +22,7 @@
 module mmul#(
     parameter           IPDATA_BNNENC = 0,
     parameter           IPWGHT_BNNENC = 0,
-    parameter  string   OP_ACTV_LAYER = "NONE",
+    parameter           OP_ACTV_LAYER = 0,
     parameter           IP_DATA_WIDTH = 8,
     parameter           IP_WGHT_WIDTH = 2,
     parameter           IP_BIAS_WIDTH = 32,
@@ -49,7 +49,6 @@ module mmul#(
     
 generate
 if ((IPDATA_BNNENC == 1) && (IPWGHT_BNNENC == 1))  begin 
-    // reg signed  [($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH):0]       accum_q ;
 
 
  
@@ -73,8 +72,6 @@ if ((IPDATA_BNNENC == 1) && (IPWGHT_BNNENC == 1))  begin
     
 end 
 else if ((IPDATA_BNNENC == 0) && (IPWGHT_BNNENC == 1)) begin
-   
-    // reg signed  [($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH):0]       accum_q ;
 
      logic   signed  [IP_DATA_WIDTH:0]       rd_A    ; 
      assign rd_A = {1'b0, rd_A_i} ;
@@ -97,8 +94,6 @@ else if ((IPDATA_BNNENC == 0) && (IPWGHT_BNNENC == 1)) begin
 
 end
 else begin
-
-    // reg signed  [($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH)-1):0]       accum_q ;
     
     always_ff @(posedge clk_i, negedge rst_n_i) begin
         if (!rst_n_i)    
@@ -119,10 +114,10 @@ always_comb
     
     
 generate
-if (OP_ACTV_LAYER == "BNN") begin  : activation_gen   
+if (OP_ACTV_LAYER == 1) begin  : activation_gen   
     logic actv    ; 
     always_comb begin
-        if (accum_biased[$left(accum_biased)])
+        if (accum_biased[ACCUM_RS_WIDTH-1])
             actv = 1'b0 ;
         else 
             actv = 1'b1 ;
@@ -136,7 +131,7 @@ if (OP_ACTV_LAYER == "BNN") begin  : activation_gen
     end
             
 end
-else if (OP_ACTV_LAYER == "ARGMAX") begin
+else if (OP_ACTV_LAYER == 2) begin
 
     reg signed [ACCUM_RS_WIDTH-1:0] maxval, maxval_nxt;
     
@@ -179,7 +174,7 @@ else if (OP_ACTV_LAYER == "ARGMAX") begin
 
 
 end
-else if (OP_ACTV_LAYER == "NONE") begin
+else begin
 
     always_comb begin
         if (clc_done_i)
