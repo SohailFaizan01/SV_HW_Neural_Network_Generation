@@ -37,13 +37,15 @@ module mmul_control_logic#(
     input               BK_sel_i [2],
     
     output [1:0] state_o,
-    output accel_rst_o, accel_done_o, accel_ready_o
+    output      accel_rst_o [2],
+    output      accel_done_o, accel_ready_o
     );
     
     
     rw_en                     en_A, en_B, en_C, en_K;
     
-    logic                     accel_rst, accel_done, accel_ready;
+    logic                     accel_rst [2] ;
+    logic                      accel_done, accel_ready;
 
     
     struct {
@@ -71,12 +73,14 @@ module mmul_control_logic#(
     
     reg [$clog2(IP_NEUR_WIDTH):0] accum_counter;
 
-    localparam IDLE        = 2'h0    ;
-    localparam LOAD        = 2'h1    ;
-    localparam CALC        = 2'h2    ;
-    localparam MATRIX_DONE = 2'h3    ;
+    // localparam IDLE        = 2'h0    ;
+    // localparam LOAD        = 2'h1    ;
+    // localparam CALC        = 2'h2    ;
+    // localparam MATRIX_DONE = 2'h3    ;
     
-    reg [1:0] state, nxt_state ;
+  
+    
+    enum logic [1:0] {IDLE, LOAD, CALC, MATRIX_DONE} state, nxt_state ;
     
     assign state_o = state;
     
@@ -169,7 +173,7 @@ always_comb begin
         if (!rst_n_i) begin
             accel_ready =  1'b0    ;
             accel_done  =  1'b0    ;
-            accel_rst   =  1'b1    ;
+            accel_rst   =  '{1'b1,1'b1}    ;
             en_A        =  '{re: 1'b0, we: 1'b0};            
             en_B        =  '{re: 1'b0, we: 1'b0};
             en_C        =  '{re: 1'b0, we: 1'b0};
@@ -183,7 +187,7 @@ always_comb begin
                 IDLE : begin
                     accel_ready =  1'b1    ;
                     accel_done  =  1'b0    ;
-                    accel_rst   =  1'b1    ;
+                    accel_rst   =  '{1'b1,1'b1}    ;
                     en_A        =  '{re: 1'b0, we: 1'b0};
                     en_C        =  '{re: 1'b0, we: 1'b0};
                     addr_A      =   '{x: 1'b0, y: 1'b0}   ;
@@ -203,7 +207,7 @@ always_comb begin
                 LOAD : begin
                     accel_ready =   1'b0    ;
                     accel_done  =   1'b0    ;
-                    accel_rst   =   1'b1    ;
+                    accel_rst   =   '{1'b1,1'b1}    ;
                     en_A        =   en_A_i  ;
                     en_C        =   '{re: 1'b0, we: 1'b0};
                     en_B        =   '{re: 1'b0, we: 1'b0};
@@ -226,9 +230,9 @@ always_comb begin
                             addr_A      = '{   x: accum_counter,    y: addr_C.y                }   ;
                             addr_B      = '{   x: addr_C.x               ,    y: accum_counter }   ;
                             if ((accum_counter==0)) 
-                                accel_rst   =  1'b1;
+                                accel_rst   =  '{1'b1,1'b0};
                             else
-                                accel_rst   =  1'b0;
+                                accel_rst   =  '{1'b0,1'b0};
                         end 
                         WAIT : begin
                             en_A        =  '{re: 1'b0, we: 1'b0};
@@ -245,10 +249,10 @@ always_comb begin
                         STORE : begin
                             en_C        =  '{re: 1'b0, we: 1'b1};
                             en_K        =  '{re: 1'b0, we: 1'b0};
-                            accel_rst   = 1'b1    ;
+                            accel_rst   =  '{1'b1,1'b0}    ;
                         end
                         default : begin
-                            accel_rst   =  1'b0            ;
+                            accel_rst   =  '{1'b0,1'b0}            ;
                             en_A        =  '{re: 1'b0, we: 1'b0};
                             en_B        =  '{re: 1'b0, we: 1'b0};
                             en_C        =  '{re: 1'b0, we: 1'b0};
@@ -261,7 +265,7 @@ always_comb begin
                 MATRIX_DONE : begin
                     accel_ready =   1'b0    ;
                     accel_done  =   1'b0    ;
-                    accel_rst   =   1'b1    ;
+                    accel_rst   =   '{1'b1,1'b1}    ;
                     en_A        =  '{re: 1'b0, we: 1'b0};            
                     en_B        =  '{re: 1'b0, we: 1'b0};
                     en_K        =  '{re: 1'b0, we: 1'b0};
@@ -273,7 +277,7 @@ always_comb begin
                 default : begin
                     accel_ready =   'h0;
                     accel_done  =   'h0;
-                    accel_rst   =   'h0;
+                    accel_rst   =   '{1'b0,1'b0};
                     en_A        =  '{re: 1'b0, we: 1'b0 }   ;            
                     en_B        =  '{re: 1'b0, we: 1'b0 }   ;
                     en_K        =  '{re: 1'b0, we: 1'b0 }   ;

@@ -13,95 +13,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16,802.200 ns"></ZoomStartTime>
-      <ZoomEndTime time="17,122.801 ns"></ZoomEndTime>
-      <Cursor1Time time="16,950.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="18.210001 us"></ZoomEndTime>
+      <Cursor1Time time="0.000000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="392"></NameColumnWidth>
-      <ValueColumnWidth column_width="170"></ValueColumnWidth>
+      <ValueColumnWidth column_width="160"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_1/data/ram" type="array">
-      <obj_property name="ElementShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="ObjectShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_1/data/en_i" type="array">
-      <obj_property name="ElementShortName">en_i</obj_property>
-      <obj_property name="ObjectShortName">en_i</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_1/control_fsm/en_A_o" type="array">
-      <obj_property name="ElementShortName">en_A_o</obj_property>
-      <obj_property name="ObjectShortName">en_A_o</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_1/control_fsm/en_A_i" type="array">
-      <obj_property name="ElementShortName">en_A_i</obj_property>
-      <obj_property name="ObjectShortName">en_A_i</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram" type="array">
-      <obj_property name="ElementShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="ObjectShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/data/ram" type="array">
-      <obj_property name="ElementShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="ObjectShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram" type="array">
-      <obj_property name="ElementShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="ObjectShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mult_out" type="array">
-      <obj_property name="ElementShortName">mult_out[0:2][0:6][0:0]</obj_property>
-      <obj_property name="ObjectShortName">mult_out[0:2][0:6][0:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/clk_i" type="logic">
-      <obj_property name="ElementShortName">clk_i</obj_property>
-      <obj_property name="ObjectShortName">clk_i</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/rst_n_i" type="logic">
-      <obj_property name="ElementShortName">rst_n_i</obj_property>
-      <obj_property name="ObjectShortName">rst_n_i</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/en_i" type="array">
-      <obj_property name="ElementShortName">en_i</obj_property>
-      <obj_property name="ObjectShortName">en_i</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/wd_A_i" type="array">
-      <obj_property name="ElementShortName">wd_A_i[1:0]</obj_property>
-      <obj_property name="ObjectShortName">wd_A_i[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/rd_B_o" type="array">
-      <obj_property name="ElementShortName">rd_B_o[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rd_B_o[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/rd_q" type="array">
-      <obj_property name="ElementShortName">rd_q[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rd_q[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/ram" type="array">
-      <obj_property name="ElementShortName">ram[0:6][0:6][1:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[0:6][0:6][1:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/DATA_WIDTH" type="array">
-      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/MATRIX_WIDTH" type="array">
-      <obj_property name="ElementShortName">MATRIX_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MATRIX_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/layer_2/weights/MATRIX_HIGHT" type="array">
-      <obj_property name="ElementShortName">MATRIX_HIGHT[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MATRIX_HIGHT[31:0]</obj_property>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/accel_tb/rd_C" type="logic">
+      <obj_property name="ElementShortName">rd_C</obj_property>
+      <obj_property name="ObjectShortName">rd_C</obj_property>
    </wvobject>
    <wvobject fp_name="/accel_tb/mult_out" type="array">
       <obj_property name="ElementShortName">mult_out[0:2][0:6][0:0]</obj_property>
@@ -112,25 +35,22 @@
       <obj_property name="ElementShortName">rd_C</obj_property>
       <obj_property name="ObjectShortName">rd_C</obj_property>
    </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/rd_C_o" type="logic">
-      <obj_property name="ElementShortName">rd_C_o</obj_property>
-      <obj_property name="ObjectShortName">rd_C_o</obj_property>
+   <wvobject fp_name="/accel_tb/addr_C" type="array">
+      <obj_property name="ElementShortName">addr_C</obj_property>
+      <obj_property name="ObjectShortName">addr_C</obj_property>
    </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/op_mem/ram" type="array">
-      <obj_property name="ElementShortName">ram[0:2][0:6]</obj_property>
-      <obj_property name="ObjectShortName">ram[0:2][0:6]</obj_property>
+   <wvobject fp_name="/accel_tb/mult_out" type="array">
+      <obj_property name="ElementShortName">mult_out[0:2][0:6][0:0]</obj_property>
+      <obj_property name="ObjectShortName">mult_out[0:2][0:6][0:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/op_mem/rd_q" type="array">
-      <obj_property name="ElementShortName">rd_q</obj_property>
-      <obj_property name="ObjectShortName">rd_q</obj_property>
+   <wvobject fp_name="/accel_tb/mmul_accel/layer_0/weights/ram" type="array">
+      <obj_property name="ElementShortName">ram[0:7][0:6][1:0]</obj_property>
+      <obj_property name="ObjectShortName">ram[0:7][0:6][1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/addr_C/x" type="array">
-      <obj_property name="ElementShortName">x[2:0]</obj_property>
-      <obj_property name="ObjectShortName">x[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/mmul_accel/addr_C/y" type="array">
-      <obj_property name="ElementShortName">y[1:0]</obj_property>
-      <obj_property name="ObjectShortName">y[1:0]</obj_property>
+   <wvobject fp_name="/accel_tb/init_array_wt_test" type="array">
+      <obj_property name="ElementShortName">init_array_wt_test[0:55][1:0]</obj_property>
+      <obj_property name="ObjectShortName">init_array_wt_test[0:55][1:0]</obj_property>
    </wvobject>
 </wave_config>

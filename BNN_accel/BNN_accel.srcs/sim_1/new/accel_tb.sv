@@ -37,12 +37,14 @@ reg clk, rst_n;
  end
  
     always # 10 clk = ~clk;
-
-
+//____________________________________________________________________________________________________________  
+//____________________________________________________________________________________________________________  
+//____________________________________________________________________________________________________________  
     
     
     
-    reg [7:0] in[0:2][0:7] =
+    
+     logic [7:0] in[0:2][0:7] =
     '{
         '{8'd244,8'd079,8'd122,8'd027,8'd165,8'd011,8'd146,8'd060},
 		'{8'd219,8'd114,8'd095,8'd245,8'd049,8'd056,8'd155,8'd124},
@@ -50,72 +52,97 @@ reg clk, rst_n;
     };
 
 
-    reg [1:0] wt_0[0:7][0:6] =
-    '{
-		'{2'h1,2'h0,2'h1,2'h0,2'h1,2'h1,2'h1},
-		'{2'h0,2'h1,2'h1,2'h0,2'h1,2'h1,2'h0},
-		'{2'h1,2'h0,2'h1,2'h0,2'h0,2'h1,2'h0},
-		'{2'h0,2'h1,2'h1,2'h0,2'h0,2'h0,2'h0},
-		'{2'h1,2'h0,2'h0,2'h1,2'h1,2'h0,2'h1},
-		'{2'h0,2'h1,2'h0,2'h1,2'h1,2'h0,2'h1},
-		'{2'h1,2'h0,2'h0,2'h1,2'h0,2'h1,2'h1},
-		'{2'h0,2'h1,2'h0,2'h1,2'h0,2'h1,2'h0}
-    };         
-    reg [1:0] wt_1[0:6][0:6] =
-    '{
-		'{2'h1,2'h0,2'h1,2'h0,2'h1,2'h1,2'h1},
-		'{2'h0,2'h1,2'h1,2'h0,2'h1,2'h1,2'h0},
-		'{2'h1,2'h0,2'h1,2'h0,2'h0,2'h1,2'h0},
-		'{2'h0,2'h1,2'h1,2'h0,2'h0,2'h0,2'h0},
-		'{2'h1,2'h0,2'h0,2'h1,2'h1,2'h0,2'h1},
-		'{2'h0,2'h1,2'h0,2'h1,2'h1,2'h0,2'h1},
-		'{2'h1,2'h0,2'h0,2'h1,2'h0,2'h1,2'h1}
-    };         
-    reg [1:0] wt_2[0:6][0:6] =
-    '{
-        '{2'h1,2'h0,2'h1,2'h0,2'h1,2'h0,2'h1},
-        '{2'h0,2'h1,2'h1,2'h0,2'h1,2'h1,2'h0},
-        '{2'h1,2'h0,2'h1,2'h0,2'h0,2'h1,2'h0},
-        '{2'h0,2'h1,2'h1,2'h0,2'h0,2'h0,2'h0},
-        '{2'h1,2'h0,2'h0,2'h1,2'h1,2'h0,2'h1},
-        '{2'h0,2'h1,2'h0,2'h1,2'h1,2'h1,2'h1},
-        '{2'h1,2'h0,2'h0,2'h1,2'h0,2'h0,2'h1}
-    };
-    logic [31:0] bias_0[0:2][0:6] =
-    '{
-        '{32'h0,32'h0,32'h0,32'h0,32'h0,32'h0,32'h0},
-        '{32'h0,32'h0,32'h0,32'h0,32'h0,32'h0,32'h0},
-        '{32'h0,32'h0,32'h0,32'h0,32'h0,32'h0,32'h0}
-    }; 
-    
-    
-    
-    
-    reg mult_out_reference_l1[0:2][0:6] =
-	'{ 
-  '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1},
-  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0},
-  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0}
-};
-//______________________________________________________________________
-  // BNN test - pass, wght_2 file data
-//______________________________________________________________________
-    reg mult_out_reference_l2[0:2][0:6] =
-	'{ 
-  '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1},
-  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0},
-  '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0}
-}; 
-
-//______________________________________________________________________
-
     reg mult_out_reference[0:2][0:6] =
     '{ 
-  '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b1},
-  '{1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1, 1'b0},
-  '{1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1, 1'b0}
-}; // Custom ARGMAX test
-     
+  '{1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1},
+  '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0},
+  '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0}
+}; // Custom ARGMAX OP test
+
+
+
+    logic   [1:0]    init_array_wt_0   [IP_NEUR_WIDTH[0]*OP_NEUR_WIDTH[0]]     ;
+    logic   [1:0]    init_array_wt_1   [IP_NEUR_WIDTH[1]*OP_NEUR_WIDTH[1]]     ;
+    logic   [1:0]    init_array_wt_2   [IP_NEUR_WIDTH[2]*OP_NEUR_WIDTH[2]]     ;
+    
+    logic   [31:0]    init_array_bias_0  [IP_NEUR_HIGHT[0]*OP_NEUR_WIDTH[0]]     ; 
+    logic   [31:0]    init_array_bias_1  [IP_NEUR_HIGHT[1]*OP_NEUR_WIDTH[1]]     ; 
+    logic   [31:0]    init_array_bias_2  [IP_NEUR_HIGHT[2]*OP_NEUR_WIDTH[2]]     ; 
+    
+
+    logic   [31:0]    init_array_bias [NUMBER_OF_LAYERS][]     ; 
+    logic   [1:0]    wt              [NUMBER_OF_LAYERS][][]    ;
+    logic   [1:0]    init_array_wt   [NUMBER_OF_LAYERS][]     ;
+    
+    
+    logic   [31:0]    bias            [NUMBER_OF_LAYERS][][]    ;
+    logic   [31:0]    init_array_bias [NUMBER_OF_LAYERS][]     ; 
+
+    
+
+
+// localparam string WEIGHTS_FILE  [0:NUMBER_OF_LAYERS-1] = '{ "wght.txt" , "wght2.txt" , "wght3.txt" }    ; //Vivado is shit
+// localparam string BIASES_FILE   [0:NUMBER_OF_LAYERS-1] = '{ "bias0.txt" , "bias0.txt" , "bias0.txt" }   ; //Vivado is shit
+    
+    
+    
+initial begin
+
+
+    for (int j=0; j<NUMBER_OF_LAYERS; j++) begin
+        wt[j]               = new[IP_NEUR_WIDTH[j]] ;  
+        bias[j]             = new[IP_NEUR_HIGHT[j]] ;          
+        init_array_wt[j]    = new[IP_NEUR_WIDTH[j]*OP_NEUR_WIDTH[j]]    ;
+        init_array_bias[j]  = new[IP_NEUR_HIGHT[j]*OP_NEUR_WIDTH[j]]    ;
+        for (int i = 0; i < IP_NEUR_WIDTH[j]; i++) 
+            wt[j][i]   = new[OP_NEUR_WIDTH[j]];  
+        for (int i = 0; i < IP_NEUR_HIGHT[j]; i++) 
+            bias[j][i] = new[OP_NEUR_WIDTH[j]];  
+    end
+    
+    
+//_______________________Vivado Workaround_______________________________________________        
+        $readmemb("wght.txt",  init_array_wt_0);
+        $readmemb("wght2.txt", init_array_wt_1);
+        $readmemb("wght3.txt", init_array_wt_2);
+        
+        $readmemh("bias0.txt", init_array_bias_0);
+        $readmemh("bias0.txt", init_array_bias_1);
+        $readmemh("bias0.txt", init_array_bias_2);
+        
+        init_array_wt[0]     = init_array_wt_0      ;
+        init_array_wt[1]     = init_array_wt_1      ;
+        init_array_wt[2]     = init_array_wt_2      ;
+        
+        init_array_bias[0]   = init_array_bias_0    ;
+        init_array_bias[1]   = init_array_bias_1    ;
+        init_array_bias[2]   = init_array_bias_2    ;
+//_______________________Vivado Workaround_______________________________________________        
+        
+        
+        
+    for (int i = 0; i < NUMBER_OF_LAYERS; i++) begin
+        // $readmemb(WEIGHTS_FILE[i], init_array_wt[i]); //Vivado is shit
+        // $readmemh(BIASES_FILE [i], init_array_bias[i]); //Vivado is shit
+        
+        for (int x = 0; x<OP_NEUR_WIDTH[i]; x++) begin
+            for (int y = 0; y<IP_NEUR_WIDTH[i]; y++)
+                wt[i][y][x] = init_array_wt[i][y+IP_NEUR_WIDTH[i]*x];
+        end
+        
+        
+        for (int x = 0; x<OP_NEUR_WIDTH[i]; x++) begin
+            for (int y = 0; y<IP_NEUR_HIGHT[i]; y++)
+                bias[i][y][x] = init_array_bias[i][y+IP_NEUR_HIGHT[i]*x];
+        end
+    end
+        
+end
+
+
+
+    
+
 
     logic [0:0] mult_out[0:2][0:6] = '{default:'h0};
 
@@ -261,7 +288,7 @@ endtask
     
     
     
-    
+    logic [$clog2(NUMBER_OF_LAYERS)-1:0] j;
     
     
     always @(posedge clk, negedge rst_n) begin
@@ -274,46 +301,22 @@ endtask
                 IDLE: begin
                     mult_out <= '{default:'h0};
                     if (accel_ready) begin
-                        write_wght_2d(
-                        .port (bswt_port_B),
-                        .lyr_sel (2'h0),
-                        .BK_sel  (2'b01),
-                        .wght_matrix (wt_0)
-                        );
-                        write_wght_2d (
-                        .port (bswt_port_B),
-                        .lyr_sel (2'h1),
-                        .BK_sel  (2'b01),
-                        .wght_matrix (wt_1)
-                        );
-                        write_wght_2d (
-                        .port (bswt_port_B),
-                        .lyr_sel (2'h2),
-                        .BK_sel  (2'b01),
-                        .wght_matrix (wt_2)
-                        );
+
+                        for (j=0;j<NUMBER_OF_LAYERS;j++) begin
+                            write_wght_2d (
+                            .port (bswt_port_B),
+                            .lyr_sel (j),
+                            .BK_sel  (2'b01),
+                            .wght_matrix (wt[j])
+                            );
         
-                        write_bias_2d (
-                        .port (bswt_port_B),
-                        .lyr_sel (2'h0),
-                        .BK_sel  (2'b10),
-                        .bias_matrix (bias_0)
-                        );
-        
-                        write_bias_2d (
-                        .port (bswt_port_B),
-                        .lyr_sel (2'h1),
-                        .BK_sel  (2'b10),
-                        .bias_matrix (bias_0)
-                        );
-        
-                        write_bias_2d (
-                        .port (bswt_port_B),
-                        .lyr_sel (2'h2),
-                        .BK_sel  (2'b10),
-                        .bias_matrix (bias_0)
-                        );
-    
+                            write_bias_2d (
+                            .port (bswt_port_B),
+                            .lyr_sel (j),
+                            .BK_sel  (2'b10),
+                            .bias_matrix (bias[j])
+                            );
+                        end
                     
                         state <= WRITE;
                     end
@@ -342,6 +345,7 @@ endtask
                     if (mult_out == mult_out_reference) begin
                             $display($time, " << Simulation Complete - Successful >>");
                             $stop;
+                            state <= IDLE;
                         end else begin
                             $display($time, " << Simulation Failed >>");
                             $stop;

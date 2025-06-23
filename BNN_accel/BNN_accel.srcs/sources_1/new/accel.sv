@@ -30,7 +30,8 @@ module mmul#(
     parameter           OP_DATA_WIDTH = 1,
     parameter           IP_DECBIAS_EN = 1
     )(
-    input  clk_i, rst_n_i, sm_rst_i,
+    input  clk_i, rst_n_i,
+    input  sm_rst_i [2],
     input  clc_done_i,
     input           [(IP_DATA_WIDTH-1):0] rd_A_i,
     input           [(IP_WGHT_WIDTH-1):0] rd_B_i,
@@ -55,7 +56,7 @@ if ((IPDATA_BNNENC == 1) && (IPWGHT_BNNENC == 1))  begin
     always_ff @(posedge clk_i, negedge rst_n_i) begin
         if (!rst_n_i)    
             accum_q <= 'h0;
-        else if (sm_rst_i)
+        else if (sm_rst_i[0])
             accum_q <= 'h0;
         else begin
             if (rd_B_i[1])//(rd_B_i >= 'h2)
@@ -79,7 +80,7 @@ else if ((IPDATA_BNNENC == 0) && (IPWGHT_BNNENC == 1)) begin
     always_ff @(posedge clk_i, negedge rst_n_i) begin
         if (!rst_n_i)    
             accum_q <= 'h0;
-        else if (sm_rst_i)
+        else if (sm_rst_i[0])
             accum_q <= 'h0;
         else begin
             if      (rd_B_i == 'h1)
@@ -98,7 +99,7 @@ else begin
     always_ff @(posedge clk_i, negedge rst_n_i) begin
         if (!rst_n_i)    
             accum_q <= 'h0;
-        else if (sm_rst_i)
+        else if (sm_rst_i[0])
             accum_q <= 'h0;
         else 
                 accum_q <= accum_q + rd_A_i*rd_B_i   ;
@@ -137,6 +138,8 @@ else if (OP_ACTV_LAYER == 2) begin
     
     always_latch begin
         if (!rst_n_i)
+            maxval_nxt <= 'h0;
+        else if (sm_rst_i[1])
             maxval_nxt <= 'h0;
         else begin
             if (clc_done_i) begin

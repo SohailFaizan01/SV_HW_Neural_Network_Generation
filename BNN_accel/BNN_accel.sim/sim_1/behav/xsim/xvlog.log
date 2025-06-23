@@ -17,5 +17,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academ
 INFO: [VRFC 10-311] analyzing module wght_matrix_mem
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module accel_tb
+WARNING: [VRFC 10-3248] data object 'init_array_bias' is already declared [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:79]
+WARNING: [VRFC 10-9364] second declaration of 'init_array_bias' is ignored [C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_tb.sv:79]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

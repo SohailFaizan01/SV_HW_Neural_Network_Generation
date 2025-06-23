@@ -59,7 +59,7 @@ module accel_wrapper#(
     );
     
     
-    logic accel_rst_fsm;
+    logic accel_rst_fsm [2];
     rw_en en_A, en_A_fsm , en_B, en_K ;
     
     ram_addr_port #(.RAM_WIDTH (IP_NEUR_WIDTH), .RAM_HIGHT (IP_NEUR_HIGHT)) addr_A_fsm();
