@@ -69,8 +69,7 @@ reg clk, rst_n;
     logic   [31:0]    init_array_bias_1  [IP_NEUR_HIGHT[1]*OP_NEUR_WIDTH[1]]     ; 
     logic   [31:0]    init_array_bias_2  [IP_NEUR_HIGHT[2]*OP_NEUR_WIDTH[2]]     ; 
     
-
-    logic   [31:0]    init_array_bias [NUMBER_OF_LAYERS][]     ; 
+    
     logic   [1:0]    wt              [NUMBER_OF_LAYERS][][]    ;
     logic   [1:0]    init_array_wt   [NUMBER_OF_LAYERS][]     ;
     
@@ -141,8 +140,9 @@ end
 
 
 
-    
-
+//____________________________________________________________________________________________________________
+//#################################################Signal Declaration#########################################
+//____________________________________________________________________________________________________________
 
     logic [0:0] mult_out[0:2][0:6] = '{default:'h0};
 
@@ -159,6 +159,14 @@ end
 ip_data_port data_port_A    ;
 ip_bswt_port bswt_port_B    ;
 op_addr_port addr_C         ;
+    
+    
+    logic          ip_img  [0:783]  ;
+    logic [15:0]   ip_lbl           ;
+    logic [15:0]   op_lbl           ;
+//____________________________________________________________________________________________________________
+//################################################# Write Bias Task #########################################
+//____________________________________________________________________________________________________________
     
 task automatic write_bias_2d(
     ref ip_bswt_port port,
@@ -184,6 +192,9 @@ task automatic write_bias_2d(
     port.en = '{re:1'b0, we:1'b0};  // disable write after done
 endtask    
     
+//____________________________________________________________________________________________________________
+//################################################# Write Weight Task ########################################
+//____________________________________________________________________________________________________________
 task automatic write_wght_2d(
     ref ip_bswt_port port,
     input logic [$clog2(NUMBER_OF_LAYERS)-1:0]    lyr_sel,
@@ -208,6 +219,9 @@ task automatic write_wght_2d(
     port.en = '{re:1'b0, we:1'b0};  // disable write after done
 endtask    
 
+//____________________________________________________________________________________________________________
+//################################################# Write Data Task ########################################
+//____________________________________________________________________________________________________________    
 
 task automatic write_data_2d(
     ref ip_data_port port,
@@ -228,6 +242,10 @@ task automatic write_data_2d(
     port.en = '{re:1'b0, we:1'b0};  // disable write after done
 endtask
  
+
+//____________________________________________________________________________________________________________
+//################################################# Read Data Task ########################################
+//____________________________________________________________________________________________________________    
     
 task automatic read_data_2d(
     ref op_addr_port port     ,
@@ -246,7 +264,113 @@ task automatic read_data_2d(
             output_reg[y][x]   = rd_C ;    
         end
     end
+endtask    
+
+task automatic read_data_argmax_2d(
+    ref op_addr_port port     ,
+    // ref logic rd              ,
+    ref logic [0:0] output_reg [0:2][0:6] 
+);
+    int X = 7;
+    int Y = 3;
+    for (int y = 0; y < Y; y++) begin
+        for (int x = 0; x < X; x++) begin
+            @(posedge clk);
+            port.x       = x;
+            port.y       = y;
+            @(posedge clk);
+            @(posedge clk);
+            output_reg[y][x]   = rd_C ;    
+        end
+    end
 endtask
+ 
+
+//____________________________________________________________________________________________________________
+//################################################# Read File Task ########################################
+//____________________________________________________________________________________________________________    
+ 
+// Made for Img files 00000-09999 and label files 10000-19999
+parameter string DATA_DIR = "../../../../BNN_accel.srcs/sim_1/img_and_label/"; // Or "C:/my_project/data/"
+task automatic read_test_vectors(
+  input int index,
+  ref   logic       img [0:783],    // Image Vector
+  ref   logic [15:0]  lbl           // Label vector
+);
+
+  string  img_filename;
+  string  lbl_filename;
+  integer img_file_handle; // Image file name number
+  integer lbl_file_handle; // Label file name number
+
+  // Path and filenames
+  $sformat(img_filename, "%simg_%05d.mem", DATA_DIR, index);
+  $sformat(lbl_filename, "%slbl_%05d.txt", DATA_DIR, index + 10000);
+
+  $display("[INFO] Reading test vector for index %0d...", index);
+  $display("[INFO]   Image file: %s", img_filename);
+  $display("[INFO]   Label file: %s", lbl_filename);
+
+
+  // Read contiguous string from the image file ---
+  img_file_handle = $fopen(img_filename, "r");
+  if (img_file_handle) begin
+    string image_line; // Entire line of 784 characters
+    
+    // Read single line from the file
+    if ($fgets(image_line, img_file_handle) > 0) begin
+      for (int i = 0; i < 784; i++) begin
+        img[i] = image_line[i] - "0";
+      end
+    end else begin
+        $error("Could not read line from %s", img_filename);
+    end
+    $fclose(img_file_handle);
+  end else begin
+    $fatal(1, "ERROR: Could not open image file '%s'.", img_filename);
+  end
+
+
+  // Read label file (hex) 
+  lbl_file_handle = $fopen(lbl_filename, "r");
+  if (lbl_file_handle) begin
+    
+    if ($fscanf(lbl_file_handle, "%h", lbl) != 1) begin
+      $error("Could not read a hex value from %s", lbl_filename);
+    end
+    $fclose(lbl_file_handle);
+  end else begin
+    $fatal(1, "ERROR: Could not open label file '%s'.", lbl_filename);
+  end
+
+endtask
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 
         
@@ -300,6 +424,15 @@ endtask
             case (state)
                 IDLE: begin
                     mult_out <= '{default:'h0};
+                    
+                    read_test_vectors(
+                        .index  (0),
+                        .img    (ip_img),
+                        .lbl    (ip_lbl)
+                    );
+                    
+                    
+                    
                     if (accel_ready) begin
 
                         for (j=0;j<NUMBER_OF_LAYERS;j++) begin
