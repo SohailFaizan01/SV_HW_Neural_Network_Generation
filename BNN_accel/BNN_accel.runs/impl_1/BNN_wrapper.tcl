@@ -104,8 +104,8 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 3
-  set_param runs.launchOptions { -jobs 12  }
+  set_param chipscope.maxJobs 6
+  set_param runs.launchOptions { -jobs 24  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg484-1
   set_property board_part xilinx.com:zc702:part0:1.4 [current_project]

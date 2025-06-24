@@ -40,7 +40,7 @@ module mmul_control_logic#(
     output      accel_rst_o [2],
     output      accel_done_o, accel_ready_o
     );
-    
+    localparam IP_NEUR_HIGHT_CLOG = (IP_NEUR_HIGHT == 1) ? 2 : IP_NEUR_HIGHT;
     
     rw_en                     en_A, en_B, en_C, en_K;
     
@@ -50,7 +50,7 @@ module mmul_control_logic#(
     
     struct {
         logic [($clog2(IP_NEUR_WIDTH)):0] x;
-        logic [($clog2(IP_NEUR_HIGHT))-1:0] y;
+        logic [($clog2(IP_NEUR_HIGHT_CLOG))-1:0] y;
     } addr_A;
     
     struct {
@@ -58,25 +58,20 @@ module mmul_control_logic#(
         logic [($clog2(IP_NEUR_WIDTH)):0] y;
     } addr_B;
     
-    struct {
-        logic [($clog2(OP_NEUR_WIDTH))-1:0] x;
-        logic [($clog2(IP_NEUR_HIGHT)):0] y;
-    } addr_K;
+    // struct {
+        // logic [($clog2(OP_NEUR_WIDTH))-1:0] x;
+        // logic [($clog2(IP_NEUR_HIGHT_CLOG)):0] y;
+    // } addr_K;
     
     struct {
         logic [($clog2(OP_NEUR_WIDTH))-1:0] x;
-        logic [($clog2(IP_NEUR_HIGHT)):0] y;
+        logic [($clog2(IP_NEUR_HIGHT_CLOG)):0] y;
     } addr_C;
     
 
     
     
     reg [$clog2(IP_NEUR_WIDTH):0] accum_counter;
-
-    // localparam IDLE        = 2'h0    ;
-    // localparam LOAD        = 2'h1    ;
-    // localparam CALC        = 2'h2    ;
-    // localparam MATRIX_DONE = 2'h3    ;
     
   
     
@@ -98,10 +93,10 @@ module mmul_control_logic#(
     assign addr_B_o.y   =   addr_B.y[$clog2(IP_NEUR_WIDTH)-1:0] ;
     
     assign addr_C_o.x   =   addr_C.x    ;
-    assign addr_C_o.y   =   addr_C.y[($clog2(IP_NEUR_HIGHT))-1:0]    ;    
+    assign addr_C_o.y   =   addr_C.y[($clog2(IP_NEUR_HIGHT_CLOG))-1:0]    ;    
     
     assign addr_K_o.x   =   addr_C.x    ;
-    assign addr_K_o.y   =   addr_C.y[($clog2(IP_NEUR_HIGHT))-1:0]    ;
+    assign addr_K_o.y   =   addr_C.y[($clog2(IP_NEUR_HIGHT_CLOG))-1:0]    ;
     
     assign accel_rst_o      = accel_rst     ;
     assign accel_done_o     = accel_done    ;

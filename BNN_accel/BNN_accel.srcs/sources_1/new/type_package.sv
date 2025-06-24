@@ -7,9 +7,15 @@ import cfg_param::*;
     logic re;
   } rw_en;
 
+
+localparam IP_NEUR_HIGHT_PKGCLOG = (IP_NEUR_HIGHT[NUMBER_OF_LAYERS-1] == 1) ? 2 : 
+                                    IP_NEUR_HIGHT[NUMBER_OF_LAYERS-1];
+
+
+
 typedef struct {
 logic [$clog2(IP_NEUR_WIDTH[0])-1:0] x;
-logic [$clog2(IP_NEUR_HIGHT[0])-1:0] y;
+logic [$clog2(IP_NEUR_HIGHT_PKGCLOG)-1:0] y;
 logic [(IP_DATA_WIDTH[0]-1):0]       data;
 rw_en                                en;
 } ip_data_port;
@@ -24,9 +30,12 @@ logic   [$clog2(NUMBER_OF_LAYERS)-1:0]  lyr_sel ;
 logic                                   BK_sel [2] ;
 } ip_bswt_port;
 
+
+
+
 typedef struct {
-logic   [$clog2(OP_NEUR_WIDTH[2])-1:0]    x   ;
-logic   [$clog2(IP_NEUR_HIGHT[2])-1:0]    y   ;
+logic   [$clog2(OP_NEUR_WIDTH[NUMBER_OF_LAYERS-1])-1:0]    x   ;
+logic   [$clog2(IP_NEUR_HIGHT_PKGCLOG)-1:0]    y   ;
 
 } op_addr_port;
 

@@ -43,7 +43,7 @@ module mmul#(
     
     localparam ACCUM_NO_BIAS    =   (IPWGHT_BNNENC == 1) ? ($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH+1) : ($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH));
     localparam ACCUM_RS_WIDTH   =   (IP_DECBIAS_EN == 0 )       ? ACCUM_NO_BIAS         :
-                                    (ACCUM_NO_BIAS + 1 > 32)    ? (ACCUM_NO_BIAS + 1)   : 33;
+                                    (ACCUM_NO_BIAS + 1 > IP_BIAS_WIDTH)    ? (ACCUM_NO_BIAS + 1)   : (IP_BIAS_WIDTH+1);
     
     reg signed  [ACCUM_NO_BIAS-1:0]       accum_q ;
     logic signed [ACCUM_RS_WIDTH-1:0]     accum_biased;

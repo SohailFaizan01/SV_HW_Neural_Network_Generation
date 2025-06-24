@@ -40,24 +40,6 @@ reg clk, rst_n;
 //____________________________________________________________________________________________________________  
 //____________________________________________________________________________________________________________  
 //____________________________________________________________________________________________________________  
-    
-    
-    
-    
-     logic [7:0] in[0:2][0:7] =
-    '{
-        '{8'd244,8'd079,8'd122,8'd027,8'd165,8'd011,8'd146,8'd060},
-		'{8'd219,8'd114,8'd095,8'd245,8'd049,8'd056,8'd155,8'd124},
-		'{8'd142,8'd192,8'd187,8'd060,8'd125,8'd082,8'd079,8'd244}
-    };
-
-
-    reg mult_out_reference[0:2][0:6] =
-    '{ 
-  '{1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1},
-  '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0},
-  '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0}
-}; // Custom ARGMAX OP test
 
 
 
@@ -65,25 +47,30 @@ reg clk, rst_n;
     logic   [1:0]    init_array_wt_1   [IP_NEUR_WIDTH[1]*OP_NEUR_WIDTH[1]]     ;
     logic   [1:0]    init_array_wt_2   [IP_NEUR_WIDTH[2]*OP_NEUR_WIDTH[2]]     ;
     
-    logic   [31:0]    init_array_bias_0  [IP_NEUR_HIGHT[0]*OP_NEUR_WIDTH[0]]     ; 
-    logic   [31:0]    init_array_bias_1  [IP_NEUR_HIGHT[1]*OP_NEUR_WIDTH[1]]     ; 
-    logic   [31:0]    init_array_bias_2  [IP_NEUR_HIGHT[2]*OP_NEUR_WIDTH[2]]     ; 
+    logic   [MAX_BSWT_WIDTH-1:0]    init_array_bias_0  [IP_NEUR_HIGHT[0]*OP_NEUR_WIDTH[0]]     ; 
+    logic   [MAX_BSWT_WIDTH-1:0]    init_array_bias_1  [IP_NEUR_HIGHT[1]*OP_NEUR_WIDTH[1]]     ; 
+    logic   [MAX_BSWT_WIDTH-1:0]    init_array_bias_2  [IP_NEUR_HIGHT[2]*OP_NEUR_WIDTH[2]]     ; 
     
     
     logic   [1:0]    wt              [NUMBER_OF_LAYERS][][]    ;
     logic   [1:0]    init_array_wt   [NUMBER_OF_LAYERS][]     ;
     
     
-    logic   [31:0]    bias            [NUMBER_OF_LAYERS][][]    ;
-    logic   [31:0]    init_array_bias [NUMBER_OF_LAYERS][]     ; 
-
-    
-
-
-// localparam string WEIGHTS_FILE  [0:NUMBER_OF_LAYERS-1] = '{ "wght.txt" , "wght2.txt" , "wght3.txt" }    ; //Vivado is shit
-// localparam string BIASES_FILE   [0:NUMBER_OF_LAYERS-1] = '{ "bias0.txt" , "bias0.txt" , "bias0.txt" }   ; //Vivado is shit
-    
-    
+    logic   [MAX_BSWT_WIDTH-1:0]    bias            [NUMBER_OF_LAYERS][][]    ;
+    logic   [MAX_BSWT_WIDTH-1:0]    init_array_bias [NUMBER_OF_LAYERS][]     ; 
+ 
+ 
+ 
+    parameter string BSWT_DIR = "../../../../BNN_accel.srcs/sim_1/pruned_weights/"; // Or "C:/my_project/data/"
+        
+        string lyr_0_wght;
+        string lyr_1_wght;
+        string lyr_2_wght;
+        
+        string lyr_0_bias;
+        string lyr_1_bias;
+        string lyr_2_bias;
+        
     
 initial begin
 
@@ -101,13 +88,23 @@ initial begin
     
     
 //_______________________Vivado Workaround_______________________________________________        
-        $readmemb("wght1.txt", init_array_wt_0);
-        $readmemb("wght2.txt", init_array_wt_1);
-        $readmemb("wght3.txt", init_array_wt_2);
+
+        $sformat(lyr_0_wght, "%sfc1_folded_weight_2bit.txt", BSWT_DIR);
+        $sformat(lyr_1_wght, "%sfc2_folded_weight_2bit.txt", BSWT_DIR);
+        $sformat(lyr_2_wght, "%sfc3_weight_2bit.txt", BSWT_DIR);
+
+        $sformat(lyr_0_bias, "%sfc1_folded_bias_fixed.mem", BSWT_DIR);
+        $sformat(lyr_1_bias, "%sfc2_folded_bias_fixed.mem", BSWT_DIR);
+        $sformat(lyr_2_bias, "%sfc3_bias_fixed.mem", BSWT_DIR);
         
-        $readmemh("bias0.txt", init_array_bias_0);
-        $readmemh("bias0.txt", init_array_bias_1);
-        $readmemh("bias0.txt", init_array_bias_2);
+        
+        $readmemb(lyr_0_wght, init_array_wt_0);
+        $readmemb(lyr_1_wght, init_array_wt_1);
+        $readmemb(lyr_2_wght, init_array_wt_2);
+                  
+        $readmemh(lyr_0_bias, init_array_bias_0);
+        $readmemh(lyr_1_bias, init_array_bias_1);
+        $readmemh(lyr_2_bias, init_array_bias_2);
         
         init_array_wt[0]     = init_array_wt_0      ;
         init_array_wt[1]     = init_array_wt_1      ;
@@ -121,8 +118,6 @@ initial begin
         
         
     for (int i = 0; i < NUMBER_OF_LAYERS; i++) begin
-        // $readmemb(WEIGHTS_FILE[i], init_array_wt[i]); //Vivado is shit
-        // $readmemh(BIASES_FILE [i], init_array_bias[i]); //Vivado is shit
         
         for (int x = 0; x<OP_NEUR_WIDTH[i]; x++) begin
             for (int y = 0; y<IP_NEUR_WIDTH[i]; y++)
@@ -144,8 +139,8 @@ end
 //#################################################Signal Declaration#########################################
 //____________________________________________________________________________________________________________
 
-    logic [0:0] mult_out[0:2][0:6] = '{default:'h0};
-
+    // logic [0:0] mult_out[0:2][0:6] = '{default:'h0};
+    logic [0:0] inf_out[1][10] = '{default:'h0};
 
     logic             data_ready, write_done, read_done ;
 
@@ -161,7 +156,7 @@ ip_bswt_port bswt_port_B    ;
 op_addr_port addr_C         ;
     
     
-    logic          ip_img  [0:783]  ;
+    logic          ip_img  [1][0:783]  ;
     logic [15:0]   ip_lbl           ;
     logic [15:0]   op_lbl           ;
 //____________________________________________________________________________________________________________
@@ -172,7 +167,7 @@ task automatic write_bias_2d(
     ref ip_bswt_port port,
     input logic [$clog2(NUMBER_OF_LAYERS)-1:0]    lyr_sel,
     input logic [1:0]                             BK_sel ,
-    input logic [31:0]                            bias_matrix [][]
+    input logic [(MAX_BSWT_WIDTH-1):0]                            bias_matrix [][]
 );
     int X = bias_matrix[0].size();
     int Y = bias_matrix.size();
@@ -225,7 +220,7 @@ endtask
 
 task automatic write_data_2d(
     ref ip_data_port port,
-    input logic [7:0] data_matrix [][]
+    input logic [(IP_DATA_WIDTH[0]-1):0] data_matrix [][]
 );
     int X = data_matrix[0].size();
     int Y = data_matrix.size();
@@ -300,8 +295,8 @@ task automatic read_test_vectors(
 
   string  img_filename;
   string  lbl_filename;
-  integer img_file_handle; // Image file name number
-  integer lbl_file_handle; // Label file name number
+  int  img_file_handle = 0; // Image file name number
+  int  lbl_file_handle = 0; // Label file name number
 
   // Path and filenames
   $sformat(img_filename, "%simg_%05d.mem", DATA_DIR, index);
@@ -347,30 +342,7 @@ endtask
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
  
 
         
@@ -410,79 +382,90 @@ endtask
     
     
     
-    
+    int     infer = 0;
+    int     prediction_rght = 0;
+    int     prediction_wrng = 0;
+    real    prediction_accuracy = 0.0;
     
     logic [$clog2(NUMBER_OF_LAYERS)-1:0] j;
     
     
     always @(posedge clk, negedge rst_n) begin
         if(!rst_n) begin
-            mult_out <= '{default:'h0};
+            // mult_out <= '{default:'h0};
+            inf_out <= '{default:'h0};
             state   <= IDLE;
         end
         else begin
             case (state)
                 IDLE: begin
-                    mult_out <= '{default:'h0};
+                    // mult_out <= '{default:'h0};
+                    inf_out <= '{default:'h0};
                     
                     read_test_vectors(
-                        .index  (0),
-                        .img    (ip_img),
+                        .index  (infer),
+                        .img    (ip_img[0]),
                         .lbl    (ip_lbl)
                     );
-                    
-                    
-                    
-                    if (accel_ready) begin
-
-                        for (j=0;j<NUMBER_OF_LAYERS;j++) begin
-                            write_wght_2d (
-                            .port (bswt_port_B),
-                            .lyr_sel (j),
-                            .BK_sel  (2'b01),
-                            .wght_matrix (wt[j])
-                            );
-        
-                            write_bias_2d (
-                            .port (bswt_port_B),
-                            .lyr_sel (j),
-                            .BK_sel  (2'b10),
-                            .bias_matrix (bias[j])
-                            );
+                    if (infer == 0) begin // Write weights and biases in first cycle
+                        if (accel_ready) begin
+    
+                            for (j=0;j<NUMBER_OF_LAYERS;j++) begin
+                                write_wght_2d (
+                                .port (bswt_port_B),
+                                .lyr_sel (j),
+                                .BK_sel  (2'b01),
+                                .wght_matrix (wt[j])
+                                );
+            
+                                write_bias_2d (
+                                .port (bswt_port_B),
+                                .lyr_sel (j),
+                                .BK_sel  (2'b10),
+                                .bias_matrix (bias[j])
+                                );
+                            end
                         end
-                    
-                        state <= WRITE;
                     end
+                    if (accel_ready) 
+                        state <= WRITE;
                 end
                 WRITE: begin
                     write_data_2d(
                         .port(data_port_A),
-                        .data_matrix (in)
+                        .data_matrix (ip_img)
                         );
                     state <= WAIT_CALC;
                 end
                 WAIT_CALC: begin
-                    
                     if (accel_done) 
                         state <= READ;
                 end
                 READ: begin
-                    read_data_bnn_2d( .port(addr_C),.output_reg (mult_out) );
-                    argmax_decode_bnn_row( .output_reg (mult_out), .argmax (op_lbl) );
+                    read_data_bnn_2d( .port(addr_C),.output_reg (inf_out) );
+                    argmax_decode_bnn_row( .output_reg (inf_out), .argmax (op_lbl) );
                     state <= VERIFY;
                 end
                 VERIFY: begin
                 
-                
-                
-                    if (mult_out == mult_out_reference) begin
-                            $display($time, " << Simulation Complete - Successful >>");
-                            $stop;
-                            state <= IDLE;
-                        end else begin
-                            $display($time, " << Simulation Failed >>");
-                            $stop;
-                        end  
+                    if (op_lbl == ip_lbl) begin
+                        prediction_rght++;
+                        $display($time, " << Inference Image %05d - Correct>>",infer);
+                    end else begin
+                        prediction_wrng++;
+                        $display($time, " << Inference Image %05d - Incorrect>>",infer);
+                    end  
+                        
+                    if (infer == 20) begin   
+                        $display($time, " << Inference Done>>");
+                        prediction_accuracy = ((prediction_rght*100)/ (prediction_rght + prediction_wrng));
+                        $display($time, " << Prediction Accuracy - %0.3f %%>>",prediction_accuracy);
+                        $stop;
+                    end else begin
+                        infer++;
+                        state <= IDLE;
+                    end
+                        
                 end
             endcase         
         end

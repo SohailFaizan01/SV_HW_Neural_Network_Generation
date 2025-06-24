@@ -32,7 +32,7 @@ module accel_wrapper#(
     parameter           OP_NEUR_WIDTH = 8,
     parameter           IP_NEUR_HIGHT = 8,
     parameter           IP_DECBIAS_EN = 1,
-    parameter           OP_DATA_WIDTH = ( ((OP_ACTV_LAYER == "BNN") || OP_ACTV_LAYER == "ARGMAX")   ? 1: 
+    parameter           OP_DATA_WIDTH = ( ((OP_ACTV_LAYER == 1) || OP_ACTV_LAYER == 2)   ? 1: 
                                         ( ((IPDATA_BNNENC == 0) && (IPWGHT_BNNENC == 0))            ? ($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH)) : ($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH+1))  )
     
     )(
@@ -58,6 +58,7 @@ module accel_wrapper#(
     output                          accel_done_o, accel_ready_o
     );
     
+    localparam IP_NEUR_HIGHT_CLOG = (IP_NEUR_HIGHT == 1) ? 2 : IP_NEUR_HIGHT;
     
     logic accel_rst_fsm [2];
     rw_en en_A, en_A_fsm , en_B, en_K ;
@@ -74,7 +75,7 @@ module accel_wrapper#(
         addr_B_mod.x = addr_BK_i.x[$clog2(OP_NEUR_WIDTH)-1:0];
         addr_K_mod.x = addr_BK_i.x[$clog2(OP_NEUR_WIDTH)-1:0];
         addr_B_mod.y = addr_BK_i.y[$clog2(IP_NEUR_WIDTH)-1:0];
-        addr_K_mod.y = addr_BK_i.y[$clog2(IP_NEUR_HIGHT)-1:0];
+        addr_K_mod.y = addr_BK_i.y[$clog2(IP_NEUR_HIGHT_CLOG)-1:0];
     end
     
     

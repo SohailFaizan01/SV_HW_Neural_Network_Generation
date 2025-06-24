@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Wed Jun 18 20:31:04 2025
+| Date         : Tue Jun 24 00:45:38 2025
 | Host         : Sohail_PC running 64-bit major release  (build 9200)
 | Command      : report_drc -file BNN_wrapper_drc_opted.rpt -pb BNN_wrapper_drc_opted.pb -rpx BNN_wrapper_drc_opted.rpx
 | Design       : BNN_wrapper

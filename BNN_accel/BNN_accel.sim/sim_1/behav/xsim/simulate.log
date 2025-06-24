@@ -1,0 +1,90 @@
+Time resolution is 1 ps
+                   0 << Starting the Simulation >>
+[INFO] Reading test vector for index 0...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00000.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10000.txt
+            21464930 << Inference Image 00000 - Correct>>
+[INFO] Reading test vector for index 1...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00001.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10001.txt
+            32213370 << Inference Image 00001 - Correct>>
+[INFO] Reading test vector for index 2...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00002.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10002.txt
+            42961810 << Inference Image 00002 - Correct>>
+[INFO] Reading test vector for index 3...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00003.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10003.txt
+            53710250 << Inference Image 00003 - Correct>>
+[INFO] Reading test vector for index 4...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00004.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10004.txt
+            64458690 << Inference Image 00004 - Correct>>
+[INFO] Reading test vector for index 5...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00005.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10005.txt
+            75207130 << Inference Image 00005 - Correct>>
+[INFO] Reading test vector for index 6...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00006.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10006.txt
+            85955570 << Inference Image 00006 - Correct>>
+[INFO] Reading test vector for index 7...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00007.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10007.txt
+            96704010 << Inference Image 00007 - Incorrect>>
+[INFO] Reading test vector for index 8...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00008.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10008.txt
+           107452450 << Inference Image 00008 - Incorrect>>
+[INFO] Reading test vector for index 9...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00009.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10009.txt
+           118200890 << Inference Image 00009 - Correct>>
+[INFO] Reading test vector for index 10...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00010.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10010.txt
+           128949330 << Inference Image 00010 - Correct>>
+[INFO] Reading test vector for index 11...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00011.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10011.txt
+           139697770 << Inference Image 00011 - Correct>>
+[INFO] Reading test vector for index 12...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00012.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10012.txt
+           150446210 << Inference Image 00012 - Incorrect>>
+[INFO] Reading test vector for index 13...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00013.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10013.txt
+           161194650 << Inference Image 00013 - Correct>>
+[INFO] Reading test vector for index 14...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00014.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10014.txt
+           171943090 << Inference Image 00014 - Correct>>
+[INFO] Reading test vector for index 15...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00015.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10015.txt
+           182691530 << Inference Image 00015 - Incorrect>>
+[INFO] Reading test vector for index 16...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00016.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10016.txt
+           193439970 << Inference Image 00016 - Correct>>
+[INFO] Reading test vector for index 17...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00017.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10017.txt
+           204188410 << Inference Image 00017 - Incorrect>>
+[INFO] Reading test vector for index 18...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00018.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10018.txt
+           214936850 << Inference Image 00018 - Correct>>
+[INFO] Reading test vector for index 19...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00019.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10019.txt
+           225685290 << Inference Image 00019 - Incorrect>>
+[INFO] Reading test vector for index 20...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00020.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10020.txt
+           236433730 << Inference Image 00020 - Correct>>
+           236433730 << Inference Done>>
+           236433730 << Prediction Accuracy - 71.000 %>>
+$stop called at time : 236433730 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_inference_tb.sv" Line 463
+INFO: xsimkernel Simulation Memory Usage: 67028 KB (Peak: 67028 KB), Simulation CPU Usage: 28858 ms
