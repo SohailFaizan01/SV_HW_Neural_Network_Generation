@@ -18,7 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+import type_pkg::*;
 interface ram_addr_port #(
     parameter RAM_WIDTH = 8,
     parameter RAM_HIGHT = 8
@@ -31,14 +31,15 @@ interface ram_addr_port #(
 endinterface
 
 
-// interface ram_port #(
-    // parameter RAM_WIDTH = 8,
-    // parameter RAM_HIGHT = 8
-    // );
-    // localparam RAM_WIDTH_CLOG = (RAM_WIDTH == 1) ? 2 : RAM_WIDTH;
-    // localparam RAM_HIGHT_CLOG = (RAM_HIGHT == 1) ? 2 : RAM_HIGHT;
+interface ram_port #(
+    parameter   DATA_WIDTH  = 8,
+    parameter   RAM_WIDTH   = 8,
+    parameter   RAM_HIGHT   = 8
+    );
     
-    // ram_addr_port #(.RAM_WIDTH(RAM_WIDTH), .RAM_HIGHT(RAM_HIGHT)) addr;
+    ram_addr_port #(.RAM_WIDTH(RAM_WIDTH), .RAM_HIGHT(RAM_HIGHT)) addr;
     
+    logic [DATA_WIDTH-1:0]  data    ;
+    rw_en                   en      ;
     
-// endinterface
+endinterface

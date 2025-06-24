@@ -26,7 +26,7 @@ module wght_matrix_mem#(
     parameter           MATRIX_HIGHT    = 8
     )(
     input  clk_i, rst_n_i, 
-    input  rw_en  en_i,
+    input  rw_en  en_A_i, en_B_i,
     ram_addr_port addr_A_i ,
     ram_addr_port addr_B_i ,
 
@@ -56,10 +56,10 @@ always_ff @ (posedge clk_i, negedge rst_n_i) begin
         rd_q <= 'h0;
     end 
     else begin
-        if (en_i.we)
+        if (en_A_i.we)
             ram[addr_A_i.y][addr_A_i.x] <= wd_A_i;  
         
-        if (en_i.re)
+        if (en_B_i.re)
             rd_q <= ram[addr_B_i.y][addr_B_i.x];
         else            
             rd_q <= 'h2;

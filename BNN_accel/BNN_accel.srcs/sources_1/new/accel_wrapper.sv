@@ -102,12 +102,15 @@ module accel_wrapper#(
         .MATRIX_WIDTH   ( IP_NEUR_WIDTH ),
         .MATRIX_HIGHT   ( IP_NEUR_HIGHT )
         ) data (
-        .clk_i          (clk_i          ), 
+        .clk_i          ( clk_i         ), 
         .rst_n_i        ( rst_n_i       ),
-        .en_i           ( en_A_fsm      ), 
+        
+        .en_A_i         ( en_A_fsm      ), 
         .addr_A_i       ( addr_A_i      ),
-        .addr_B_i       ( addr_A_fsm    ),
         .wd_A_i         ( wd_A.data     ), 
+        
+        .en_B_i         ( en_A_fsm      ), 
+        .addr_B_i       ( addr_A_fsm    ),
         .rd_B_o         ( rd_A.data     ),
         .rd_B_valid_o   ( rd_A.valid    )
         );
@@ -121,10 +124,13 @@ module accel_wrapper#(
         )weights(
         .clk_i          ( clk_i         ), 
         .rst_n_i        ( rst_n_i       ), 
-        .en_i           ( en_B          ), 
+        
+        .en_A_i         ( en_B          ), 
         .addr_A_i       ( addr_B_mod    ),
-        .addr_B_i       ( addr_B_fsm    ),
         .wd_A_i         ( wd_BK_i[IP_WGHT_WIDTH-1:0]),
+        
+        .en_B_i         ( en_B          ), 
+        .addr_B_i       ( addr_B_fsm    ),
         .rd_B_o         ( rd_B          )
         );
     
@@ -136,10 +142,13 @@ module accel_wrapper#(
         )biases(
         .clk_i          ( clk_i         ), 
         .rst_n_i        ( rst_n_i       ), 
-        .en_i           ( en_K          ), 
+        
+        .en_A_i         ( en_K          ), 
         .addr_A_i       ( addr_K_mod    ),
-        .addr_B_i       ( addr_K_fsm    ),
         .wd_A_i         ( wd_BK_i[IP_BIAS_WIDTH-1:0]),
+        
+        .en_B_i         ( en_K          ), 
+        .addr_B_i       ( addr_K_fsm    ),
         .rd_B_o         ( rd_K          )
         );
     
@@ -192,7 +201,7 @@ module accel_wrapper#(
     .rd_A_i         ( rd_A.data     ), 
     .rd_B_i         ( rd_B          ),
     .rd_K_i         ( rd_K          ),
-    .wd_C_o         ( wd_C_o    )
+    .wd_C_o         ( wd_C_o        )
     );
     
 endmodule

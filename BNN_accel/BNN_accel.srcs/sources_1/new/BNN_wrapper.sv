@@ -165,6 +165,7 @@ module BNN_wrapper
     // .rd_B_o         ( rd_C_o                                        ),
     // .rd_B_valid_o   ()
     // );
+
 //____________________________________________________________________________________________________________________________
     
      genvar neur;
@@ -180,7 +181,17 @@ for (neur = 0; neur < NUMBER_OF_LAYERS; neur++) begin : neuron_signals
     logic accel_done , accel_ready;
     
 end    
-endgenerate
+endgenerate    
+
+
+// generate
+// for (neur = 0; neur < NUMBER_OF_LAYERS; neur++) begin : neuron_signals
+
+    // logic [1:0] state ;
+    // logic accel_done , accel_ready;
+    
+// end    
+// endgenerate
 
     ram_addr_port #(.RAM_WIDTH (IP_NEUR_WIDTH[0]), .RAM_HIGHT (IP_NEUR_HIGHT[0])) addr_A();
     ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[2]), .RAM_HIGHT (IP_NEUR_HIGHT[2])) addr_C();
@@ -194,17 +205,18 @@ endgenerate
     ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[1]), .RAM_HIGHT (IP_NEUR_HIGHT[1])) addr_C_fsm_1();
     ram_addr_port #(.RAM_WIDTH (OP_NEUR_WIDTH[2]), .RAM_HIGHT (IP_NEUR_HIGHT[2])) addr_C_fsm_2();
 
-    assign  addr_A.x    = module_data_port_i.x;
-    assign  addr_A.y    = module_data_port_i.y;
-    
-    
-    // assign addr_B_1.x = 'h0;
-    // assign addr_B_1.y = 'h0;
-    // assign addr_B_2.x = 'h0;
-    // assign addr_B_2.y = 'h0;
-    
-    assign addr_C.x = addr_C_i.x;
-    assign addr_C.y = addr_C_i.y;
+
+    // ram_port #(.RAM_WIDTH ( .DATA_WIDTH(), IP_NEUR_WIDTH[0]), .RAM_HIGHT (IP_NEUR_HIGHT[0])) port_A();
+    // ram_port #(.RAM_WIDTH ( .DATA_WIDTH(), OP_NEUR_WIDTH[2]), .RAM_HIGHT (IP_NEUR_HIGHT[2])) port_C();
+
+
+    // ram_port #(.RAM_WIDTH ( .DATA_WIDTH(), OP_NEUR_WIDTH[0]), .RAM_HIGHT (IP_NEUR_WIDTH[0])) port_BK_0();
+    // ram_port #(.RAM_WIDTH ( .DATA_WIDTH(), OP_NEUR_WIDTH[1]), .RAM_HIGHT (IP_NEUR_WIDTH[1])) port_BK_1();
+    // ram_port #(.RAM_WIDTH ( .DATA_WIDTH(), OP_NEUR_WIDTH[2]), .RAM_HIGHT (IP_NEUR_WIDTH[2])) port_BK_2();
+
+    // ram_port #(.RAM_WIDTH ( .DATA_WIDTH(), OP_NEUR_WIDTH[0]), .RAM_HIGHT (IP_NEUR_HIGHT[0])) port_C_fsm_0();
+    // ram_port #(.RAM_WIDTH ( .DATA_WIDTH(), OP_NEUR_WIDTH[1]), .RAM_HIGHT (IP_NEUR_HIGHT[1])) port_C_fsm_1();
+    // ram_port #(.RAM_WIDTH ( .DATA_WIDTH(), OP_NEUR_WIDTH[2]), .RAM_HIGHT (IP_NEUR_HIGHT[2])) port_C_fsm_2();
 
     logic wght_mod_i = 1'b0;
 
@@ -335,10 +347,13 @@ data_matrix_mem #(
     ) op_mem (
     .clk_i          ( clk_i     ), 
     .rst_n_i        ( rst_n_i   ),
-    .en_i           ( neuron_signals[NUMBER_OF_LAYERS-1].en_C         ),
+    
+    .en_A_i         ( neuron_signals[NUMBER_OF_LAYERS-1].en_C         ),
     .addr_A_i       ( addr_C_fsm_2   ),   
-    .addr_B_i       ( addr_C   ),
     .wd_A_i         ( neuron_signals[NUMBER_OF_LAYERS-1].wd_C_out     ), 
+    
+    .en_B_i         ( neuron_signals[NUMBER_OF_LAYERS-1].en_C         ),
+    .addr_B_i       ( addr_C   ),
     .rd_B_o         ( rd_C_o                                        ),
     .rd_B_valid_o   ()
     );
@@ -348,6 +363,12 @@ data_matrix_mem #(
     
    
     always_comb begin
+
+        addr_A.x    = module_data_port_i.x;
+        addr_A.y    = module_data_port_i.y;
+
+        addr_C.x    = addr_C_i.x;
+        addr_C.y    = addr_C_i.y;
         
         addr_BK_0.x = module_bswt_port_i.x [$clog2(OP_NEUR_WIDTH[0])-1:0];
         addr_BK_1.x = module_bswt_port_i.x [$clog2(OP_NEUR_WIDTH[1])-1:0];
@@ -358,8 +379,12 @@ data_matrix_mem #(
         addr_BK_2.y = module_bswt_port_i.y [$clog2(IP_NEUR_WIDTH[2])-1:0];
     end
     
-    genvar i;
-generate 
+    
+    
+genvar i;
+    
+    
+generate //VIVADO is hsit
 for (i = 0; i< NUMBER_OF_LAYERS; i++) begin
     always_comb begin
         if ( module_bswt_port_i.lyr_sel == i )
@@ -369,6 +394,9 @@ for (i = 0; i< NUMBER_OF_LAYERS; i++) begin
     end
 end   
 endgenerate        
- endmodule   
-    
-    
+
+
+
+
+
+endmodule   

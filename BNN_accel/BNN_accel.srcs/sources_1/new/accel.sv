@@ -41,8 +41,8 @@ module mmul#(
     
     // accumulator width $clog2(IP_NEUR_WIDTH) + IP_DATA_WIDTH + 2
     
-    localparam ACCUM_NO_BIAS    =   (IPWGHT_BNNENC == 1) ? ($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH+1) : ($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH));
-    localparam ACCUM_RS_WIDTH   =   (IP_DECBIAS_EN == 0 )       ? ACCUM_NO_BIAS         :
+    localparam ACCUM_NO_BIAS    =   (IPWGHT_BNNENC == 1)    ? ($clog2(IP_NEUR_WIDTH)+IP_DATA_WIDTH+1) : ($clog2(IP_NEUR_WIDTH)+(IP_DATA_WIDTH+IP_WGHT_WIDTH));
+    localparam ACCUM_RS_WIDTH   =   (IP_DECBIAS_EN == 0 )   ? ACCUM_NO_BIAS         :
                                     (ACCUM_NO_BIAS + 1 > IP_BIAS_WIDTH)    ? (ACCUM_NO_BIAS + 1)   : (IP_BIAS_WIDTH+1);
     
     reg signed  [ACCUM_NO_BIAS-1:0]       accum_q ;
@@ -144,11 +144,11 @@ else if (OP_ACTV_LAYER == 2) begin
         else begin
             if (clc_done_i) begin
                 if (maxval <= accum_biased) 
-                    maxval_nxt = accum_biased;
+                    maxval_nxt <= accum_biased;
                 else 
-                    maxval_nxt = maxval_nxt;
+                    maxval_nxt <= maxval_nxt;
             end else
-                maxval_nxt = maxval_nxt;
+                maxval_nxt <= maxval_nxt;
         end
     end
                 
