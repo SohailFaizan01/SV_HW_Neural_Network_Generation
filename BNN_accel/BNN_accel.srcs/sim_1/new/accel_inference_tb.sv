@@ -157,8 +157,8 @@ op_addr_port addr_C         ;
     
     
     logic [IP_DATA_WIDTH[0]-1:0]   ip_img  [1][0:783]  ;
-    logic [15:0]   ip_lbl           ;
-    logic [15:0]   op_lbl           ;
+    logic [15:0]   ip_lbl = 0          ;
+    logic [15:0]   op_lbl = 0           ;
 //____________________________________________________________________________________________________________
 //################################################# Write Bias Task #########################################
 //____________________________________________________________________________________________________________
@@ -455,7 +455,10 @@ endtask
         end
     end
     
-    
+    time load_weights_start_time;
+    time load_data_start_time;
+    time nn_done_time;
+    time read_done_time;
     
     
     
@@ -489,6 +492,10 @@ endtask
                         // .img    (ip_img[0]),
                         // .lbl    (ip_lbl)
                     // );
+                    if (infer == 0)
+                    load_weights_start_time = $time;
+                    
+                    
                     if (infer == 0) begin // Write weights and biases in first cycle
                         if (accel_ready) begin
     
@@ -513,6 +520,10 @@ endtask
                         state <= WRITE;
                 end
                 WRITE: begin
+                    if (infer == 0)
+                        load_data_start_time = $time;
+                        
+                        
                     write_data_2d(
                         .port(data_port_A),
                         .data_matrix (ip_img)
@@ -524,8 +535,19 @@ endtask
                         state <= READ;
                 end
                 READ: begin
+                
+                    if (infer == 0)
+                        nn_done_time = $time;
                     read_data_bnn_2d( .port(addr_C),.output_reg (inf_out) );
+                    
+                    
+                    
+                    if (infer == 0)
+                        read_done_time = $time;
+                    
                     argmax_decode_bnn_row( .output_reg (inf_out), .argmax (op_lbl) );
+                    
+                    
                     state <= VERIFY;
                 end
                 VERIFY: begin
@@ -538,10 +560,22 @@ endtask
                         $display($time, " << Inference Image %05d - Incorrect>>",infer);
                     end  
                         
-                    if (infer == 1000) begin   
+                    if (infer == 3) begin   
                         $display($time, " << Inference Done>>");
                         prediction_accuracy = ((prediction_rght*100)/ (prediction_rght + prediction_wrng));
                         $display($time, " << Prediction Accuracy - %0.3f %%>>",prediction_accuracy);
+                        
+                        $display("  Load Weights Start Time:   %0t" , load_weights_start_time);
+                        $display("  Load Data Start Time: %0t"      , load_data_start_time);
+                        $display("  NN Done Time:  %0t"             , nn_done_time);
+                        $display("  Read Done Time:  %0t"           , read_done_time);
+                        
+                        $display("  First Cycle Latency:  %0.2f"      , real'((read_done_time-load_weights_start_time)/20));
+                        $display("  Total Inference Latency:  %0.2f"  , real'((read_done_time-load_data_start_time)/20));
+                        $display("  Accelerator Operation Latency:  %0.2f"  , real'((nn_done_time-load_data_start_time)/20));
+                        
+                        
+                        
                         $stop;
                     end else begin
                         infer++;

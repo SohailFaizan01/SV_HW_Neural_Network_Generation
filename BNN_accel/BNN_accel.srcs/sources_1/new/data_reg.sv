@@ -30,8 +30,7 @@ module data_matrix_mem#(
 
     ram_addr_port addr_A_i ,
     ram_addr_port addr_B_i ,
-    // ram_port A_i ,
-    // ram_port B_i ,
+
 
     input  [(DATA_WIDTH-1):0]  wd_A_i,
     output [(DATA_WIDTH-1):0]  rd_B_o,
