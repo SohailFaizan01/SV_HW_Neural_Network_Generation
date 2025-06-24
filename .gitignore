@@ -1,0 +1,23 @@
+# ===================================================================
+#  Default .gitignore for Xilinx Vivado Projects
+# ===================================================================
+
+# General logs and reports
+*.log
+*.jou
+*.pb
+*.html
+*.xml
+*.rpt
+
+# Vivado-specific process files
+vivado*.log
+vivado*.jou
+vivado*.pid
+webtalk*.log
+webtalk*.jou
+
+# Simulation files - VERY IMPORTANT
+###################################
+*.wdb
+*.wcfg
