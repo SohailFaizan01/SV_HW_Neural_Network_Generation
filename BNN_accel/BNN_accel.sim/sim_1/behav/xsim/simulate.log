@@ -84,7 +84,2071 @@ Time resolution is 1 ps
 [INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00020.mem
 [INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10020.txt
            236433730 << Inference Image 00020 - Correct>>
-           236433730 << Inference Done>>
-           236433730 << Prediction Accuracy - 71.000 %>>
-$stop called at time : 236433730 ns : File "C:/Users/Sohai/Desktop/Academics/TU_Delft/Q4/EE4690_Hardware_Architecture_for_AI/EE4690_Hardware_Architecture_for_AI/BNN_accel/BNN_accel.srcs/sim_1/new/accel_inference_tb.sv" Line 463
-INFO: xsimkernel Simulation Memory Usage: 67028 KB (Peak: 67028 KB), Simulation CPU Usage: 28858 ms
+[INFO] Reading test vector for index 21...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00021.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10021.txt
+           247182170 << Inference Image 00021 - Correct>>
+[INFO] Reading test vector for index 22...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00022.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10022.txt
+           257930610 << Inference Image 00022 - Correct>>
+[INFO] Reading test vector for index 23...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00023.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10023.txt
+           268679050 << Inference Image 00023 - Correct>>
+[INFO] Reading test vector for index 24...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00024.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10024.txt
+           279427490 << Inference Image 00024 - Correct>>
+[INFO] Reading test vector for index 25...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00025.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10025.txt
+           290175930 << Inference Image 00025 - Incorrect>>
+[INFO] Reading test vector for index 26...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00026.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10026.txt
+           300924370 << Inference Image 00026 - Correct>>
+[INFO] Reading test vector for index 27...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00027.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10027.txt
+           311672810 << Inference Image 00027 - Correct>>
+[INFO] Reading test vector for index 28...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00028.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10028.txt
+           322421250 << Inference Image 00028 - Incorrect>>
+[INFO] Reading test vector for index 29...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00029.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10029.txt
+           333169690 << Inference Image 00029 - Incorrect>>
+[INFO] Reading test vector for index 30...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00030.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10030.txt
+           343918130 << Inference Image 00030 - Incorrect>>
+[INFO] Reading test vector for index 31...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00031.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10031.txt
+           354666570 << Inference Image 00031 - Correct>>
+[INFO] Reading test vector for index 32...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00032.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10032.txt
+           365415010 << Inference Image 00032 - Correct>>
+[INFO] Reading test vector for index 33...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00033.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10033.txt
+           376163450 << Inference Image 00033 - Incorrect>>
+[INFO] Reading test vector for index 34...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00034.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10034.txt
+           386911890 << Inference Image 00034 - Correct>>
+[INFO] Reading test vector for index 35...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00035.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10035.txt
+           397660330 << Inference Image 00035 - Correct>>
+[INFO] Reading test vector for index 36...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00036.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10036.txt
+           408408770 << Inference Image 00036 - Correct>>
+[INFO] Reading test vector for index 37...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00037.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10037.txt
+           419157210 << Inference Image 00037 - Incorrect>>
+[INFO] Reading test vector for index 38...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00038.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10038.txt
+           429905650 << Inference Image 00038 - Correct>>
+[INFO] Reading test vector for index 39...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00039.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10039.txt
+           440654090 << Inference Image 00039 - Incorrect>>
+[INFO] Reading test vector for index 40...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00040.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10040.txt
+           451402530 << Inference Image 00040 - Incorrect>>
+[INFO] Reading test vector for index 41...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00041.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10041.txt
+           462150970 << Inference Image 00041 - Correct>>
+[INFO] Reading test vector for index 42...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00042.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10042.txt
+           472899410 << Inference Image 00042 - Correct>>
+[INFO] Reading test vector for index 43...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00043.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10043.txt
+           483647850 << Inference Image 00043 - Correct>>
+[INFO] Reading test vector for index 44...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00044.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10044.txt
+           494396290 << Inference Image 00044 - Incorrect>>
+[INFO] Reading test vector for index 45...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00045.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10045.txt
+           505144730 << Inference Image 00045 - Incorrect>>
+[INFO] Reading test vector for index 46...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00046.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10046.txt
+           515893170 << Inference Image 00046 - Incorrect>>
+[INFO] Reading test vector for index 47...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00047.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10047.txt
+           526641610 << Inference Image 00047 - Correct>>
+[INFO] Reading test vector for index 48...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00048.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10048.txt
+           537390050 << Inference Image 00048 - Correct>>
+[INFO] Reading test vector for index 49...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00049.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10049.txt
+           548138490 << Inference Image 00049 - Correct>>
+[INFO] Reading test vector for index 50...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00050.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10050.txt
+           558886930 << Inference Image 00050 - Correct>>
+[INFO] Reading test vector for index 51...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00051.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10051.txt
+           569635370 << Inference Image 00051 - Incorrect>>
+[INFO] Reading test vector for index 52...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00052.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10052.txt
+           580383810 << Inference Image 00052 - Incorrect>>
+[INFO] Reading test vector for index 53...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00053.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10053.txt
+           591132250 << Inference Image 00053 - Correct>>
+[INFO] Reading test vector for index 54...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00054.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10054.txt
+           601880690 << Inference Image 00054 - Incorrect>>
+[INFO] Reading test vector for index 55...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00055.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10055.txt
+           612629130 << Inference Image 00055 - Correct>>
+[INFO] Reading test vector for index 56...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00056.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10056.txt
+           623377570 << Inference Image 00056 - Correct>>
+[INFO] Reading test vector for index 57...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00057.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10057.txt
+           634126010 << Inference Image 00057 - Correct>>
+[INFO] Reading test vector for index 58...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00058.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10058.txt
+           644874450 << Inference Image 00058 - Correct>>
+[INFO] Reading test vector for index 59...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00059.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10059.txt
+           655622890 << Inference Image 00059 - Incorrect>>
+[INFO] Reading test vector for index 60...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00060.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10060.txt
+           666371330 << Inference Image 00060 - Incorrect>>
+[INFO] Reading test vector for index 61...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00061.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10061.txt
+           677119770 << Inference Image 00061 - Correct>>
+[INFO] Reading test vector for index 62...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00062.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10062.txt
+           687868210 << Inference Image 00062 - Correct>>
+[INFO] Reading test vector for index 63...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00063.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10063.txt
+           698616650 << Inference Image 00063 - Incorrect>>
+[INFO] Reading test vector for index 64...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00064.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10064.txt
+           709365090 << Inference Image 00064 - Correct>>
+[INFO] Reading test vector for index 65...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00065.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10065.txt
+           720113530 << Inference Image 00065 - Correct>>
+[INFO] Reading test vector for index 66...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00066.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10066.txt
+           730861970 << Inference Image 00066 - Correct>>
+[INFO] Reading test vector for index 67...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00067.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10067.txt
+           741610410 << Inference Image 00067 - Correct>>
+[INFO] Reading test vector for index 68...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00068.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10068.txt
+           752358850 << Inference Image 00068 - Correct>>
+[INFO] Reading test vector for index 69...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00069.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10069.txt
+           763107290 << Inference Image 00069 - Correct>>
+[INFO] Reading test vector for index 70...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00070.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10070.txt
+           773855730 << Inference Image 00070 - Correct>>
+[INFO] Reading test vector for index 71...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00071.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10071.txt
+           784604170 << Inference Image 00071 - Correct>>
+[INFO] Reading test vector for index 72...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00072.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10072.txt
+           795352610 << Inference Image 00072 - Correct>>
+[INFO] Reading test vector for index 73...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00073.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10073.txt
+           806101050 << Inference Image 00073 - Correct>>
+[INFO] Reading test vector for index 74...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00074.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10074.txt
+           816849490 << Inference Image 00074 - Correct>>
+[INFO] Reading test vector for index 75...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00075.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10075.txt
+           827597930 << Inference Image 00075 - Correct>>
+[INFO] Reading test vector for index 76...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00076.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10076.txt
+           838346370 << Inference Image 00076 - Correct>>
+[INFO] Reading test vector for index 77...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00077.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10077.txt
+           849094810 << Inference Image 00077 - Correct>>
+[INFO] Reading test vector for index 78...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00078.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10078.txt
+           859843250 << Inference Image 00078 - Correct>>
+[INFO] Reading test vector for index 79...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00079.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10079.txt
+           870591690 << Inference Image 00079 - Correct>>
+[INFO] Reading test vector for index 80...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00080.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10080.txt
+           881340130 << Inference Image 00080 - Incorrect>>
+[INFO] Reading test vector for index 81...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00081.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10081.txt
+           892088570 << Inference Image 00081 - Correct>>
+[INFO] Reading test vector for index 82...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00082.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10082.txt
+           902837010 << Inference Image 00082 - Correct>>
+[INFO] Reading test vector for index 83...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00083.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10083.txt
+           913585450 << Inference Image 00083 - Correct>>
+[INFO] Reading test vector for index 84...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00084.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10084.txt
+           924333890 << Inference Image 00084 - Incorrect>>
+[INFO] Reading test vector for index 85...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00085.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10085.txt
+           935082330 << Inference Image 00085 - Correct>>
+[INFO] Reading test vector for index 86...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00086.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10086.txt
+           945830770 << Inference Image 00086 - Correct>>
+[INFO] Reading test vector for index 87...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00087.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10087.txt
+           956579210 << Inference Image 00087 - Incorrect>>
+[INFO] Reading test vector for index 88...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00088.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10088.txt
+           967327650 << Inference Image 00088 - Correct>>
+[INFO] Reading test vector for index 89...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00089.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10089.txt
+           978076090 << Inference Image 00089 - Correct>>
+[INFO] Reading test vector for index 90...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00090.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10090.txt
+           988824530 << Inference Image 00090 - Correct>>
+[INFO] Reading test vector for index 91...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00091.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10091.txt
+           999572970 << Inference Image 00091 - Correct>>
+[INFO] Reading test vector for index 92...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00092.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10092.txt
+          1010321410 << Inference Image 00092 - Correct>>
+[INFO] Reading test vector for index 93...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00093.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10093.txt
+          1021069850 << Inference Image 00093 - Correct>>
+[INFO] Reading test vector for index 94...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00094.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10094.txt
+          1031818290 << Inference Image 00094 - Incorrect>>
+[INFO] Reading test vector for index 95...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00095.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10095.txt
+          1042566730 << Inference Image 00095 - Incorrect>>
+[INFO] Reading test vector for index 96...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00096.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10096.txt
+          1053315170 << Inference Image 00096 - Correct>>
+[INFO] Reading test vector for index 97...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00097.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10097.txt
+          1064063610 << Inference Image 00097 - Correct>>
+[INFO] Reading test vector for index 98...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00098.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10098.txt
+          1074812050 << Inference Image 00098 - Correct>>
+[INFO] Reading test vector for index 99...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00099.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10099.txt
+          1085560490 << Inference Image 00099 - Incorrect>>
+[INFO] Reading test vector for index 100...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00100.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10100.txt
+          1096308930 << Inference Image 00100 - Correct>>
+[INFO] Reading test vector for index 101...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00101.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10101.txt
+          1107057370 << Inference Image 00101 - Incorrect>>
+[INFO] Reading test vector for index 102...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00102.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10102.txt
+          1117805810 << Inference Image 00102 - Correct>>
+[INFO] Reading test vector for index 103...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00103.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10103.txt
+          1128554250 << Inference Image 00103 - Correct>>
+[INFO] Reading test vector for index 104...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00104.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10104.txt
+          1139302690 << Inference Image 00104 - Incorrect>>
+[INFO] Reading test vector for index 105...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00105.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10105.txt
+          1150051130 << Inference Image 00105 - Correct>>
+[INFO] Reading test vector for index 106...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00106.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10106.txt
+          1160799570 << Inference Image 00106 - Correct>>
+[INFO] Reading test vector for index 107...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00107.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10107.txt
+          1171548010 << Inference Image 00107 - Correct>>
+[INFO] Reading test vector for index 108...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00108.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10108.txt
+          1182296450 << Inference Image 00108 - Correct>>
+[INFO] Reading test vector for index 109...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00109.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10109.txt
+          1193044890 << Inference Image 00109 - Incorrect>>
+[INFO] Reading test vector for index 110...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00110.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10110.txt
+          1203793330 << Inference Image 00110 - Incorrect>>
+[INFO] Reading test vector for index 111...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00111.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10111.txt
+          1214541770 << Inference Image 00111 - Correct>>
+[INFO] Reading test vector for index 112...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00112.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10112.txt
+          1225290210 << Inference Image 00112 - Correct>>
+[INFO] Reading test vector for index 113...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00113.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10113.txt
+          1236038650 << Inference Image 00113 - Correct>>
+[INFO] Reading test vector for index 114...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00114.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10114.txt
+          1246787090 << Inference Image 00114 - Correct>>
+[INFO] Reading test vector for index 115...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00115.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10115.txt
+          1257535530 << Inference Image 00115 - Correct>>
+[INFO] Reading test vector for index 116...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00116.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10116.txt
+          1268283970 << Inference Image 00116 - Incorrect>>
+[INFO] Reading test vector for index 117...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00117.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10117.txt
+          1279032410 << Inference Image 00117 - Incorrect>>
+[INFO] Reading test vector for index 118...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00118.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10118.txt
+          1289780850 << Inference Image 00118 - Correct>>
+[INFO] Reading test vector for index 119...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00119.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10119.txt
+          1300529290 << Inference Image 00119 - Correct>>
+[INFO] Reading test vector for index 120...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00120.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10120.txt
+          1311277730 << Inference Image 00120 - Correct>>
+[INFO] Reading test vector for index 121...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00121.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10121.txt
+          1322026170 << Inference Image 00121 - Correct>>
+[INFO] Reading test vector for index 122...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00122.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10122.txt
+          1332774610 << Inference Image 00122 - Incorrect>>
+[INFO] Reading test vector for index 123...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00123.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10123.txt
+          1343523050 << Inference Image 00123 - Correct>>
+[INFO] Reading test vector for index 124...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00124.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10124.txt
+          1354271490 << Inference Image 00124 - Correct>>
+[INFO] Reading test vector for index 125...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00125.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10125.txt
+          1365019930 << Inference Image 00125 - Correct>>
+[INFO] Reading test vector for index 126...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00126.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10126.txt
+          1375768370 << Inference Image 00126 - Correct>>
+[INFO] Reading test vector for index 127...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00127.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10127.txt
+          1386516810 << Inference Image 00127 - Correct>>
+[INFO] Reading test vector for index 128...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00128.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10128.txt
+          1397265250 << Inference Image 00128 - Incorrect>>
+[INFO] Reading test vector for index 129...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00129.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10129.txt
+          1408013690 << Inference Image 00129 - Correct>>
+[INFO] Reading test vector for index 130...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00130.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10130.txt
+          1418762130 << Inference Image 00130 - Correct>>
+[INFO] Reading test vector for index 131...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00131.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10131.txt
+          1429510570 << Inference Image 00131 - Incorrect>>
+[INFO] Reading test vector for index 132...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00132.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10132.txt
+          1440259010 << Inference Image 00132 - Correct>>
+[INFO] Reading test vector for index 133...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00133.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10133.txt
+          1451007450 << Inference Image 00133 - Incorrect>>
+[INFO] Reading test vector for index 134...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00134.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10134.txt
+          1461755890 << Inference Image 00134 - Correct>>
+[INFO] Reading test vector for index 135...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00135.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10135.txt
+          1472504330 << Inference Image 00135 - Incorrect>>
+[INFO] Reading test vector for index 136...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00136.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10136.txt
+          1483252770 << Inference Image 00136 - Correct>>
+[INFO] Reading test vector for index 137...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00137.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10137.txt
+          1494001210 << Inference Image 00137 - Correct>>
+[INFO] Reading test vector for index 138...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00138.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10138.txt
+          1504749650 << Inference Image 00138 - Correct>>
+[INFO] Reading test vector for index 139...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00139.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10139.txt
+          1515498090 << Inference Image 00139 - Correct>>
+[INFO] Reading test vector for index 140...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00140.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10140.txt
+          1526246530 << Inference Image 00140 - Correct>>
+[INFO] Reading test vector for index 141...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00141.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10141.txt
+          1536994970 << Inference Image 00141 - Correct>>
+[INFO] Reading test vector for index 142...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00142.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10142.txt
+          1547743410 << Inference Image 00142 - Incorrect>>
+[INFO] Reading test vector for index 143...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00143.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10143.txt
+          1558491850 << Inference Image 00143 - Correct>>
+[INFO] Reading test vector for index 144...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00144.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10144.txt
+          1569240290 << Inference Image 00144 - Correct>>
+[INFO] Reading test vector for index 145...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00145.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10145.txt
+          1579988730 << Inference Image 00145 - Correct>>
+[INFO] Reading test vector for index 146...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00146.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10146.txt
+          1590737170 << Inference Image 00146 - Correct>>
+[INFO] Reading test vector for index 147...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00147.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10147.txt
+          1601485610 << Inference Image 00147 - Correct>>
+[INFO] Reading test vector for index 148...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00148.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10148.txt
+          1612234050 << Inference Image 00148 - Correct>>
+[INFO] Reading test vector for index 149...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00149.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10149.txt
+          1622982490 << Inference Image 00149 - Incorrect>>
+[INFO] Reading test vector for index 150...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00150.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10150.txt
+          1633730930 << Inference Image 00150 - Correct>>
+[INFO] Reading test vector for index 151...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00151.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10151.txt
+          1644479370 << Inference Image 00151 - Correct>>
+[INFO] Reading test vector for index 152...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00152.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10152.txt
+          1655227810 << Inference Image 00152 - Correct>>
+[INFO] Reading test vector for index 153...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00153.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10153.txt
+          1665976250 << Inference Image 00153 - Incorrect>>
+[INFO] Reading test vector for index 154...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00154.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10154.txt
+          1676724690 << Inference Image 00154 - Incorrect>>
+[INFO] Reading test vector for index 155...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00155.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10155.txt
+          1687473130 << Inference Image 00155 - Incorrect>>
+[INFO] Reading test vector for index 156...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00156.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10156.txt
+          1698221570 << Inference Image 00156 - Correct>>
+[INFO] Reading test vector for index 157...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00157.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10157.txt
+          1708970010 << Inference Image 00157 - Incorrect>>
+[INFO] Reading test vector for index 158...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00158.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10158.txt
+          1719718450 << Inference Image 00158 - Correct>>
+[INFO] Reading test vector for index 159...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00159.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10159.txt
+          1730466890 << Inference Image 00159 - Correct>>
+[INFO] Reading test vector for index 160...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00160.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10160.txt
+          1741215330 << Inference Image 00160 - Correct>>
+[INFO] Reading test vector for index 161...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00161.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10161.txt
+          1751963770 << Inference Image 00161 - Incorrect>>
+[INFO] Reading test vector for index 162...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00162.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10162.txt
+          1762712210 << Inference Image 00162 - Correct>>
+[INFO] Reading test vector for index 163...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00163.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10163.txt
+          1773460650 << Inference Image 00163 - Incorrect>>
+[INFO] Reading test vector for index 164...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00164.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10164.txt
+          1784209090 << Inference Image 00164 - Correct>>
+[INFO] Reading test vector for index 165...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00165.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10165.txt
+          1794957530 << Inference Image 00165 - Incorrect>>
+[INFO] Reading test vector for index 166...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00166.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10166.txt
+          1805705970 << Inference Image 00166 - Incorrect>>
+[INFO] Reading test vector for index 167...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00167.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10167.txt
+          1816454410 << Inference Image 00167 - Correct>>
+[INFO] Reading test vector for index 168...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00168.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10168.txt
+          1827202850 << Inference Image 00168 - Correct>>
+[INFO] Reading test vector for index 169...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00169.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10169.txt
+          1837951290 << Inference Image 00169 - Correct>>
+[INFO] Reading test vector for index 170...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00170.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10170.txt
+          1848699730 << Inference Image 00170 - Correct>>
+[INFO] Reading test vector for index 171...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00171.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10171.txt
+          1859448170 << Inference Image 00171 - Correct>>
+[INFO] Reading test vector for index 172...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00172.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10172.txt
+          1870196610 << Inference Image 00172 - Correct>>
+[INFO] Reading test vector for index 173...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00173.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10173.txt
+          1880945050 << Inference Image 00173 - Incorrect>>
+[INFO] Reading test vector for index 174...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00174.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10174.txt
+          1891693490 << Inference Image 00174 - Correct>>
+[INFO] Reading test vector for index 175...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00175.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10175.txt
+          1902441930 << Inference Image 00175 - Incorrect>>
+[INFO] Reading test vector for index 176...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00176.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10176.txt
+          1913190370 << Inference Image 00176 - Correct>>
+[INFO] Reading test vector for index 177...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00177.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10177.txt
+          1923938810 << Inference Image 00177 - Correct>>
+[INFO] Reading test vector for index 178...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00178.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10178.txt
+          1934687250 << Inference Image 00178 - Correct>>
+[INFO] Reading test vector for index 179...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00179.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10179.txt
+          1945435690 << Inference Image 00179 - Incorrect>>
+[INFO] Reading test vector for index 180...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00180.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10180.txt
+          1956184130 << Inference Image 00180 - Correct>>
+[INFO] Reading test vector for index 181...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00181.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10181.txt
+          1966932570 << Inference Image 00181 - Correct>>
+[INFO] Reading test vector for index 182...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00182.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10182.txt
+          1977681010 << Inference Image 00182 - Correct>>
+[INFO] Reading test vector for index 183...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00183.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10183.txt
+          1988429450 << Inference Image 00183 - Correct>>
+[INFO] Reading test vector for index 184...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00184.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10184.txt
+          1999177890 << Inference Image 00184 - Correct>>
+[INFO] Reading test vector for index 185...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00185.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10185.txt
+          2009926330 << Inference Image 00185 - Incorrect>>
+[INFO] Reading test vector for index 186...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00186.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10186.txt
+          2020674770 << Inference Image 00186 - Correct>>
+[INFO] Reading test vector for index 187...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00187.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10187.txt
+          2031423210 << Inference Image 00187 - Correct>>
+[INFO] Reading test vector for index 188...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00188.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10188.txt
+          2042171650 << Inference Image 00188 - Correct>>
+[INFO] Reading test vector for index 189...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00189.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10189.txt
+          2052920090 << Inference Image 00189 - Correct>>
+[INFO] Reading test vector for index 190...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00190.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10190.txt
+          2063668530 << Inference Image 00190 - Incorrect>>
+[INFO] Reading test vector for index 191...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00191.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10191.txt
+          2074416970 << Inference Image 00191 - Correct>>
+[INFO] Reading test vector for index 192...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00192.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10192.txt
+          2085165410 << Inference Image 00192 - Correct>>
+[INFO] Reading test vector for index 193...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00193.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10193.txt
+          2095913850 << Inference Image 00193 - Correct>>
+[INFO] Reading test vector for index 194...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00194.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10194.txt
+          2106662290 << Inference Image 00194 - Correct>>
+[INFO] Reading test vector for index 195...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00195.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10195.txt
+          2117410730 << Inference Image 00195 - Incorrect>>
+[INFO] Reading test vector for index 196...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00196.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10196.txt
+          2128159170 << Inference Image 00196 - Correct>>
+[INFO] Reading test vector for index 197...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00197.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10197.txt
+          2138907610 << Inference Image 00197 - Correct>>
+[INFO] Reading test vector for index 198...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00198.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10198.txt
+          2149656050 << Inference Image 00198 - Correct>>
+[INFO] Reading test vector for index 199...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00199.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10199.txt
+          2160404490 << Inference Image 00199 - Correct>>
+[INFO] Reading test vector for index 200...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00200.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10200.txt
+          2171152930 << Inference Image 00200 - Incorrect>>
+[INFO] Reading test vector for index 201...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00201.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10201.txt
+          2181901370 << Inference Image 00201 - Correct>>
+[INFO] Reading test vector for index 202...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00202.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10202.txt
+          2192649810 << Inference Image 00202 - Incorrect>>
+[INFO] Reading test vector for index 203...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00203.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10203.txt
+          2203398250 << Inference Image 00203 - Incorrect>>
+[INFO] Reading test vector for index 204...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00204.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10204.txt
+          2214146690 << Inference Image 00204 - Incorrect>>
+[INFO] Reading test vector for index 205...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00205.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10205.txt
+          2224895130 << Inference Image 00205 - Incorrect>>
+[INFO] Reading test vector for index 206...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00206.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10206.txt
+          2235643570 << Inference Image 00206 - Correct>>
+[INFO] Reading test vector for index 207...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00207.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10207.txt
+          2246392010 << Inference Image 00207 - Correct>>
+[INFO] Reading test vector for index 208...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00208.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10208.txt
+          2257140450 << Inference Image 00208 - Incorrect>>
+[INFO] Reading test vector for index 209...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00209.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10209.txt
+          2267888890 << Inference Image 00209 - Correct>>
+[INFO] Reading test vector for index 210...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00210.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10210.txt
+          2278637330 << Inference Image 00210 - Correct>>
+[INFO] Reading test vector for index 211...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00211.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10211.txt
+          2289385770 << Inference Image 00211 - Correct>>
+[INFO] Reading test vector for index 212...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00212.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10212.txt
+          2300134210 << Inference Image 00212 - Incorrect>>
+[INFO] Reading test vector for index 213...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00213.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10213.txt
+          2310882650 << Inference Image 00213 - Incorrect>>
+[INFO] Reading test vector for index 214...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00214.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10214.txt
+          2321631090 << Inference Image 00214 - Incorrect>>
+[INFO] Reading test vector for index 215...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00215.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10215.txt
+          2332379530 << Inference Image 00215 - Incorrect>>
+[INFO] Reading test vector for index 216...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00216.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10216.txt
+          2343127970 << Inference Image 00216 - Incorrect>>
+[INFO] Reading test vector for index 217...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00217.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10217.txt
+          2353876410 << Inference Image 00217 - Correct>>
+[INFO] Reading test vector for index 218...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00218.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10218.txt
+          2364624850 << Inference Image 00218 - Incorrect>>
+[INFO] Reading test vector for index 219...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00219.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10219.txt
+          2375373290 << Inference Image 00219 - Correct>>
+[INFO] Reading test vector for index 220...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00220.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10220.txt
+          2386121730 << Inference Image 00220 - Correct>>
+[INFO] Reading test vector for index 221...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00221.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10221.txt
+          2396870170 << Inference Image 00221 - Correct>>
+[INFO] Reading test vector for index 222...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00222.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10222.txt
+          2407618610 << Inference Image 00222 - Incorrect>>
+[INFO] Reading test vector for index 223...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00223.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10223.txt
+          2418367050 << Inference Image 00223 - Correct>>
+[INFO] Reading test vector for index 224...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00224.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10224.txt
+          2429115490 << Inference Image 00224 - Correct>>
+[INFO] Reading test vector for index 225...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00225.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10225.txt
+          2439863930 << Inference Image 00225 - Incorrect>>
+[INFO] Reading test vector for index 226...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00226.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10226.txt
+          2450612370 << Inference Image 00226 - Incorrect>>
+[INFO] Reading test vector for index 227...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00227.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10227.txt
+          2461360810 << Inference Image 00227 - Incorrect>>
+[INFO] Reading test vector for index 228...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00228.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10228.txt
+          2472109250 << Inference Image 00228 - Incorrect>>
+[INFO] Reading test vector for index 229...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00229.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10229.txt
+          2482857690 << Inference Image 00229 - Correct>>
+[INFO] Reading test vector for index 230...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00230.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10230.txt
+          2493606130 << Inference Image 00230 - Correct>>
+[INFO] Reading test vector for index 231...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00231.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10231.txt
+          2504354570 << Inference Image 00231 - Correct>>
+[INFO] Reading test vector for index 232...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00232.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10232.txt
+          2515103010 << Inference Image 00232 - Incorrect>>
+[INFO] Reading test vector for index 233...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00233.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10233.txt
+          2525851450 << Inference Image 00233 - Correct>>
+[INFO] Reading test vector for index 234...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00234.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10234.txt
+          2536599890 << Inference Image 00234 - Correct>>
+[INFO] Reading test vector for index 235...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00235.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10235.txt
+          2547348330 << Inference Image 00235 - Correct>>
+[INFO] Reading test vector for index 236...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00236.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10236.txt
+          2558096770 << Inference Image 00236 - Correct>>
+[INFO] Reading test vector for index 237...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00237.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10237.txt
+          2568845210 << Inference Image 00237 - Correct>>
+[INFO] Reading test vector for index 238...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00238.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10238.txt
+          2579593650 << Inference Image 00238 - Correct>>
+[INFO] Reading test vector for index 239...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00239.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10239.txt
+          2590342090 << Inference Image 00239 - Correct>>
+[INFO] Reading test vector for index 240...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00240.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10240.txt
+          2601090530 << Inference Image 00240 - Incorrect>>
+[INFO] Reading test vector for index 241...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00241.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10241.txt
+          2611838970 << Inference Image 00241 - Incorrect>>
+[INFO] Reading test vector for index 242...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00242.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10242.txt
+          2622587410 << Inference Image 00242 - Correct>>
+[INFO] Reading test vector for index 243...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00243.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10243.txt
+          2633335850 << Inference Image 00243 - Correct>>
+[INFO] Reading test vector for index 244...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00244.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10244.txt
+          2644084290 << Inference Image 00244 - Correct>>
+[INFO] Reading test vector for index 245...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00245.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10245.txt
+          2654832730 << Inference Image 00245 - Correct>>
+[INFO] Reading test vector for index 246...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00246.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10246.txt
+          2665581170 << Inference Image 00246 - Correct>>
+[INFO] Reading test vector for index 247...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00247.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10247.txt
+          2676329610 << Inference Image 00247 - Correct>>
+[INFO] Reading test vector for index 248...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00248.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10248.txt
+          2687078050 << Inference Image 00248 - Correct>>
+[INFO] Reading test vector for index 249...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00249.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10249.txt
+          2697826490 << Inference Image 00249 - Incorrect>>
+[INFO] Reading test vector for index 250...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00250.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10250.txt
+          2708574930 << Inference Image 00250 - Correct>>
+[INFO] Reading test vector for index 251...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00251.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10251.txt
+          2719323370 << Inference Image 00251 - Correct>>
+[INFO] Reading test vector for index 252...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00252.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10252.txt
+          2730071810 << Inference Image 00252 - Incorrect>>
+[INFO] Reading test vector for index 253...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00253.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10253.txt
+          2740820250 << Inference Image 00253 - Correct>>
+[INFO] Reading test vector for index 254...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00254.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10254.txt
+          2751568690 << Inference Image 00254 - Incorrect>>
+[INFO] Reading test vector for index 255...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00255.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10255.txt
+          2762317130 << Inference Image 00255 - Correct>>
+[INFO] Reading test vector for index 256...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00256.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10256.txt
+          2773065570 << Inference Image 00256 - Correct>>
+[INFO] Reading test vector for index 257...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00257.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10257.txt
+          2783814010 << Inference Image 00257 - Incorrect>>
+[INFO] Reading test vector for index 258...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00258.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10258.txt
+          2794562450 << Inference Image 00258 - Correct>>
+[INFO] Reading test vector for index 259...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00259.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10259.txt
+          2805310890 << Inference Image 00259 - Correct>>
+[INFO] Reading test vector for index 260...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00260.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10260.txt
+          2816059330 << Inference Image 00260 - Correct>>
+[INFO] Reading test vector for index 261...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00261.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10261.txt
+          2826807770 << Inference Image 00261 - Incorrect>>
+[INFO] Reading test vector for index 262...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00262.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10262.txt
+          2837556210 << Inference Image 00262 - Incorrect>>
+[INFO] Reading test vector for index 263...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00263.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10263.txt
+          2848304650 << Inference Image 00263 - Correct>>
+[INFO] Reading test vector for index 264...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00264.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10264.txt
+          2859053090 << Inference Image 00264 - Incorrect>>
+[INFO] Reading test vector for index 265...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00265.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10265.txt
+          2869801530 << Inference Image 00265 - Incorrect>>
+[INFO] Reading test vector for index 266...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00266.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10266.txt
+          2880549970 << Inference Image 00266 - Correct>>
+[INFO] Reading test vector for index 267...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00267.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10267.txt
+          2891298410 << Inference Image 00267 - Incorrect>>
+[INFO] Reading test vector for index 268...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00268.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10268.txt
+          2902046850 << Inference Image 00268 - Correct>>
+[INFO] Reading test vector for index 269...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00269.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10269.txt
+          2912795290 << Inference Image 00269 - Correct>>
+[INFO] Reading test vector for index 270...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00270.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10270.txt
+          2923543730 << Inference Image 00270 - Incorrect>>
+[INFO] Reading test vector for index 271...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00271.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10271.txt
+          2934292170 << Inference Image 00271 - Correct>>
+[INFO] Reading test vector for index 272...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00272.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10272.txt
+          2945040610 << Inference Image 00272 - Incorrect>>
+[INFO] Reading test vector for index 273...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00273.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10273.txt
+          2955789050 << Inference Image 00273 - Incorrect>>
+[INFO] Reading test vector for index 274...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00274.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10274.txt
+          2966537490 << Inference Image 00274 - Correct>>
+[INFO] Reading test vector for index 275...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00275.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10275.txt
+          2977285930 << Inference Image 00275 - Correct>>
+[INFO] Reading test vector for index 276...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00276.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10276.txt
+          2988034370 << Inference Image 00276 - Correct>>
+[INFO] Reading test vector for index 277...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00277.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10277.txt
+          2998782810 << Inference Image 00277 - Incorrect>>
+[INFO] Reading test vector for index 278...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00278.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10278.txt
+          3009531250 << Inference Image 00278 - Correct>>
+[INFO] Reading test vector for index 279...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00279.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10279.txt
+          3020279690 << Inference Image 00279 - Incorrect>>
+[INFO] Reading test vector for index 280...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00280.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10280.txt
+          3031028130 << Inference Image 00280 - Correct>>
+[INFO] Reading test vector for index 281...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00281.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10281.txt
+          3041776570 << Inference Image 00281 - Correct>>
+[INFO] Reading test vector for index 282...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00282.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10282.txt
+          3052525010 << Inference Image 00282 - Correct>>
+[INFO] Reading test vector for index 283...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00283.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10283.txt
+          3063273450 << Inference Image 00283 - Incorrect>>
+[INFO] Reading test vector for index 284...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00284.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10284.txt
+          3074021890 << Inference Image 00284 - Incorrect>>
+[INFO] Reading test vector for index 285...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00285.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10285.txt
+          3084770330 << Inference Image 00285 - Correct>>
+[INFO] Reading test vector for index 286...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00286.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10286.txt
+          3095518770 << Inference Image 00286 - Correct>>
+[INFO] Reading test vector for index 287...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00287.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10287.txt
+          3106267210 << Inference Image 00287 - Incorrect>>
+[INFO] Reading test vector for index 288...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00288.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10288.txt
+          3117015650 << Inference Image 00288 - Correct>>
+[INFO] Reading test vector for index 289...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00289.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10289.txt
+          3127764090 << Inference Image 00289 - Incorrect>>
+[INFO] Reading test vector for index 290...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00290.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10290.txt
+          3138512530 << Inference Image 00290 - Correct>>
+[INFO] Reading test vector for index 291...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00291.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10291.txt
+          3149260970 << Inference Image 00291 - Correct>>
+[INFO] Reading test vector for index 292...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00292.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10292.txt
+          3160009410 << Inference Image 00292 - Incorrect>>
+[INFO] Reading test vector for index 293...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00293.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10293.txt
+          3170757850 << Inference Image 00293 - Correct>>
+[INFO] Reading test vector for index 294...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00294.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10294.txt
+          3181506290 << Inference Image 00294 - Correct>>
+[INFO] Reading test vector for index 295...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00295.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10295.txt
+          3192254730 << Inference Image 00295 - Correct>>
+[INFO] Reading test vector for index 296...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00296.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10296.txt
+          3203003170 << Inference Image 00296 - Incorrect>>
+[INFO] Reading test vector for index 297...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00297.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10297.txt
+          3213751610 << Inference Image 00297 - Correct>>
+[INFO] Reading test vector for index 298...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00298.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10298.txt
+          3224500050 << Inference Image 00298 - Correct>>
+[INFO] Reading test vector for index 299...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00299.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10299.txt
+          3235248490 << Inference Image 00299 - Incorrect>>
+[INFO] Reading test vector for index 300...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00300.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10300.txt
+          3245996930 << Inference Image 00300 - Correct>>
+[INFO] Reading test vector for index 301...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00301.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10301.txt
+          3256745370 << Inference Image 00301 - Incorrect>>
+[INFO] Reading test vector for index 302...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00302.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10302.txt
+          3267493810 << Inference Image 00302 - Correct>>
+[INFO] Reading test vector for index 303...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00303.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10303.txt
+          3278242250 << Inference Image 00303 - Incorrect>>
+[INFO] Reading test vector for index 304...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00304.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10304.txt
+          3288990690 << Inference Image 00304 - Correct>>
+[INFO] Reading test vector for index 305...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00305.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10305.txt
+          3299739130 << Inference Image 00305 - Incorrect>>
+[INFO] Reading test vector for index 306...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00306.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10306.txt
+          3310487570 << Inference Image 00306 - Correct>>
+[INFO] Reading test vector for index 307...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00307.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10307.txt
+          3321236010 << Inference Image 00307 - Correct>>
+[INFO] Reading test vector for index 308...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00308.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10308.txt
+          3331984450 << Inference Image 00308 - Correct>>
+[INFO] Reading test vector for index 309...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00309.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10309.txt
+          3342732890 << Inference Image 00309 - Correct>>
+[INFO] Reading test vector for index 310...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00310.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10310.txt
+          3353481330 << Inference Image 00310 - Correct>>
+[INFO] Reading test vector for index 311...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00311.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10311.txt
+          3364229770 << Inference Image 00311 - Correct>>
+[INFO] Reading test vector for index 312...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00312.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10312.txt
+          3374978210 << Inference Image 00312 - Correct>>
+[INFO] Reading test vector for index 313...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00313.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10313.txt
+          3385726650 << Inference Image 00313 - Correct>>
+[INFO] Reading test vector for index 314...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00314.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10314.txt
+          3396475090 << Inference Image 00314 - Correct>>
+[INFO] Reading test vector for index 315...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00315.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10315.txt
+          3407223530 << Inference Image 00315 - Incorrect>>
+[INFO] Reading test vector for index 316...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00316.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10316.txt
+          3417971970 << Inference Image 00316 - Correct>>
+[INFO] Reading test vector for index 317...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00317.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10317.txt
+          3428720410 << Inference Image 00317 - Incorrect>>
+[INFO] Reading test vector for index 318...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00318.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10318.txt
+          3439468850 << Inference Image 00318 - Correct>>
+[INFO] Reading test vector for index 319...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00319.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10319.txt
+          3450217290 << Inference Image 00319 - Incorrect>>
+[INFO] Reading test vector for index 320...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00320.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10320.txt
+          3460965730 << Inference Image 00320 - Correct>>
+[INFO] Reading test vector for index 321...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00321.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10321.txt
+          3471714170 << Inference Image 00321 - Correct>>
+[INFO] Reading test vector for index 322...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00322.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10322.txt
+          3482462610 << Inference Image 00322 - Correct>>
+[INFO] Reading test vector for index 323...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00323.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10323.txt
+          3493211050 << Inference Image 00323 - Incorrect>>
+[INFO] Reading test vector for index 324...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00324.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10324.txt
+          3503959490 << Inference Image 00324 - Incorrect>>
+[INFO] Reading test vector for index 325...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00325.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10325.txt
+          3514707930 << Inference Image 00325 - Correct>>
+[INFO] Reading test vector for index 326...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00326.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10326.txt
+          3525456370 << Inference Image 00326 - Correct>>
+[INFO] Reading test vector for index 327...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00327.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10327.txt
+          3536204810 << Inference Image 00327 - Correct>>
+[INFO] Reading test vector for index 328...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00328.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10328.txt
+          3546953250 << Inference Image 00328 - Correct>>
+[INFO] Reading test vector for index 329...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00329.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10329.txt
+          3557701690 << Inference Image 00329 - Correct>>
+[INFO] Reading test vector for index 330...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00330.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10330.txt
+          3568450130 << Inference Image 00330 - Correct>>
+[INFO] Reading test vector for index 331...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00331.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10331.txt
+          3579198570 << Inference Image 00331 - Incorrect>>
+[INFO] Reading test vector for index 332...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00332.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10332.txt
+          3589947010 << Inference Image 00332 - Correct>>
+[INFO] Reading test vector for index 333...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00333.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10333.txt
+          3600695450 << Inference Image 00333 - Correct>>
+[INFO] Reading test vector for index 334...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00334.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10334.txt
+          3611443890 << Inference Image 00334 - Incorrect>>
+[INFO] Reading test vector for index 335...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00335.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10335.txt
+          3622192330 << Inference Image 00335 - Correct>>
+[INFO] Reading test vector for index 336...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00336.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10336.txt
+          3632940770 << Inference Image 00336 - Correct>>
+[INFO] Reading test vector for index 337...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00337.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10337.txt
+          3643689210 << Inference Image 00337 - Correct>>
+[INFO] Reading test vector for index 338...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00338.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10338.txt
+          3654437650 << Inference Image 00338 - Correct>>
+[INFO] Reading test vector for index 339...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00339.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10339.txt
+          3665186090 << Inference Image 00339 - Incorrect>>
+[INFO] Reading test vector for index 340...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00340.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10340.txt
+          3675934530 << Inference Image 00340 - Incorrect>>
+[INFO] Reading test vector for index 341...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00341.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10341.txt
+          3686682970 << Inference Image 00341 - Correct>>
+[INFO] Reading test vector for index 342...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00342.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10342.txt
+          3697431410 << Inference Image 00342 - Correct>>
+[INFO] Reading test vector for index 343...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00343.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10343.txt
+          3708179850 << Inference Image 00343 - Correct>>
+[INFO] Reading test vector for index 344...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00344.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10344.txt
+          3718928290 << Inference Image 00344 - Correct>>
+[INFO] Reading test vector for index 345...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00345.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10345.txt
+          3729676730 << Inference Image 00345 - Correct>>
+[INFO] Reading test vector for index 346...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00346.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10346.txt
+          3740425170 << Inference Image 00346 - Correct>>
+[INFO] Reading test vector for index 347...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00347.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10347.txt
+          3751173610 << Inference Image 00347 - Correct>>
+[INFO] Reading test vector for index 348...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00348.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10348.txt
+          3761922050 << Inference Image 00348 - Correct>>
+[INFO] Reading test vector for index 349...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00349.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10349.txt
+          3772670490 << Inference Image 00349 - Correct>>
+[INFO] Reading test vector for index 350...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00350.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10350.txt
+          3783418930 << Inference Image 00350 - Correct>>
+[INFO] Reading test vector for index 351...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00351.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10351.txt
+          3794167370 << Inference Image 00351 - Correct>>
+[INFO] Reading test vector for index 352...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00352.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10352.txt
+          3804915810 << Inference Image 00352 - Correct>>
+[INFO] Reading test vector for index 353...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00353.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10353.txt
+          3815664250 << Inference Image 00353 - Correct>>
+[INFO] Reading test vector for index 354...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00354.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10354.txt
+          3826412690 << Inference Image 00354 - Correct>>
+[INFO] Reading test vector for index 355...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00355.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10355.txt
+          3837161130 << Inference Image 00355 - Correct>>
+[INFO] Reading test vector for index 356...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00356.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10356.txt
+          3847909570 << Inference Image 00356 - Correct>>
+[INFO] Reading test vector for index 357...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00357.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10357.txt
+          3858658010 << Inference Image 00357 - Incorrect>>
+[INFO] Reading test vector for index 358...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00358.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10358.txt
+          3869406450 << Inference Image 00358 - Correct>>
+[INFO] Reading test vector for index 359...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00359.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10359.txt
+          3880154890 << Inference Image 00359 - Incorrect>>
+[INFO] Reading test vector for index 360...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00360.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10360.txt
+          3890903330 << Inference Image 00360 - Correct>>
+[INFO] Reading test vector for index 361...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00361.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10361.txt
+          3901651770 << Inference Image 00361 - Correct>>
+[INFO] Reading test vector for index 362...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00362.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10362.txt
+          3912400210 << Inference Image 00362 - Correct>>
+[INFO] Reading test vector for index 363...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00363.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10363.txt
+          3923148650 << Inference Image 00363 - Correct>>
+[INFO] Reading test vector for index 364...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00364.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10364.txt
+          3933897090 << Inference Image 00364 - Incorrect>>
+[INFO] Reading test vector for index 365...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00365.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10365.txt
+          3944645530 << Inference Image 00365 - Incorrect>>
+[INFO] Reading test vector for index 366...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00366.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10366.txt
+          3955393970 << Inference Image 00366 - Correct>>
+[INFO] Reading test vector for index 367...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00367.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10367.txt
+          3966142410 << Inference Image 00367 - Incorrect>>
+[INFO] Reading test vector for index 368...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00368.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10368.txt
+          3976890850 << Inference Image 00368 - Correct>>
+[INFO] Reading test vector for index 369...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00369.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10369.txt
+          3987639290 << Inference Image 00369 - Correct>>
+[INFO] Reading test vector for index 370...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00370.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10370.txt
+          3998387730 << Inference Image 00370 - Correct>>
+[INFO] Reading test vector for index 371...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00371.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10371.txt
+          4009136170 << Inference Image 00371 - Incorrect>>
+[INFO] Reading test vector for index 372...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00372.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10372.txt
+          4019884610 << Inference Image 00372 - Correct>>
+[INFO] Reading test vector for index 373...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00373.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10373.txt
+          4030633050 << Inference Image 00373 - Correct>>
+[INFO] Reading test vector for index 374...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00374.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10374.txt
+          4041381490 << Inference Image 00374 - Incorrect>>
+[INFO] Reading test vector for index 375...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00375.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10375.txt
+          4052129930 << Inference Image 00375 - Correct>>
+[INFO] Reading test vector for index 376...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00376.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10376.txt
+          4062878370 << Inference Image 00376 - Correct>>
+[INFO] Reading test vector for index 377...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00377.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10377.txt
+          4073626810 << Inference Image 00377 - Incorrect>>
+[INFO] Reading test vector for index 378...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00378.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10378.txt
+          4084375250 << Inference Image 00378 - Incorrect>>
+[INFO] Reading test vector for index 379...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00379.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10379.txt
+          4095123690 << Inference Image 00379 - Incorrect>>
+[INFO] Reading test vector for index 380...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00380.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10380.txt
+          4105872130 << Inference Image 00380 - Correct>>
+[INFO] Reading test vector for index 381...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00381.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10381.txt
+          4116620570 << Inference Image 00381 - Incorrect>>
+[INFO] Reading test vector for index 382...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00382.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10382.txt
+          4127369010 << Inference Image 00382 - Correct>>
+[INFO] Reading test vector for index 383...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00383.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10383.txt
+          4138117450 << Inference Image 00383 - Correct>>
+[INFO] Reading test vector for index 384...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00384.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10384.txt
+          4148865890 << Inference Image 00384 - Correct>>
+[INFO] Reading test vector for index 385...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00385.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10385.txt
+          4159614330 << Inference Image 00385 - Correct>>
+[INFO] Reading test vector for index 386...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00386.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10386.txt
+          4170362770 << Inference Image 00386 - Correct>>
+[INFO] Reading test vector for index 387...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00387.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10387.txt
+          4181111210 << Inference Image 00387 - Correct>>
+[INFO] Reading test vector for index 388...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00388.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10388.txt
+          4191859650 << Inference Image 00388 - Incorrect>>
+[INFO] Reading test vector for index 389...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00389.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10389.txt
+          4202608090 << Inference Image 00389 - Incorrect>>
+[INFO] Reading test vector for index 390...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00390.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10390.txt
+          4213356530 << Inference Image 00390 - Correct>>
+[INFO] Reading test vector for index 391...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00391.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10391.txt
+          4224104970 << Inference Image 00391 - Correct>>
+[INFO] Reading test vector for index 392...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00392.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10392.txt
+          4234853410 << Inference Image 00392 - Incorrect>>
+[INFO] Reading test vector for index 393...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00393.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10393.txt
+          4245601850 << Inference Image 00393 - Incorrect>>
+[INFO] Reading test vector for index 394...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00394.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10394.txt
+          4256350290 << Inference Image 00394 - Incorrect>>
+[INFO] Reading test vector for index 395...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00395.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10395.txt
+          4267098730 << Inference Image 00395 - Incorrect>>
+[INFO] Reading test vector for index 396...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00396.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10396.txt
+          4277847170 << Inference Image 00396 - Correct>>
+[INFO] Reading test vector for index 397...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00397.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10397.txt
+          4288595610 << Inference Image 00397 - Correct>>
+[INFO] Reading test vector for index 398...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00398.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10398.txt
+          4299344050 << Inference Image 00398 - Correct>>
+[INFO] Reading test vector for index 399...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00399.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10399.txt
+          4310092490 << Inference Image 00399 - Incorrect>>
+[INFO] Reading test vector for index 400...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00400.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10400.txt
+          4320840930 << Inference Image 00400 - Incorrect>>
+[INFO] Reading test vector for index 401...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00401.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10401.txt
+          4331589370 << Inference Image 00401 - Correct>>
+[INFO] Reading test vector for index 402...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00402.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10402.txt
+          4342337810 << Inference Image 00402 - Correct>>
+[INFO] Reading test vector for index 403...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00403.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10403.txt
+          4353086250 << Inference Image 00403 - Incorrect>>
+[INFO] Reading test vector for index 404...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00404.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10404.txt
+          4363834690 << Inference Image 00404 - Correct>>
+[INFO] Reading test vector for index 405...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00405.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10405.txt
+          4374583130 << Inference Image 00405 - Correct>>
+[INFO] Reading test vector for index 406...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00406.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10406.txt
+          4385331570 << Inference Image 00406 - Incorrect>>
+[INFO] Reading test vector for index 407...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00407.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10407.txt
+          4396080010 << Inference Image 00407 - Correct>>
+[INFO] Reading test vector for index 408...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00408.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10408.txt
+          4406828450 << Inference Image 00408 - Correct>>
+[INFO] Reading test vector for index 409...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00409.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10409.txt
+          4417576890 << Inference Image 00409 - Correct>>
+[INFO] Reading test vector for index 410...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00410.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10410.txt
+          4428325330 << Inference Image 00410 - Correct>>
+[INFO] Reading test vector for index 411...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00411.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10411.txt
+          4439073770 << Inference Image 00411 - Incorrect>>
+[INFO] Reading test vector for index 412...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00412.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10412.txt
+          4449822210 << Inference Image 00412 - Correct>>
+[INFO] Reading test vector for index 413...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00413.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10413.txt
+          4460570650 << Inference Image 00413 - Incorrect>>
+[INFO] Reading test vector for index 414...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00414.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10414.txt
+          4471319090 << Inference Image 00414 - Incorrect>>
+[INFO] Reading test vector for index 415...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00415.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10415.txt
+          4482067530 << Inference Image 00415 - Correct>>
+[INFO] Reading test vector for index 416...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00416.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10416.txt
+          4492815970 << Inference Image 00416 - Correct>>
+[INFO] Reading test vector for index 417...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00417.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10417.txt
+          4503564410 << Inference Image 00417 - Correct>>
+[INFO] Reading test vector for index 418...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00418.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10418.txt
+          4514312850 << Inference Image 00418 - Incorrect>>
+[INFO] Reading test vector for index 419...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00419.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10419.txt
+          4525061290 << Inference Image 00419 - Incorrect>>
+[INFO] Reading test vector for index 420...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00420.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10420.txt
+          4535809730 << Inference Image 00420 - Incorrect>>
+[INFO] Reading test vector for index 421...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00421.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10421.txt
+          4546558170 << Inference Image 00421 - Correct>>
+[INFO] Reading test vector for index 422...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00422.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10422.txt
+          4557306610 << Inference Image 00422 - Incorrect>>
+[INFO] Reading test vector for index 423...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00423.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10423.txt
+          4568055050 << Inference Image 00423 - Correct>>
+[INFO] Reading test vector for index 424...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00424.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10424.txt
+          4578803490 << Inference Image 00424 - Correct>>
+[INFO] Reading test vector for index 425...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00425.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10425.txt
+          4589551930 << Inference Image 00425 - Correct>>
+[INFO] Reading test vector for index 426...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00426.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10426.txt
+          4600300370 << Inference Image 00426 - Correct>>
+[INFO] Reading test vector for index 427...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00427.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10427.txt
+          4611048810 << Inference Image 00427 - Correct>>
+[INFO] Reading test vector for index 428...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00428.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10428.txt
+          4621797250 << Inference Image 00428 - Correct>>
+[INFO] Reading test vector for index 429...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00429.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10429.txt
+          4632545690 << Inference Image 00429 - Correct>>
+[INFO] Reading test vector for index 430...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00430.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10430.txt
+          4643294130 << Inference Image 00430 - Correct>>
+[INFO] Reading test vector for index 431...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00431.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10431.txt
+          4654042570 << Inference Image 00431 - Correct>>
+[INFO] Reading test vector for index 432...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00432.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10432.txt
+          4664791010 << Inference Image 00432 - Correct>>
+[INFO] Reading test vector for index 433...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00433.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10433.txt
+          4675539450 << Inference Image 00433 - Correct>>
+[INFO] Reading test vector for index 434...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00434.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10434.txt
+          4686287890 << Inference Image 00434 - Correct>>
+[INFO] Reading test vector for index 435...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00435.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10435.txt
+          4697036330 << Inference Image 00435 - Correct>>
+[INFO] Reading test vector for index 436...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00436.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10436.txt
+          4707784770 << Inference Image 00436 - Correct>>
+[INFO] Reading test vector for index 437...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00437.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10437.txt
+          4718533210 << Inference Image 00437 - Incorrect>>
+[INFO] Reading test vector for index 438...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00438.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10438.txt
+          4729281650 << Inference Image 00438 - Incorrect>>
+[INFO] Reading test vector for index 439...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00439.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10439.txt
+          4740030090 << Inference Image 00439 - Incorrect>>
+[INFO] Reading test vector for index 440...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00440.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10440.txt
+          4750778530 << Inference Image 00440 - Correct>>
+[INFO] Reading test vector for index 441...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00441.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10441.txt
+          4761526970 << Inference Image 00441 - Correct>>
+[INFO] Reading test vector for index 442...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00442.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10442.txt
+          4772275410 << Inference Image 00442 - Correct>>
+[INFO] Reading test vector for index 443...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00443.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10443.txt
+          4783023850 << Inference Image 00443 - Incorrect>>
+[INFO] Reading test vector for index 444...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00444.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10444.txt
+          4793772290 << Inference Image 00444 - Correct>>
+[INFO] Reading test vector for index 445...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00445.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10445.txt
+          4804520730 << Inference Image 00445 - Correct>>
+[INFO] Reading test vector for index 446...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00446.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10446.txt
+          4815269170 << Inference Image 00446 - Incorrect>>
+[INFO] Reading test vector for index 447...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00447.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10447.txt
+          4826017610 << Inference Image 00447 - Correct>>
+[INFO] Reading test vector for index 448...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00448.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10448.txt
+          4836766050 << Inference Image 00448 - Correct>>
+[INFO] Reading test vector for index 449...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00449.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10449.txt
+          4847514490 << Inference Image 00449 - Correct>>
+[INFO] Reading test vector for index 450...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00450.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10450.txt
+          4858262930 << Inference Image 00450 - Incorrect>>
+[INFO] Reading test vector for index 451...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00451.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10451.txt
+          4869011370 << Inference Image 00451 - Incorrect>>
+[INFO] Reading test vector for index 452...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00452.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10452.txt
+          4879759810 << Inference Image 00452 - Correct>>
+[INFO] Reading test vector for index 453...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00453.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10453.txt
+          4890508250 << Inference Image 00453 - Correct>>
+[INFO] Reading test vector for index 454...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00454.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10454.txt
+          4901256690 << Inference Image 00454 - Correct>>
+[INFO] Reading test vector for index 455...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00455.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10455.txt
+          4912005130 << Inference Image 00455 - Correct>>
+[INFO] Reading test vector for index 456...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00456.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10456.txt
+          4922753570 << Inference Image 00456 - Correct>>
+[INFO] Reading test vector for index 457...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00457.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10457.txt
+          4933502010 << Inference Image 00457 - Correct>>
+[INFO] Reading test vector for index 458...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00458.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10458.txt
+          4944250450 << Inference Image 00458 - Correct>>
+[INFO] Reading test vector for index 459...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00459.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10459.txt
+          4954998890 << Inference Image 00459 - Incorrect>>
+[INFO] Reading test vector for index 460...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00460.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10460.txt
+          4965747330 << Inference Image 00460 - Correct>>
+[INFO] Reading test vector for index 461...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00461.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10461.txt
+          4976495770 << Inference Image 00461 - Correct>>
+[INFO] Reading test vector for index 462...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00462.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10462.txt
+          4987244210 << Inference Image 00462 - Incorrect>>
+[INFO] Reading test vector for index 463...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00463.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10463.txt
+          4997992650 << Inference Image 00463 - Correct>>
+[INFO] Reading test vector for index 464...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00464.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10464.txt
+          5008741090 << Inference Image 00464 - Correct>>
+[INFO] Reading test vector for index 465...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00465.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10465.txt
+          5019489530 << Inference Image 00465 - Correct>>
+[INFO] Reading test vector for index 466...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00466.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10466.txt
+          5030237970 << Inference Image 00466 - Correct>>
+[INFO] Reading test vector for index 467...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00467.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10467.txt
+          5040986410 << Inference Image 00467 - Correct>>
+[INFO] Reading test vector for index 468...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00468.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10468.txt
+          5051734850 << Inference Image 00468 - Correct>>
+[INFO] Reading test vector for index 469...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00469.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10469.txt
+          5062483290 << Inference Image 00469 - Correct>>
+[INFO] Reading test vector for index 470...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00470.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10470.txt
+          5073231730 << Inference Image 00470 - Correct>>
+[INFO] Reading test vector for index 471...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00471.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10471.txt
+          5083980170 << Inference Image 00471 - Incorrect>>
+[INFO] Reading test vector for index 472...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00472.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10472.txt
+          5094728610 << Inference Image 00472 - Incorrect>>
+[INFO] Reading test vector for index 473...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00473.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10473.txt
+          5105477050 << Inference Image 00473 - Correct>>
+[INFO] Reading test vector for index 474...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00474.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10474.txt
+          5116225490 << Inference Image 00474 - Incorrect>>
+[INFO] Reading test vector for index 475...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00475.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10475.txt
+          5126973930 << Inference Image 00475 - Correct>>
+[INFO] Reading test vector for index 476...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00476.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10476.txt
+          5137722370 << Inference Image 00476 - Correct>>
+[INFO] Reading test vector for index 477...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00477.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10477.txt
+          5148470810 << Inference Image 00477 - Correct>>
+[INFO] Reading test vector for index 478...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00478.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10478.txt
+          5159219250 << Inference Image 00478 - Correct>>
+[INFO] Reading test vector for index 479...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00479.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10479.txt
+          5169967690 << Inference Image 00479 - Correct>>
+[INFO] Reading test vector for index 480...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00480.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10480.txt
+          5180716130 << Inference Image 00480 - Incorrect>>
+[INFO] Reading test vector for index 481...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00481.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10481.txt
+          5191464570 << Inference Image 00481 - Correct>>
+[INFO] Reading test vector for index 482...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00482.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10482.txt
+          5202213010 << Inference Image 00482 - Correct>>
+[INFO] Reading test vector for index 483...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00483.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10483.txt
+          5212961450 << Inference Image 00483 - Correct>>
+[INFO] Reading test vector for index 484...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00484.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10484.txt
+          5223709890 << Inference Image 00484 - Incorrect>>
+[INFO] Reading test vector for index 485...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00485.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10485.txt
+          5234458330 << Inference Image 00485 - Incorrect>>
+[INFO] Reading test vector for index 486...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00486.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10486.txt
+          5245206770 << Inference Image 00486 - Correct>>
+[INFO] Reading test vector for index 487...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00487.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10487.txt
+          5255955210 << Inference Image 00487 - Incorrect>>
+[INFO] Reading test vector for index 488...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00488.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10488.txt
+          5266703650 << Inference Image 00488 - Correct>>
+[INFO] Reading test vector for index 489...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00489.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10489.txt
+          5277452090 << Inference Image 00489 - Correct>>
+[INFO] Reading test vector for index 490...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00490.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10490.txt
+          5288200530 << Inference Image 00490 - Correct>>
+[INFO] Reading test vector for index 491...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00491.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10491.txt
+          5298948970 << Inference Image 00491 - Incorrect>>
+[INFO] Reading test vector for index 492...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00492.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10492.txt
+          5309697410 << Inference Image 00492 - Incorrect>>
+[INFO] Reading test vector for index 493...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00493.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10493.txt
+          5320445850 << Inference Image 00493 - Incorrect>>
+[INFO] Reading test vector for index 494...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00494.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10494.txt
+          5331194290 << Inference Image 00494 - Correct>>
+[INFO] Reading test vector for index 495...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00495.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10495.txt
+          5341942730 << Inference Image 00495 - Correct>>
+[INFO] Reading test vector for index 496...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00496.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10496.txt
+          5352691170 << Inference Image 00496 - Incorrect>>
+[INFO] Reading test vector for index 497...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00497.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10497.txt
+          5363439610 << Inference Image 00497 - Correct>>
+[INFO] Reading test vector for index 498...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00498.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10498.txt
+          5374188050 << Inference Image 00498 - Incorrect>>
+[INFO] Reading test vector for index 499...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00499.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10499.txt
+          5384936490 << Inference Image 00499 - Incorrect>>
+[INFO] Reading test vector for index 500...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00500.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10500.txt
+          5395684930 << Inference Image 00500 - Incorrect>>
+[INFO] Reading test vector for index 501...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00501.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10501.txt
+          5406433370 << Inference Image 00501 - Correct>>
+[INFO] Reading test vector for index 502...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00502.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10502.txt
+          5417181810 << Inference Image 00502 - Incorrect>>
+[INFO] Reading test vector for index 503...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00503.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10503.txt
+          5427930250 << Inference Image 00503 - Correct>>
+[INFO] Reading test vector for index 504...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00504.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10504.txt
+          5438678690 << Inference Image 00504 - Correct>>
+[INFO] Reading test vector for index 505...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00505.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10505.txt
+          5449427130 << Inference Image 00505 - Correct>>
+[INFO] Reading test vector for index 506...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00506.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10506.txt
+          5460175570 << Inference Image 00506 - Incorrect>>
+[INFO] Reading test vector for index 507...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00507.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10507.txt
+          5470924010 << Inference Image 00507 - Correct>>
+[INFO] Reading test vector for index 508...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00508.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10508.txt
+          5481672450 << Inference Image 00508 - Correct>>
+[INFO] Reading test vector for index 509...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00509.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10509.txt
+          5492420890 << Inference Image 00509 - Correct>>
+[INFO] Reading test vector for index 510...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00510.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10510.txt
+          5503169330 << Inference Image 00510 - Correct>>
+[INFO] Reading test vector for index 511...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00511.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10511.txt
+          5513917770 << Inference Image 00511 - Correct>>
+[INFO] Reading test vector for index 512...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00512.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10512.txt
+          5524666210 << Inference Image 00512 - Correct>>
+[INFO] Reading test vector for index 513...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00513.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10513.txt
+          5535414650 << Inference Image 00513 - Correct>>
+[INFO] Reading test vector for index 514...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00514.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10514.txt
+          5546163090 << Inference Image 00514 - Correct>>
+[INFO] Reading test vector for index 515...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00515.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10515.txt
+          5556911530 << Inference Image 00515 - Correct>>
+[INFO] Reading test vector for index 516...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00516.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10516.txt
+          5567659970 << Inference Image 00516 - Incorrect>>
+[INFO] Reading test vector for index 517...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00517.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10517.txt
+          5578408410 << Inference Image 00517 - Correct>>
+[INFO] Reading test vector for index 518...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00518.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10518.txt
+          5589156850 << Inference Image 00518 - Correct>>
+[INFO] Reading test vector for index 519...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00519.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10519.txt
+          5599905290 << Inference Image 00519 - Incorrect>>
+[INFO] Reading test vector for index 520...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00520.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10520.txt
+          5610653730 << Inference Image 00520 - Incorrect>>
+[INFO] Reading test vector for index 521...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00521.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10521.txt
+          5621402170 << Inference Image 00521 - Incorrect>>
+[INFO] Reading test vector for index 522...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00522.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10522.txt
+          5632150610 << Inference Image 00522 - Correct>>
+[INFO] Reading test vector for index 523...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00523.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10523.txt
+          5642899050 << Inference Image 00523 - Correct>>
+[INFO] Reading test vector for index 524...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00524.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10524.txt
+          5653647490 << Inference Image 00524 - Correct>>
+[INFO] Reading test vector for index 525...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00525.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10525.txt
+          5664395930 << Inference Image 00525 - Incorrect>>
+[INFO] Reading test vector for index 526...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00526.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10526.txt
+          5675144370 << Inference Image 00526 - Incorrect>>
+[INFO] Reading test vector for index 527...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00527.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10527.txt
+          5685892810 << Inference Image 00527 - Correct>>
+[INFO] Reading test vector for index 528...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00528.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10528.txt
+          5696641250 << Inference Image 00528 - Incorrect>>
+[INFO] Reading test vector for index 529...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00529.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10529.txt
+          5707389690 << Inference Image 00529 - Correct>>
+[INFO] Reading test vector for index 530...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00530.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10530.txt
+          5718138130 << Inference Image 00530 - Correct>>
+[INFO] Reading test vector for index 531...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00531.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10531.txt
+          5728886570 << Inference Image 00531 - Incorrect>>
+[INFO] Reading test vector for index 532...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00532.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10532.txt
+          5739635010 << Inference Image 00532 - Correct>>
+[INFO] Reading test vector for index 533...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00533.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10533.txt
+          5750383450 << Inference Image 00533 - Correct>>
+[INFO] Reading test vector for index 534...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00534.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10534.txt
+          5761131890 << Inference Image 00534 - Correct>>
+[INFO] Reading test vector for index 535...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00535.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10535.txt
+          5771880330 << Inference Image 00535 - Correct>>
+[INFO] Reading test vector for index 536...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00536.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10536.txt
+          5782628770 << Inference Image 00536 - Correct>>
+[INFO] Reading test vector for index 537...
+[INFO]   Image file: ../../../../BNN_accel.srcs/sim_1/img_and_label/img_00537.mem
+[INFO]   Label file: ../../../../BNN_accel.srcs/sim_1/img_and_label/lbl_10537.txt
+     

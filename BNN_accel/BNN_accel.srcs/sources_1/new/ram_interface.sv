@@ -28,8 +28,17 @@ interface ram_addr_port #(
     
     logic [$clog2(RAM_WIDTH_CLOG)-1:0] x;
     logic [$clog2(RAM_HIGHT_CLOG)-1:0] y;
-    
-    
-
-
 endinterface
+
+
+// interface ram_port #(
+    // parameter RAM_WIDTH = 8,
+    // parameter RAM_HIGHT = 8
+    // );
+    // localparam RAM_WIDTH_CLOG = (RAM_WIDTH == 1) ? 2 : RAM_WIDTH;
+    // localparam RAM_HIGHT_CLOG = (RAM_HIGHT == 1) ? 2 : RAM_HIGHT;
+    
+    // ram_addr_port #(.RAM_WIDTH(RAM_WIDTH), .RAM_HIGHT(RAM_HIGHT)) addr;
+    
+    
+// endinterface

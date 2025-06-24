@@ -13,29 +13,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
-      <ZoomEndTime time="154.900000001 ms"></ZoomEndTime>
-      <Cursor1Time time="128.949330000 ms"></Cursor1Time>
+      <ZoomStartTime time="1,017.992235000 ms"></ZoomStartTime>
+      <ZoomEndTime time="1,174.969365001 ms"></ZoomEndTime>
+      <Cursor1Time time="1,148.806510000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="392"></NameColumnWidth>
-      <ValueColumnWidth column_width="135"></ValueColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="4" />
-   <wvobject fp_name="/accel_tb/ip_lbl" type="array">
-      <obj_property name="ElementShortName">ip_lbl[15:0]</obj_property>
-      <obj_property name="ObjectShortName">ip_lbl[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/op_lbl" type="array">
-      <obj_property name="ElementShortName">op_lbl[15:0]</obj_property>
-      <obj_property name="ObjectShortName">op_lbl[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/prediction_rght" type="array">
-      <obj_property name="ElementShortName">prediction_rght[31:0]</obj_property>
-      <obj_property name="ObjectShortName">prediction_rght[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/accel_tb/prediction_wrng" type="array">
-      <obj_property name="ElementShortName">prediction_wrng[31:0]</obj_property>
-      <obj_property name="ObjectShortName">prediction_wrng[31:0]</obj_property>
-   </wvobject>
+   <WVObjectSize size="0" />
 </wave_config>
